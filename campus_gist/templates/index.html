@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+      <label for="">{{ form.email.label }}</label>
+      {{ form.email }}
+    </div>
+
+    <div>
+      <label for="">{{ form.subject.label }}</label>
+      {{ form.subject }}
+    </div>
+
+    <div>
+      <label for="">{{ form.message.label }}</label>
+      {{ form.message }}
+    </div>
+
+    <div>
+      {{ form.send_button }}
+    </div>
+  </form>
+{% endblock main %}
