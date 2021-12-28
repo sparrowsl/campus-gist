@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <div class="share-gist-box uk-box-shadow-medium uk-margin-small-top
+      uk-border-rounded uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
+    <a href="{{ url_for('create_gist_page') }}" class="uk-link-reset uk-display-block">
+      <i uk-icon="pencil" class="uk-border-circle"></i>
+      <span class="uk-margin-small-left uk-text-bold">Share a gist</span>
+    </a>
+  </div>
+
+  <section class="display-gists uk-margin-top">
+    {% for i in range(5) %}
+    <article class="uk-box-shadow-medium uk-padding-small uk-margin-small-bottom
+          uk-border-rounded uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
+      <!-- Article header -->
+      <div class="uk-flex">
+        <div class="profile-image">
+          <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="profile-image">
+        </div>
+        <div class="username-and-date uk-margin-small-left">
+          <h4 class="uk-margin-remove-bottom uk-text-bold">
+            <a href="">John Doe | capitalize</a>
+          </h4>
+          <p class="uk-margin-remove uk-text-italic">December 25, 2021</p>
+        </div>
+      </div>
+      <!-- Article content -->
+      <div class="article-title">
+        <h3 class="uk-margin-remove">
+          <a href="" class="uk-link-reset uk-text-bold">A short title here</a>
+        </h3>
+        <p class="uk-text-muted uk-margin-remove uk-text-italic">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          Tenetur necessitatibus tempore inventore amet neque est soluta aliquam, natus eum harum!
+        </p>
+        <!-- use truncate filter -->
+        <span class="uk-text-right uk-text-meta uk-margin-small-top uk-display-block uk-text-italic">
+          <i uk-icon="comments"></i> {0} comments
+        </span>
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+{% endblock main %}

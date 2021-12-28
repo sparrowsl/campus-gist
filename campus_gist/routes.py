@@ -1,22 +1,38 @@
 from flask import redirect, url_for, render_template, flash
-from flask_mail import Message
 
-from send_a_mail import app, mail
-from send_a_mail.forms import SendMailForm
-
-
+from campus_gist import app
+from campus_gist.forms import (RegistrationForm, LoginForm, CreateGistForm,
+                               UpdateGistForm)
 
 
-@app.route("/", methods=["GET", "POST"])
+
+@app.route("/")
 def index_page():
-    form = SendMailForm()
-    # Validate form
-    if form.validate_on_submit():
-        message = Message("subject", sender="from@example.com", recipients=[
-                          form.email.data, "benjaminthorpe19@gmail.com"])
+    return render_template("index.html")
 
-        mail.send(message)
-        flash("Email was sent successfully!!")
-        # clear previous form data by redirecting
-        return redirect(url_for("index_page"))
-    return render_template("index.html", form=form)
+
+@app.route("/gists")
+def show_all_gists():
+    return render_template("gists.html")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login_page():
+    form = LoginForm()
+    return render_template("auth/login.html", form=form)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register_page():
+    form = RegistrationForm()
+    return render_template("auth/register.html", form=form)
+
+
+@app.route("/update", methods=["GET", "POST"])
+def update_gist_page():
+    return render_template("auth/update.html")
+
+
+@app.route("/create", methods=["GET", "POST"])
+def create_gist_page():
+    return render_template("auth/create_gist.html")

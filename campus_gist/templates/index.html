@@ -1,25 +1,28 @@
 {% extends "base.html" %}
 
 {% block main %}
-  <form action="" method="POST">
-    {{ form.hidden_tag() }}
-    <div>
-      <label for="">{{ form.email.label }}</label>
-      {{ form.email }}
-    </div>
+  <section class="index-section">
+    <section>
+      <div class="content">
+        <h1 class="uk-text-bold">Campus Gist</h1>
+        <p class="uk-text-muted summary">
+          Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Odio vero
+          ipsam ipsum, inventore sequi expedita excepturi illum vitae asperiores omnis.
+        </p>
+      </div>
+      <!-- Signup and Register buttons -->
+      <div class="auth-links">
+        <span class="index-login-btn uk-margin-small-right">
+          <a href="{{ url_for('login_page') }}">Login</a>
+        </span>
+        <span class="index-register-btn uk-margin-small-left">
+          <a href="{{ url_for('register_page') }}">Register</a>
+        </span>
+      </div>
+    </section>
 
-    <div>
-      <label for="">{{ form.subject.label }}</label>
-      {{ form.subject }}
+    <div class="svg">
+      <img src="{{ url_for('static', filename='images/chat_svg.svg') }}" alt="" uk-svg>
     </div>
-
-    <div>
-      <label for="">{{ form.message.label }}</label>
-      {{ form.message }}
-    </div>
-
-    <div>
-      {{ form.send_button }}
-    </div>
-  </form>
+  </section>
 {% endblock main %}

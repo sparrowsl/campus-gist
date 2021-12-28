@@ -1,20 +1,27 @@
 import os
 
 from flask import Flask
-from flask_mail import Mail
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+# from flask_login import LoginManager
+from dotenv import load_dotenv
 
+
+load_dotenv()
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = os.getenv("SECRET_KEY") or "secret_key"
-# Email Configuration
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = 1
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME') or "marvelousbend@gmail.com"
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD') or "marve!0us"
-# app.config['MAIL_DEFAULT_SENDER'] = 'Default Sender'
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///gist.db"
 
-mail = Mail(app)
+# Initialize the extensions
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+"""
+login_manager = LoginManager(app)
+# redirect un-authenticated users to login page
+login_manager.login_view = "login_page"
+login_manager.login_message = "Please log in to access that page."
+login_manager.login_message_category = "primary"
+"""
 
-
-from send_a_mail import routes
+from campus_gist import routes

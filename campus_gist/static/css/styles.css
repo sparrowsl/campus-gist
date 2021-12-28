@@ -1,0 +1,99 @@
+:root {
+  --nav-bg: #406882;
+  --white: #ffffff;
+}
+body{
+  min-height: 100vh;
+  background-color: #F4F9F9;
+}
+.uk-logo, .uk-logo:hover, .uk-navbar-toggle{
+  color: white;
+}
+.uk-navbar-left{ width: 50%; }
+.nav-header{
+  background-color: var(--nav-bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav ul{
+  display: none;
+  flex-direction: column;
+  gap: .5em;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background: inherit !important;
+  z-index: 100;
+}
+nav ul a{ color: white; }
+.uk-navbar-container{ background: inherit !important; }
+
+.share-gist-box{
+  background-color: #6D8299;
+  padding: .5em;
+  color: #fff;
+}
+.share-gist-box i{
+  background-color: #fbfbfb;
+  padding: .5em;
+  color: initial;
+}
+.display-gists .profile-image img{
+  width: 60px;
+  height: 60px;
+}
+.login-form, .register-form{
+  background-color: #E1E8EB;
+}
+.login-form-button, .register-form-button{
+  background-color: #125D98;
+  color: #fff;
+  text-transform: capitalize;
+}
+section.index-section{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 5vh .5em;
+}
+section p.summary{ max-width: 55ch; }
+div.auth-links{ margin-top: 2em; }
+.index-login-btn a, .index-register-btn a{
+  background-color: #79a9d1;
+  padding: .7em 1em;
+  border-radius: 5px;
+  color: #ffffff;
+}
+/* RESPONSIVE MEDIA QUERIES
+======================================================= */
+@media (min-width: 400px) {
+  nav{ padding: 0 .5em; }
+}
+@media (min-width: 576px) {}
+@media (min-width: 768px) {
+  nav{ padding: 0 5vw; }
+  nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1.5em;
+    position: static;
+    background-color: inherit;
+  }
+  nav li a:hover{ color: silver; }
+  .login-form, .register-form{
+    padding: 1.5em 3em;
+  }
+  section.index-section{
+    min-height: 75vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+  }
+}
+@media (min-width: 992px) {
+  nav{ padding: 0 10vw; }
+}
+@media (min-width: 1200px) {}

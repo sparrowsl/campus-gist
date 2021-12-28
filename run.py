@@ -1,1 +1,1 @@
-from send_a_mail import app
+from campus_gist import app
