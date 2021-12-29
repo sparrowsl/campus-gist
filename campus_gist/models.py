@@ -9,10 +9,12 @@ class Student(db.Model):
     fullname = db.Column(db.String(20), nullable=False)
     username = db.Column(db.String(15), unique=True, nullable=False)
     email = db.Column(db.String(75), unique=True, nullable=False, default="")
+    bio = db.Column(db.Text, default="A normal student.")
     profile_picture = db.Column(db.String(20), nullable=False,
                                 default="default.jpg")
     password = db.Column(db.String(256), nullable=False)
 
+    institute = db.Column(db.Integer, db.ForeignKey("institutions.id"))
     gists = db.relationship("Gist", backref="student", lazy=True)
     comments = db.relationship("Comment", backref="student", lazy=True)
 
@@ -47,3 +49,15 @@ class Comment(db.Model):
 
     def __repr__(self):
         return f"<Comment('{self.comment}')>"
+
+
+class Institution(db.Model):
+    __tablename__ = "institutions"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(250), nullable=False, unique=True)
+    abbreviation = db.Column(db.String(15), default="N/A")
+
+    student_id = db.relationship("Student", backref="institution", lazy=True)
+
+    def __repr__(self):
+        return f"<Institution('{self.name}', '{self.abbreviation}')>"

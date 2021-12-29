@@ -3,6 +3,7 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+from flask_ckeditor import CKEditor
 # from flask_login import LoginManager
 from dotenv import load_dotenv
 
@@ -16,6 +17,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///gist.db"
 # Initialize the extensions
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
+ckeditor = CKEditor(app)
 """
 login_manager = LoginManager(app)
 # redirect un-authenticated users to login page

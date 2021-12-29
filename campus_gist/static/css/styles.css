@@ -40,14 +40,12 @@ nav ul a{ color: white; }
   padding: .5em;
   color: initial;
 }
-.display-gists .profile-image img{
-  width: 60px;
-  height: 60px;
-}
 .login-form, .register-form{
   background-color: #E1E8EB;
 }
-.login-form-button, .register-form-button{
+.login-form-button,
+.register-form-button,
+.create-gist-button{
   background-color: #125D98;
   color: #fff;
   text-transform: capitalize;
@@ -65,6 +63,14 @@ div.auth-links{ margin-top: 2em; }
   padding: .7em 1em;
   border-radius: 5px;
   color: #ffffff;
+}
+section.article-content p{
+  color: #333;
+  line-height: 1.75;
+}
+.uk-textarea{
+  min-height: 175px;
+  resize: none;
 }
 /* RESPONSIVE MEDIA QUERIES
 ======================================================= */

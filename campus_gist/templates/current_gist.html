@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <article class="uk-padding-small uk-margin uk-width-3-4@s uk-width-2-3@m">
+    <h1 class="uk-margin-small uk-text-bold">A short title here</h1>
+      <!-- Article header -->
+    <hr class="uk-margin-small">
+      <div class="uk-flex uk-flex-middle">
+        <div class="profile-image">
+          <img src="{{ url_for('static', filename='images/default.jpg') }}" width="60" height="60"
+            alt="profile-image">
+        </div>
+        <div class="username-and-date uk-margin-small-left">
+          <h4 class="uk-margin-remove-bottom">
+            <a href="">John Doe</a>
+          </h4>
+          <p class="uk-margin-remove uk-text-italic uk-text-meta">Posted on { December 25, 2021 }</p>
+        </div>
+      </div>
+    <hr class="uk-margin-small">
+
+    <!-- Article content -->
+    <section class="article-content uk-margin-top">
+      <div class="uk-margin-remove">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis itaque dignissimos
+        nihil cum vel maiores! Fugiat, aliquid, reiciendis! Impedit, aspernatur deserunt ad earum,
+        vitae molestias suscipit quam. Ab recusandae ea eos voluptatibus tempora aspernatur veritatis
+        blanditiis aliquid, inventore nesciunt repellendus odio accusantium mollitia vitae! Magni nemo
+        necessitatibus aspernatur corporis minus ratione incidunt harum fugit voluptates sapiente aut, a
+        dolores illo expedita quos laboriosam animi veritatis, nesciunt fuga perspiciatis rerum numquam
+        repellendus quibusdam id. Temporibus fugiat repellat laboriosam quam facilis natus hic nisi
+        doloribus culpa non architecto perferendis, repudiandae provident mollitia earum distinctio, et ipsam.
+        Dignissimos rerum accusamus, tempora. Odio numquam, amet illum suscipit, et at dolorum alias
+        laboriosam quae, quibusdam odit, repudiandae quos! Dolore culpa, commodi, fugit sit quos autem
+        reiciendis recusandae. Neque, minima dignissimos nostrum eum. Dolor ex sequi iure facilis fugiat,
+        ducimus nihil! Cum aliquam neque fugiat, non perferendis, consequuntur eos labore vero veniam et
+        cupiditate blanditiis ea provident voluptatum beatae reiciendis itaque. Tempore, delectus cum quidem
+        autem sed obcaecati quo ipsa dolor expedita quam molestiae, incidunt molestias.
+      </div>
+      <!-- use truncate filter -->
+      <span class="uk-text-right uk-text-meta uk-margin-small-top uk-display-block uk-text-italic">
+        <i uk-icon="comments"></i> {0} comments
+      </span>
+    </section>
+  </article>
+{% endblock main %}
