@@ -1,1 +1,1 @@
-web: gunicorn wsgi:campus_gist
+web: gunicorn campus_gist:app
