@@ -11,6 +11,8 @@ institutes = [
     ("FBC", "Fourah Bay College"),
     ("CODE", "College of Digital Excellence"),
     ("CCMT", "Canadian College of Modern Technology"),
+    ("CAT", "College of Agriculture and Technology"),
+    ("other", "Other"),
 ]
 
 class RegistrationForm(FlaskForm):

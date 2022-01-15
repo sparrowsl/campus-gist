@@ -10,6 +10,7 @@ A simple web app for students, to post gist about anything happening around camp
 ## Features
 - Create Post with Rich Text Editor (future feature)
 - Update, Delete and Edit Gists (future feature)
+- Separate Chat Room (future feature)
 
 ## Run Locally
 
