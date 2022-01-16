@@ -13,7 +13,7 @@
         </div>
 
         <div class="uk-margin">
-          {{ form.gist_content() }}
+          {{ form.gist_content(class="uk-textarea uk-border-rounded", placeholder="Mary is in love!") }}
         </div>
 
         <div class="uk-margin">
@@ -21,7 +21,5 @@
         </div>
       </fieldset>
     </form>
-    {{ ckeditor.load(pkg_type="basic") }}
-    {{ ckeditor.config(name='gist_content') }}
   </section>
 {% endblock main %}

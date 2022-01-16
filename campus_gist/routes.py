@@ -1,8 +1,10 @@
 from flask import redirect, url_for, render_template, flash
 
-from campus_gist import app
+from campus_gist import app, db
 from campus_gist.forms import (RegistrationForm, LoginForm, CreateGistForm,
                                UpdateGistForm)
+
+from campus_gist.models import Student
 
 
 @app.route("/")
@@ -23,12 +25,25 @@ def current_gist():
 @app.route("/login", methods=["GET", "POST"])
 def login_page():
     form = LoginForm()
+    if form.validate_on_submit():
+        flash("Login Successfully")
+        # return redirect(url_for("show_all_gists"))
     return render_template("auth/login.html", form=form)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register_page():
     form = RegistrationForm()
+    if form.validate_on_submit():
+        institute = dict(form.instututions.choices).get(form.instututions.data)
+        user = Student(fullname=form.fullname.data, email=form.email.data,
+                       username=form.username.data,
+                       institutions=institute)
+        user.set_password(password=form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash(f"Successfully Registered")
+        return redirect(url_for("show_all_gists"))
     return render_template("auth/register.html", form=form)
 
 

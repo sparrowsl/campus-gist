@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block main %}
-  <div class="share-gist-box uk-box-shadow-medium uk-margin-small-top
-      uk-border-rounded uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
-    <a href="{{ url_for('create_gist_page') }}" class="uk-link-reset uk-display-block">
-      <i uk-icon="pencil" class="uk-border-circle"></i>
-      <span class="uk-margin-small-left uk-text-bold">Share a gist</span>
-    </a>
-  </div>
+    <div class="share-gist-box uk-box-shadow-medium uk-margin-small-top
+        uk-border-rounded uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
+      <a href="{{ url_for('create_gist_page') }}" class="uk-link-reset uk-display-block">
+        <i uk-icon="pencil" class="uk-border-circle"></i>
+        <span class="uk-margin-small-left uk-text-bold">Share a gist</span>
+      </a>
+    </div>
 
   <section class="display-gists uk-margin-top">
     {% for i in range(5) %}

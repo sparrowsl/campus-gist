@@ -1,39 +1,48 @@
 {% extends "base.html" %}
+{% import 'macros.html' as macros %}
 
 {% block main %}
   <section class="uk-margin-top uk-width-3-4@s uk-width-1-2@m uk-margin-auto uk-box-shadow-large">
-    <form action="" method="POST" class="register-form uk-padding-small uk-border-rounded">
+    <form action="{{ url_for('register_page') }}" method="POST"
+        class="register-form uk-padding-small uk-border-rounded" novalidate>
+      {{ form.hidden_tag() }}
       <fieldset class="uk-fieldset">
         <legend class="uk-legend uk-text-bold">Register</legend>
 
         <div class="uk-margin">
           {{ form.fullname.label(class="uk-form-label") }}
           {{ form.fullname(class="uk-input uk-border-rounded", placeholder="John Doe") }}
+          {{ macros.display_form_errors(form.fullname) }}
         </div>
 
         <div class="uk-margin">
           {{ form.username.label(class="uk-form-label") }}
           {{ form.username(class="uk-input uk-border-rounded", placeholder="johndoe") }}
+          {{ macros.display_form_errors(form.username) }}
         </div>
 
         <div class="uk-margin">
           {{ form.email.label(class="uk-form-label") }}
           {{ form.email(class="uk-input uk-border-rounded", placeholder="johndoe@mail.com") }}
+          {{ macros.display_form_errors(form.email) }}
         </div>
 
         <div class="uk-margin">
           {{ form.instututions.label(class="uk-form-label") }}
           {{ form.instututions(class="uk-select uk-border-rounded") }}
+          {{ macros.display_form_errors(form.instututions) }}
         </div>
 
         <div class="uk-margin">
           {{ form.password.label(class="uk-form-label") }}
           {{ form.password(class="uk-input uk-border-rounded", placeholder="********") }}
+          {{ macros.display_form_errors(form.password) }}
         </div>
 
         <div class="uk-margin">
           {{ form.confirm_password.label(class="uk-form-label") }}
           {{ form.confirm_password(class="uk-input uk-border-rounded", placeholder="********") }}
+          {{ macros.display_form_errors(form.confirm_password) }}
         </div>
 
         <div class="uk-margin">
