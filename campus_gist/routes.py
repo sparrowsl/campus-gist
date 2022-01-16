@@ -26,8 +26,14 @@ def current_gist():
 def login_page():
     form = LoginForm()
     if form.validate_on_submit():
-        flash("Login Successfully")
-        # return redirect(url_for("show_all_gists"))
+        user = Student.query.filter_by(username=form.username.data).first()
+        # Check if username and password is invalid and redirect to login page
+        if user and user.check_password(form.password.data):
+            flash(f"Welcome back {user.fullname}!")
+            return redirect(url_for("show_all_gists"))
+        else:
+            flash("Invalid username or password!!")
+            return redirect(url_for("login_page"))
     return render_template("auth/login.html", form=form)
 
 
