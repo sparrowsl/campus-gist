@@ -1,5 +1,5 @@
-from flask import redirect, url_for, render_template, flash
-from flask_login import current_user, login_user, logout_user
+from flask import redirect, url_for, render_template, flash, request
+from flask_login import (current_user, login_user, logout_user, login_required)
 
 from campus_gist import app, db, login_manager
 from campus_gist.forms import (RegistrationForm, LoginForm, CreateGistForm,
@@ -43,6 +43,7 @@ def login_page():
 
 
 @app.route("/logout")
+@login_required
 def logout():
     logout_user()
     flash("Bye Bye!! See you next time.")
@@ -71,14 +72,32 @@ def register_page():
     return render_template("auth/register.html", form=form)
 
 
+@app.route("/account")
+@login_required
+def account_page():
+    return render_template("auth/profile.html")
+
+
 @app.route("/update", methods=["GET", "POST"])
+@login_required
 def update_gist_page():
     form = UpdateGistForm()
-    form.gist_content.data = "hello world of <b>CKeditor</b>!!"
     return render_template("auth/update_gist.html", form=form)
 
 
 @app.route("/create", methods=["GET", "POST"])
+@login_required
 def create_gist_page():
     form = CreateGistForm()
     return render_template("auth/create_gist.html", form=form)
+
+
+@app.route("/students/<username>", methods=["GET", "POST"])
+@login_required
+def profile_page(username):
+    user = Student.query.filter_by(username=username).first_or_404()
+    posts = [
+        {'author': user, 'body': 'Test post #1'},
+        {'author': user, 'body': 'Test post #2'}
+    ]
+    return render_template("auth/profile.html", user=user, posts=posts)

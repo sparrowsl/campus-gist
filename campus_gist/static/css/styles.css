@@ -59,7 +59,7 @@ section.index-section{
   flex-direction: column;
   padding: 5vh .5em;
 }
-section p.summary{ max-width: 55ch; }
+div.summary{ max-width: 55ch; }
 div.auth-links{ margin-top: 2em; }
 .index-login-btn a,
 .index-register-btn a{
@@ -85,7 +85,7 @@ div.article-title p{
 
 /* a quick tweak to reduce padding size of checkbok on login form */
 .uk-checkbox.uk-padding-small{
-  padding: .67em;
+  padding: .6em;
   background-color: #fff;
   border-color: #8fccef;
 }

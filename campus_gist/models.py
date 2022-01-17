@@ -21,8 +21,8 @@ class Student(db.Model, UserMixin):
     joined_on = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     institutions = db.Column(db.String(200), unique=True, nullable=False)
 
-    gists = db.relationship("Gist", backref="student", lazy=True)
-    comments = db.relationship("Comment", backref="student", lazy=True)
+    gists = db.relationship("Gist", backref="student", lazy="dynamic")
+    comments = db.relationship("Comment", backref="student", lazy="dynamic")
 
     def __repr__(self):
         return f"<Student: ('{self.name}', '{self.username}')>"
@@ -42,7 +42,7 @@ class Gist(db.Model):
                                 default=datetime.utcnow)
 
     student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
-    comments = db.relationship("Comment", backref="gist", lazy=True)
+    comments = db.relationship("Comment", backref="gist", lazy="dynamic")
 
     def __repr__(self):
         return f"<Gist: ('{self.gist_title}')>"
@@ -66,7 +66,7 @@ class Comment(db.Model):
 #     name = db.Column(db.String(250), nullable=False, unique=True)
 #     abbreviation = db.Column(db.String(15), default="N/A")
 
-#     student_id = db.relationship("Student", backref="institution", lazy=True)
+#     student_id = db.relationship("Student", backref="institution", lazy="dynamic")
 
 #     def __repr__(self):
 #         return f"<Institution('{self.name}', '{self.abbreviation}')>"

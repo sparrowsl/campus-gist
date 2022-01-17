@@ -30,9 +30,9 @@
         <li class=""><a href="{{ url_for('index_page') }}"><i class="" uk-icon="home"></i>Home</a></li>
         <li class=""><a href="{{ url_for('show_all_gists') }}"><i class="" uk-icon="info"></i>Gists</a></li>
         {% if current_user.is_authenticated %}
-          <li><a href="{{ url_for('create_gist_page') }}"><i class="" uk-icon="pencil"></i>New Gist</a></li>
-          <li><a href=""><i class="" uk-icon="cog"></i>Account</a></li>
-          <li><a href="{{ url_for('logout') }}"><i class="" uk-icon="sign-out"></i>Logout</a></li>
+          <li><a href="{{ url_for('create_gist_page') }}"><i uk-icon="pencil"></i>New Gist</a></li>
+          <li><a href="{{ url_for('profile_page', username=current_user.username) }}"><i uk-icon="cog"></i>Profile</a></li>
+          <li><a href="{{ url_for('logout') }}"><i uk-icon="sign-out"></i>Logout</a></li>
         {% else %}
           <li><a href="{{ url_for('login_page') }}"><i class="" uk-icon="sign-in"></i>Login</a></li>
           <li><a href="{{ url_for('register_page') }}"><i class="" uk-icon="pencil"></i>Register</a></li>
