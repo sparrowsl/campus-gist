@@ -27,7 +27,10 @@ nav ul{
   background: inherit !important;
   z-index: 100;
 }
-nav ul a{ color: white; }
+nav ul a{
+  color: white;
+  font-size: .9rem;
+}
 .uk-navbar-container{ background: inherit !important; }
 
 .share-gist-box{
@@ -58,16 +61,36 @@ section.index-section{
 }
 section p.summary{ max-width: 55ch; }
 div.auth-links{ margin-top: 2em; }
-.index-login-btn a, .index-register-btn a{
+.index-login-btn a,
+.index-register-btn a{
   background-color: #79a9d1;
   padding: .7em 1em;
   border-radius: 5px;
   color: #ffffff;
 }
-section.article-content p{
-  color: #333;
+div.profile-image img{
+  width: 60px;
+  height: 60px;
+}
+div.article-title h3,
+div.username-and-date h4{
+  font-size: 1.25rem;
+}
+div.article-title p{
   line-height: 1.75;
 }
+.current_gist h1{
+  font-size: 2rem;
+}
+
+/* a quick tweak to reduce padding size of checkbok on login form */
+.uk-checkbox.uk-padding-small{
+  padding: .67em;
+  background-color: #fff;
+  border-color: #8fccef;
+}
+
+/* Create gist section */
 .uk-textarea{
   min-height: 175px;
   resize: none;

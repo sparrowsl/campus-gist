@@ -1,9 +1,15 @@
 from datetime import datetime
 
-from campus_gist import db, bcrypt
+from flask_login import UserMixin
+
+from campus_gist import db, bcrypt, login_manager
 
 
-class Student(db.Model):
+@login_manager.user_loader
+def load_user(id):
+    return Student.query.get(int(id))
+
+class Student(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     fullname = db.Column(db.String(20), nullable=False)
     username = db.Column(db.String(15), unique=True, nullable=False)

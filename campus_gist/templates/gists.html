@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block main %}
+  {% if current_user.is_authenticated %}
     <div class="share-gist-box uk-box-shadow-medium uk-margin-small-top
         uk-border-rounded uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
       <a href="{{ url_for('create_gist_page') }}" class="uk-link-reset uk-display-block">
@@ -8,30 +9,30 @@
         <span class="uk-margin-small-left uk-text-bold">Share a gist</span>
       </a>
     </div>
+  {% endif %}
 
   <section class="display-gists uk-margin-top">
     {% for i in range(5) %}
     <article class="uk-box-shadow-medium uk-padding-small uk-margin-small-bottom
           uk-border-rounded uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
       <!-- Article header -->
-      <div class="uk-flex">
+      <div class="uk-flex uk-flex-middle">
         <div class="profile-image">
-          <img src="{{ url_for('static', filename='images/default.jpg') }}" width="60" height="60"
-            alt="profile-image">
+          <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="profile-image">
         </div>
         <div class="username-and-date uk-margin-small-left">
           <h4 class="uk-margin-remove-bottom">
-            <a href="">John Doe | capitalize</a>
+             <small><a href="">@John Doe | capitalize</a></small>
           </h4>
-          <p class="uk-margin-remove uk-text-italic">December 25, 2021</p>
+          <p class="uk-margin-remove uk-text-italic uk-text-meta">December 25, 2021</p>
         </div>
       </div>
       <!-- Article content -->
       <div class="article-title">
         <h3 class="uk-margin-remove">
-          <a href="" class="uk-link-reset uk-text-bold">A short title here</a>
+          <a href="{{ url_for('current_gist') }}" class="uk-link-reset uk-text-bold">A short title here</a>
         </h3>
-        <p class="uk-text-muted uk-margin-remove uk-text-italic">
+        <p class="uk-text-muted uk-margin-remove uk-text-italic uk-text-small">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           Tenetur necessitatibus tempore inventore amet neque est soluta aliquam, natus eum harum!
         </p>
