@@ -4,7 +4,7 @@
   <section class="user-profile uk-margin-small-top uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
     <!-- User's profile image -->
     <div class="user-profile-image uk-padding-small uk-padding-remove-left uk-flex uk-flex-middle">
-      <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="" class="uk-border-pill">
+      <img src="{{ current_user.profile_avatar(128) }}" alt="" class="uk-border-pill">
       <!-- User's name, email, username and Institution -->
       <div class="user-name uk-margin-small-left">
         <h3 class="uk-margin-remove uk-text-bold">{ John Doe }</h3>

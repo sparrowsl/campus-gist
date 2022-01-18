@@ -18,7 +18,7 @@
       <!-- Article header -->
       <div class="uk-flex uk-flex-middle">
         <div class="profile-image">
-          <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="profile-image">
+          <img src="{{ current_user.profile_avatar() }}" alt="" class="uk-border-circle">
         </div>
         <div class="username-and-date uk-margin-small-left">
           <h4 class="uk-margin-remove-bottom">

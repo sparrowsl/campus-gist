@@ -1,4 +1,5 @@
 from datetime import datetime
+from hashlib import md5
 
 from flask_login import UserMixin
 
@@ -13,7 +14,8 @@ class Student(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     fullname = db.Column(db.String(20), nullable=False)
     username = db.Column(db.String(15), unique=True, nullable=False)
-    email = db.Column(db.String(75), unique=True, nullable=False, default="")
+    email = db.Column(db.String(75), unique=True, nullable=False,
+                      default="johndoe@mail.com")
     bio = db.Column(db.Text, default="A normal student.")
     profile_picture = db.Column(db.String(20), nullable=False,
                                 default="default.jpg")
@@ -32,6 +34,11 @@ class Student(db.Model, UserMixin):
 
     def check_password(self, password):
         return bcrypt.check_password_hash(self.password, password)
+
+    def profile_avatar(self, size=80):
+        gravatar_url = 'https://www.gravatar.com/avatar'
+        digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        return f'{gravatar_url}/{digest}?d=mp&s={size}'
 
 
 class Gist(db.Model):
