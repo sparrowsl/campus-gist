@@ -1,6 +1,44 @@
 {% extends "base.html" %}
 
 {% block main %}
+  <section class="user-profile uk-margin-small-top uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
+    <!-- User's profile image -->
+    <div class="user-profile-image uk-padding-small uk-padding-remove-left uk-flex uk-flex-middle">
+      <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="" class="uk-border-pill">
+      <!-- User's name, email, username and Institution -->
+      <div class="user-name uk-margin-small-left">
+        <h3 class="uk-margin-remove uk-text-bold">{ John Doe }</h3>
+        <p class="uk-margin-remove uk-text-meta">@{ jdoe }</p>
+        <p class="uk-margin-small uk-text-meta">{ jdoe@mail.com }</p>
+        <!-- edit profile link -->
+        <p class="uk-margin-remove"><small><a href="">Edit Profile</a></small></p>
+      </div>
+    </div>
+    <hr class="uk-margin-remove">
+    <!-- User Bio and Institution -->
+    <div class="user-bio">
+      <p class="bio">{ simple is better than complex }</p>
+      <p class="uk-margin-small uk-text-meta">Attends { BlueCrest College }</p>
+      <p class="uk-margin-small uk-text-meta">Joined on { December 25, 2021 }</p>
+    </div>
+    <hr class="uk-margin-remove">
+    <!-- Display all the Gist of current student -->
+    <article class="all-user-gists uk-margin-small-top">
+      {% for i in range(5) %}
+      <section class="uk-padding-small uk-card uk-card-hover uk-margin-small-top uk-box-shadow-medium">
+        <h3 class="uk-margin-small">{ A cool gist title here }</h3>
+        <p class="uk-text-muted uk-text-small uk-text">{ Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Animi eligendi id, ratione, perferendis est alias. }</p>
+      <div class="comments-and-date uk-flex uk-flex-between uk-flex-middle uk-padding-remove uk-margin-remove">
+        <span class="uk-text-meta uk-text-italic">{ December 30, 2021 }</span>
+        <span class="uk-text-meta uk-text-italic">
+          <i uk-icon="comments"></i> {0}
+        </span>
+      </div>
+      </section>
+      {% endfor %}
+    </article>
+  </section>
     <h1>User: {{ user.username }}</h1>
     <hr>
     {% for post in posts %}

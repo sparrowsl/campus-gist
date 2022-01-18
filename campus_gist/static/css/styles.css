@@ -82,6 +82,11 @@ div.article-title p{
 .current_gist h1{
   font-size: 2rem;
 }
+/*  Profile Page */
+div.user-profile-image img{
+  width: 125px;
+  height: auto;
+}
 
 /* a quick tweak to reduce padding size of checkbok on login form */
 .uk-checkbox.uk-padding-small{

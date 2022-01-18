@@ -1,7 +1,7 @@
 from flask import redirect, url_for, render_template, flash, request
 from flask_login import (current_user, login_user, logout_user, login_required)
 
-from campus_gist import app, db, login_manager
+from campus_gist import app, db
 from campus_gist.forms import (RegistrationForm, LoginForm, CreateGistForm,
                                UpdateGistForm)
 from campus_gist.models import Student
@@ -26,7 +26,7 @@ def current_gist():
 def login_page():
     # Redirect authenticated user
     if current_user.is_authenticated:
-        return redirect(url_for("index_page"))
+        return redirect(url_for("show_all_gists"))
 
     form = LoginForm()
     if form.validate_on_submit():
@@ -35,6 +35,10 @@ def login_page():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             flash(f"Welcome back {user.fullname}!")
+
+            next_page = request.args.get("next")
+            if next_page:
+                return redirect(next_page)
             return redirect(url_for("show_all_gists"))
         else:
             flash("Invalid username or password!!")
@@ -54,7 +58,7 @@ def logout():
 def register_page():
     # Redirect authenticated user
     if current_user.is_authenticated:
-        return redirect(url_for("index_page"))
+        return redirect(url_for("show_all_gists"))
 
     form = RegistrationForm()
     if form.validate_on_submit():
@@ -92,7 +96,7 @@ def create_gist_page():
     return render_template("auth/create_gist.html", form=form)
 
 
-@app.route("/students/<username>", methods=["GET", "POST"])
+@app.route("/profile/<username>", methods=["GET", "POST"])
 @login_required
 def profile_page(username):
     user = Student.query.filter_by(username=username).first_or_404()
