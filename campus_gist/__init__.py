@@ -20,4 +20,5 @@ migrate = Migrate(app, db)
 # redirect un-authenticated users to login page
 login_manager.login_view = "login_page"
 
-from campus_gist import routes, models
+
+from campus_gist import routes, models, errors

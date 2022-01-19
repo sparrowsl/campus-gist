@@ -119,6 +119,7 @@ def edit_profile_page():
         current_user.username = form.username.data
         current_user.email = form.email.data
         current_user.bio = form.bio.data
+        current_user.institutions = form.institutions.data
         db.session.commit()
         flash("Your details have been updated!!")
         return redirect(url_for("profile_page", username=current_user.username))
@@ -127,4 +128,5 @@ def edit_profile_page():
         form.username.data = current_user.username
         form.email.data = current_user.email
         form.bio.data = current_user.bio
+        form.institutions.data = current_user.institutions
     return render_template("auth/edit_profile.html", form=form)
