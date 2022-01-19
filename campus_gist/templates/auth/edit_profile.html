@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% import 'macros.html' as macros %}
+
+{% block main %}
+  <section class="user-profile uk-margin-small-top uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
+    <form action="" method="POST" enctype="multipart/form-data" class="uk-padding-small">
+      {{ form.hidden_tag() }}
+      <fieldset class="uk-fieldset">
+        <legend class="uk-legend uk-text-bold">Edit Your Profile</legend>
+
+        <!-- User's profile image -->
+        <div class="user-profile-image uk-padding-small uk-padding-remove-left uk-flex uk-flex-middle">
+          <img src="{{ current_user.profile_avatar(128) }}" alt="" class="uk-border-pill" loading="lazy">
+
+<!--           <div class="change-picture uk-margin-small-left">
+            <input type="file">
+          </div> -->
+        </div>
+        <hr class="uk-margin-remove">
+
+        <div class="uk-margin">
+          {{ form.fullname.label(class="uk-form-label") }}
+          {{ form.fullname(class="uk-input uk-border-rounded", placeholder="John Doe") }}
+          {{ macros.display_form_errors(form.fullname) }}
+        </div>
+
+        <div class="uk-margin">
+          {{ form.username.label(class="uk-form-label") }}
+          {{ form.username(class="uk-input uk-border-rounded", placeholder="johndoe") }}
+          {{ macros.display_form_errors(form.username) }}
+        </div>
+
+        <div class="uk-margin">
+          {{ form.email.label(class="uk-form-label") }}
+          {{ form.email(class="uk-input uk-border-rounded", placeholder="johndoe") }}
+          {{ macros.display_form_errors(form.email) }}
+        </div>
+
+        <div class="uk-margin">
+          {{ form.institutions.label(class="uk-form-label") }}
+          {{ form.institutions(class="uk-select uk-border-rounded", placeholder="johndoe") }}
+          {{ macros.display_form_errors(form.institutions) }}
+        </div>
+
+        <div class="uk-margin">
+          {{ form.bio.label(class="uk-form-label") }}
+          {{ form.bio(class="uk-textarea uk-border-rounded", placeholder="johndoe") }}
+          {{ macros.display_form_errors(form.bio) }}
+        </div>
+
+        <div class="uk-margin">
+          {{ form.submit(class="uk-button uk-border-rounded uk-text-bold edit-profile-button") }}
+        </div>
+
+      </fieldset>
+    </form>
+  </section>
+{% endblock main %}

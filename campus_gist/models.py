@@ -14,11 +14,9 @@ class Student(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     fullname = db.Column(db.String(20), nullable=False)
     username = db.Column(db.String(15), unique=True, nullable=False)
-    email = db.Column(db.String(75), unique=True, nullable=False,
-                      default="johndoe@mail.com")
-    bio = db.Column(db.Text, default="A normal student.")
-    profile_picture = db.Column(db.String(20), nullable=False,
-                                default="default.jpg")
+    email = db.Column(db.String(75), unique=True, default="john@mail.com")
+    bio = db.Column(db.Text)
+    profile_picture = db.Column(db.String(20))
     password = db.Column(db.String(256), nullable=False)
     joined_on = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     institutions = db.Column(db.String(200), unique=True, nullable=False)
@@ -27,7 +25,7 @@ class Student(db.Model, UserMixin):
     comments = db.relationship("Comment", backref="student", lazy="dynamic")
 
     def __repr__(self):
-        return f"<Student: ('{self.name}', '{self.username}')>"
+        return f"<Student: ('{self.fullname}', '{self.username}')>"
 
     def set_password(self, password):
         self.password = bcrypt.generate_password_hash(password)
@@ -38,7 +36,7 @@ class Student(db.Model, UserMixin):
     def profile_avatar(self, size=80):
         gravatar_url = 'https://www.gravatar.com/avatar'
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
-        return f'{gravatar_url}/{digest}?d=mp&s={size}'
+        return f'{gravatar_url}/{digest}?d=identicon&s={size}'
 
 
 class Gist(db.Model):

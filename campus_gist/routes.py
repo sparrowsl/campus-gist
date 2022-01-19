@@ -3,7 +3,7 @@ from flask_login import (current_user, login_user, logout_user, login_required)
 
 from campus_gist import app, db
 from campus_gist.forms import (RegistrationForm, LoginForm, CreateGistForm,
-                               UpdateGistForm)
+                               UpdateGistForm, EditProfileForm)
 from campus_gist.models import Student
 
 
@@ -37,6 +37,8 @@ def login_page():
             flash(f"Welcome back {user.fullname}!")
 
             next_page = request.args.get("next")
+            print(next_page)
+            print(request)
             if next_page:
                 return redirect(next_page)
             return redirect(url_for("show_all_gists"))
@@ -96,7 +98,7 @@ def create_gist_page():
     return render_template("auth/create_gist.html", form=form)
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
+@app.route("/profile/<username>")
 @login_required
 def profile_page(username):
     user = Student.query.filter_by(username=username).first_or_404()
@@ -105,3 +107,24 @@ def profile_page(username):
         {'author': user, 'body': 'Test post #2'}
     ]
     return render_template("auth/profile.html", user=user, posts=posts)
+
+
+@app.route("/profile/edit", methods=["GET", "POST"])
+@login_required
+def edit_profile_page():
+    form = EditProfileForm()
+
+    if form.validate_on_submit():
+        current_user.fullname = form.fullname.data
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        current_user.bio = form.bio.data
+        db.session.commit()
+        flash("Your details have been updated!!")
+        return redirect(url_for("profile_page", username=current_user.username))
+    elif request.method == "GET":
+        form.fullname.data = current_user.fullname
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+        form.bio.data = current_user.bio
+    return render_template("auth/edit_profile.html", form=form)

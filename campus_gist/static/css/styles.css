@@ -48,7 +48,8 @@ nav ul a{
 }
 .login-form-button,
 .register-form-button,
-.create-gist-button{
+.create-gist-button,
+.edit-profile-button{
   background-color: #125D98;
   color: #fff;
   text-transform: capitalize;

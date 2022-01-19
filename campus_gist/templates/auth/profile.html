@@ -4,22 +4,24 @@
   <section class="user-profile uk-margin-small-top uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
     <!-- User's profile image -->
     <div class="user-profile-image uk-padding-small uk-padding-remove-left uk-flex uk-flex-middle">
-      <img src="{{ current_user.profile_avatar(128) }}" alt="" class="uk-border-pill">
+      <img src="{{ current_user.profile_avatar(128) }}" alt="" class="uk-border-pill" loading="lazy">
       <!-- User's name, email, username and Institution -->
       <div class="user-name uk-margin-small-left">
-        <h3 class="uk-margin-remove uk-text-bold">{ John Doe }</h3>
-        <p class="uk-margin-remove uk-text-meta">@{ jdoe }</p>
-        <p class="uk-margin-small uk-text-meta">{ jdoe@mail.com }</p>
+        <h3 class="uk-margin-remove uk-text-bold">{{ user.fullname }}</h3>
+        <p class="uk-margin-remove uk-text-meta">@{{ user.username }}</p>
+        <p class="uk-margin-small uk-text-meta">{{ user.email }}</p>
         <!-- edit profile link -->
-        <p class="uk-margin-remove"><small><a href="">Edit Profile</a></small></p>
+        <p class="uk-margin-remove uk-text-small">
+          <a href="{{ url_for('edit_profile_page') }}">Edit Profile</a>
+        </p>
       </div>
     </div>
     <hr class="uk-margin-remove">
     <!-- User Bio and Institution -->
     <div class="user-bio">
-      <p class="bio">{ simple is better than complex }</p>
-      <p class="uk-margin-small uk-text-meta">Attends { BlueCrest College }</p>
-      <p class="uk-margin-small uk-text-meta">Joined on { December 25, 2021 }</p>
+      <p class="bio">{{ user.bio }}</p>
+      <p class="uk-margin-small uk-text-meta">Attends: <b>{{ user.institutions }}</b></p>
+      <p class="uk-margin-small uk-text-meta">Joined on: {{ user.joined_on }}</p>
     </div>
     <hr class="uk-margin-remove">
     <!-- Display all the Gist of current student -->

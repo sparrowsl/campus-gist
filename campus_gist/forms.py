@@ -60,3 +60,13 @@ class UpdateGistForm(FlaskForm):
     gist_title = StringField("Update the Gist", validators=[DataRequired()])
     gist_content = TextAreaField(validators=[DataRequired()])
     submit = SubmitField("Update")
+
+
+class EditProfileForm(FlaskForm):
+    fullname = StringField("Full Name", validators=[DataRequired()])
+    username = StringField("Username", validators=[DataRequired(),
+                           Length(2, 20)])
+    email = StringField("Email Address", validators=[Email()])
+    bio = TextAreaField("About you", validators=[Length(0, 150)])
+    institutions = SelectField("Institution", choices=institutes)
+    submit = SubmitField("Update Profile")
