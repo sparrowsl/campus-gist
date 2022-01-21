@@ -121,7 +121,7 @@ def edit_profile_page():
         current_user.bio = form.bio.data
         current_user.institutions = form.institutions.data
         db.session.commit()
-        flash("Your details have been updated!!")
+        flash("Your profile has been updated!!")
         return redirect(url_for("profile_page", username=current_user.username))
     elif request.method == "GET":
         form.fullname.data = current_user.fullname

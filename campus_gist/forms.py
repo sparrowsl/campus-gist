@@ -3,6 +3,7 @@ from wtforms import (StringField, PasswordField, SubmitField, TextAreaField,
                      SelectField, BooleanField)
 from wtforms.validators import (DataRequired, Length, Email, ValidationError,
                                 EqualTo)
+from flask_login import current_user
 
 from campus_gist.models import Student
 
@@ -70,3 +71,15 @@ class EditProfileForm(FlaskForm):
     bio = TextAreaField("About you", validators=[Length(0, 150)])
     institutions = SelectField("Institution", choices=institutes)
     submit = SubmitField("Update Profile")
+
+    def validate_username(self, username):
+        if username.data != current_user.username:
+            user = Student.query.filter_by(username=username.data).first()
+            if user is not None:
+                raise ValidationError("Username already taken!! Try another")
+
+    def validate_email(self, email):
+        if email.data != current_user.email:
+            user = Student.query.filter_by(email=email.data).first()
+            if user is not None:
+                raise ValidationError("Email already taken.")
