@@ -1,6 +1,7 @@
 from datetime import datetime
 from hashlib import md5
 
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
 from campus_gist import db, bcrypt, login_manager
@@ -28,10 +29,10 @@ class Student(db.Model, UserMixin):
         return f"<Student: ('{self.fullname}', '{self.username}')>"
 
     def set_password(self, password):
-        self.password = bcrypt.generate_password_hash(password)
+        self.password = generate_password_hash(password)
 
     def check_password(self, password):
-        return bcrypt.check_password_hash(self.password, password)
+        return check_password_hash(self.password, password)
 
     def profile_avatar(self, size=80):
         gravatar_url = 'https://www.gravatar.com/avatar'
