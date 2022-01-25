@@ -15,12 +15,13 @@ class Student(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     fullname = db.Column(db.String(20), nullable=False)
     username = db.Column(db.String(15), unique=True, nullable=False)
-    email = db.Column(db.String(75), unique=True, default="john@mail.com")
+    email = db.Column(db.String(75), unique=True, default="")
     bio = db.Column(db.Text)
-    profile_picture = db.Column(db.String(20))
+    profile_picture = db.Column(db.String(20), default="default.jpg")
     password = db.Column(db.String(256), nullable=False)
-    joined_on = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    institutions = db.Column(db.String(200), unique=True, nullable=False)
+    joined_on = db.Column(db.DateTime, default=datetime.utcnow)
+    institutions = db.Column(db.String(200), unique=True, nullable=False,
+                             default="Other")
 
     gists = db.relationship("Gist", backref="student", lazy="dynamic")
     comments = db.relationship("Comment", backref="student", lazy="dynamic")

@@ -70,18 +70,25 @@ def register_page():
         user = Student(fullname=form.fullname.data, email=form.email.data,
                        username=form.username.data,
                        institutions=institute)
-        user.set_password(password=form.password.data)
+        user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
         flash(f"Successfully Registered an Account!")
+        login_user(user)
         return redirect(url_for("show_all_gists"))
     return render_template("auth/register.html", form=form)
 
 
-@app.route("/account")
+@app.route("/delete-account/")
 @login_required
-def account_page():
-    return render_template("auth/profile.html")
+def delete_account():
+    user = Student.query.filter_by(id=current_user.id).first()
+    if user:
+        db.session.delete(user)
+        db.session.commit()
+        logout_user()
+        flash(f"{user.fullname} was deleted!!")
+    return redirect(url_for("show_all_gists"))
 
 
 @app.route("/update", methods=["GET", "POST"])

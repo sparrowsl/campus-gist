@@ -15,14 +15,16 @@
         </div>
       </div>
       <!-- Signup and Register buttons -->
-      <div class="auth-links">
-        <span class="index-login-btn uk-margin-small-right">
-          <a href="{{ url_for('login_page') }}">Login</a>
-        </span>
-        <span class="index-register-btn uk-margin-small-left">
-          <a href="{{ url_for('register_page') }}">Register</a>
-        </span>
-      </div>
+      {% if current_user.is_anonymous %}
+        <div class="auth-links">
+          <span class="index-login-btn uk-margin-small-right">
+            <a href="{{ url_for('login_page') }}">Login</a>
+          </span>
+          <span class="index-register-btn uk-margin-small-left">
+            <a href="{{ url_for('register_page') }}">Register</a>
+          </span>
+        </div>
+      {% endif %}
     </section>
 
     <div class="svg">

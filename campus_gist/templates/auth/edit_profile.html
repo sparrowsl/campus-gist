@@ -54,5 +54,27 @@
 
       </fieldset>
     </form>
+
+    <hr class="uk-horizontal-divider uk-margin-remove">
+    <div class="delete-account uk-padding uk-text-right uk-flex uk-flex-middle uk-flex-center">
+      Click here to delete your account...
+      <button class="uk-button uk-button-danger uk-button-small uk-border-rounded uk-text-capitalize"
+          uk-toggle="target: #delete-account-modal">
+        Delete Account
+      </button>
+    </div>
+
+    <div id="delete-account-modal" uk-modal>
+      <div class="uk-modal-dialog uk-modal-body">
+        <h3 class="uk-modal-title uk-text-small">Delete Account?</h3>
+        <p class="uk-text-right">
+          <button class="uk-button uk-button-default uk-modal-close uk-text-capitalize
+            uk-button-small uk-border-rounded">No</button>
+          <a href="{{ url_for('delete_account', user=current_user) }}"
+            class="uk-button uk-button-danger uk-button-small uk-text-bold
+            uk-text-capitalize uk-border-rounded">Yes</a>
+        </p>
+      </div>
+    </div>
   </section>
 {% endblock main %}
