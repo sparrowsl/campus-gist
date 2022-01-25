@@ -38,6 +38,12 @@ class Student(db.Model, UserMixin):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return f'{gravatar_url}/{digest}?d=identicon&s={size}'
 
+# self-referential relationship for the Users
+followers = db.Table("followers",
+    db.Column("follower_id", db.Integer, db.ForeignKey("student.id")),
+    db.Column("followed_id", db.Integer, db.ForeignKey("student.id")),
+)
+
 
 class Gist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
