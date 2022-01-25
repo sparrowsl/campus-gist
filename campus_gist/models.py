@@ -38,6 +38,7 @@ class Student(db.Model, UserMixin):
     def profile_avatar(self, size=80):
         gravatar_url = 'https://www.gravatar.com/avatar'
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+        self.profile_picture = f"{gravatar_url}/{digest}?d=identicon&s={size}"
         return f'{gravatar_url}/{digest}?d=identicon&s={size}'
 
 # self-referential relationship for the Users

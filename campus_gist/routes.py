@@ -4,7 +4,7 @@ from flask_login import (current_user, login_user, logout_user, login_required)
 from campus_gist import app, db
 from campus_gist.forms import (RegistrationForm, LoginForm, CreateGistForm,
                                UpdateGistForm, EditProfileForm)
-from campus_gist.models import Student
+from campus_gist.models import Student, Gist
 
 
 @app.route("/")
@@ -14,7 +14,8 @@ def index_page():
 
 @app.route("/gists")
 def show_all_gists():
-    return render_template("gists.html")
+    gists = Gist.query.all()
+    return render_template("gists.html", gists=gists)
 
 # gists/gist_id
 @app.route("/gist")
@@ -102,6 +103,12 @@ def update_gist_page():
 @login_required
 def create_gist_page():
     form = CreateGistForm()
+    if form.validate_on_submit():
+        gist = Gist(gist_title=form.gist_title.data,
+                    gist_content=form.gist_content.data, student=current_user)
+        db.session.add(gist)
+        db.session.commit()
+        return redirect(url_for("show_all_gists"))
     return render_template("auth/create_gist.html", form=form)
 
 
