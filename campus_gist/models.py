@@ -4,7 +4,7 @@ from hashlib import md5
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
-from campus_gist import db, bcrypt, login_manager
+from campus_gist import db, login_manager
 
 
 @login_manager.user_loader
