@@ -23,7 +23,8 @@ class Student(db.Model, UserMixin):
     institutions = db.Column(db.String(200), unique=True, nullable=False,
                              default="Other")
 
-    gists = db.relationship("Gist", backref="student", lazy="dynamic")
+    gists = db.relationship("Gist", backref="student", lazy="dynamic",
+                            cascade="all, delete-orphan")
     comments = db.relationship("Comment", backref="student", lazy="dynamic")
 
     def __repr__(self):
@@ -38,7 +39,6 @@ class Student(db.Model, UserMixin):
     def profile_avatar(self, size=80):
         gravatar_url = 'https://www.gravatar.com/avatar'
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
-        self.profile_picture = f"{gravatar_url}/{digest}?d=identicon&s={size}"
         return f'{gravatar_url}/{digest}?d=identicon&s={size}'
 
 # self-referential relationship for the Users
@@ -56,7 +56,8 @@ class Gist(db.Model):
                                 default=datetime.utcnow)
 
     student_id = db.Column(db.Integer, db.ForeignKey("student.id"))
-    comments = db.relationship("Comment", backref="gist", lazy="dynamic")
+    comments = db.relationship("Comment", backref="gist", lazy="dynamic",
+                               cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<Gist: ('{self.gist_title}')>"

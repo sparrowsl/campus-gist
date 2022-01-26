@@ -13,31 +13,35 @@
 
   <section class="display-gists uk-margin-top">
     {% for gist in gists %}
-    <article class="uk-box-shadow-medium uk-padding-small uk-margin-small-bottom
-          uk-border-rounded uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
-      <!-- Article header -->
-      <div class="uk-flex uk-flex-middle">
-        <div class="profile-image">
-          <img src="{{ url_for('static', filename='images/default.jpg') }}" alt="" class="uk-border-circle">
+      <article class="uk-box-shadow-medium uk-padding-small uk-margin-small-bottom
+            uk-border-rounded uk-width-2-3@s uk-width-1-2@m uk-margin-auto">
+        <!-- Article header -->
+        <div class="uk-flex uk-flex-middle">
+          <div class="profile-image">
+            <img src="{{ gist.student.profile_avatar(80) }}" alt="" class="uk-border-circle">
+          </div>
+          <div class="username-and-date uk-margin-small-left">
+            <h4 class="uk-margin-remove-bottom">
+              <small>@<a href="{{ url_for('profile_page', username=gist.student.username) }}">
+                {{ gist.student.fullname }}</a></small>
+            </h4>
+            <p class="uk-margin-remove uk-text-italic uk-text-meta">{{ gist.date_posted }}</p>
+          </div>
         </div>
-        <div class="username-and-date uk-margin-small-left">
-          <h4 class="uk-margin-remove-bottom">
-            <small>@<a href="">{{ gist.student.fullname }}</a></small>
-          </h4>
-          <p class="uk-margin-remove uk-text-italic uk-text-meta">{{ gist.date_posted }}</p>
+        <!-- Article content -->
+        <div class="article-title">
+          <h3 class="uk-margin-remove">
+            <a href="{{ url_for('current_gist', gist_id=gist.id) }}" class="uk-link-reset uk-text-bold">
+            {{ gist.gist_title }}</a>
+          </h3>
+          <p class="uk-text-muted uk-margin-remove uk-text-italic uk-text-small">{{ gist.gist_content | truncate(150) }}</p>
+          <span class="uk-text-right uk-text-meta uk-margin-small-top uk-display-block uk-text-italic">
+            <i uk-icon="comments"></i> {0} comments
+          </span>
         </div>
-      </div>
-      <!-- Article content -->
-      <div class="article-title">
-        <h3 class="uk-margin-remove">
-          <a href="{{ url_for('current_gist') }}" class="uk-link-reset uk-text-bold">{{ gist.gist_title }}</a>
-        </h3>
-        <p class="uk-text-muted uk-margin-remove uk-text-italic uk-text-small">{{ gist.gist_content | truncate }}</p>
-        <span class="uk-text-right uk-text-meta uk-margin-small-top uk-display-block uk-text-italic">
-          <i uk-icon="comments"></i> {0} comments
-        </span>
-      </div>
-    </article>
+      </article>
+    {% else %}
+      <p>No Gists has been posted yet!!</p>
     {% endfor %}
   </section>
 {% endblock main %}

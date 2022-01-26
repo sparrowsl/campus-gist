@@ -14,13 +14,14 @@ def index_page():
 
 @app.route("/gists")
 def show_all_gists():
-    gists = Gist.query.all()
+    gists = Gist.query.order_by(Gist.date_posted.desc())
     return render_template("gists.html", gists=gists)
 
-# gists/gist_id
-@app.route("/gist")
-def current_gist():
-    return render_template("current_gist.html")
+
+@app.route("/gist/<gist_id>")
+def current_gist(gist_id):
+    gist = Gist.query.filter_by(id=gist_id).first_or_404()
+    return render_template("current_gist.html", gist=gist)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -116,11 +117,8 @@ def create_gist_page():
 @login_required
 def profile_page(username):
     user = Student.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test post #1'},
-        {'author': user, 'body': 'Test post #2'}
-    ]
-    return render_template("auth/profile.html", user=user, posts=posts)
+    gists = Gist.query.filter_by(student=user)
+    return render_template("auth/profile.html", user=user, gists=gists)
 
 
 @app.route("/profile/edit", methods=["GET", "POST"])

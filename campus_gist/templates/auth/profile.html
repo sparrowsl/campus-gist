@@ -10,10 +10,12 @@
         <h3 class="uk-margin-remove uk-text-bold">{{ user.fullname }}</h3>
         <p class="uk-margin-remove uk-text-meta">@{{ user.username }}</p>
         <p class="uk-margin-small uk-text-meta">{{ user.email }}</p>
+        {% if current_user.username == user.username %}
         <!-- edit profile link -->
         <p class="uk-margin-remove uk-text-small">
           <a href="{{ url_for('edit_profile_page') }}">Edit Profile</a>
         </p>
+        {% endif %}
       </div>
     </div>
     <hr class="uk-margin-remove">
@@ -26,13 +28,14 @@
     <hr class="uk-margin-remove">
     <!-- Display all the Gist of current student -->
     <article class="all-user-gists uk-margin-small-top">
-      {% for i in range(5) %}
+      {% for gist in gists %}
       <section class="uk-padding-small uk-card uk-card-hover uk-margin-small-top uk-box-shadow-medium">
-        <h3 class="uk-margin-small">{ A cool gist title here }</h3>
-        <p class="uk-text-muted uk-text-small uk-text">{ Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Animi eligendi id, ratione, perferendis est alias. }</p>
+        <h3 class="uk-margin-small">
+          <a href="{{ url_for('current_gist', gist_id=gist.id) }}">{{ gist.gist_title }}</a>
+        </h3>
+        <p class="uk-text-muted uk-text-small uk-text">{{ gist.gist_content | truncate(125) }}</p>
       <div class="comments-and-date uk-flex uk-flex-between uk-flex-middle uk-padding-remove uk-margin-remove">
-        <span class="uk-text-meta uk-text-italic">{ December 30, 2021 }</span>
+        <span class="uk-text-meta uk-text-italic">{{ gist.date_posted }}</span>
         <span class="uk-text-meta uk-text-italic">
           <i uk-icon="comments"></i> {0}
         </span>
@@ -41,11 +44,4 @@
       {% endfor %}
     </article>
   </section>
-    <h1>User: {{ user.username }}</h1>
-    <hr>
-    {% for post in posts %}
-    <p>
-    {{ post.author.username }} says: <b>{{ post.body }}</b>
-    </p>
-    {% endfor %}
 {% endblock main %}
