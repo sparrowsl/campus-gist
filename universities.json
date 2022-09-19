@@ -1,0 +1,418 @@
+[
+  {
+    "name": "ABBAKO Technical College",
+    "description": null,
+    "address": "Port Loko",
+    "contact": null,
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "Adkan Institute of Management and Technology",
+    "description": null,
+    "address": "7 Station Road, Newton, Western Rural",
+    "contact": null,
+    "email": null,
+    "website": null
+  },
+  {
+    "name": "AFTec",
+    "description": "",
+    "address": "Ministry of Defence, Tower Hill",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "American College of Science and Technology",
+    "description": "",
+    "address": "33 Circular Rd, Freetown",
+    "contact": "+232-88-488-724",
+    "email": "Edu@acosatsl.com",
+    "website": "https://acosatsl.com/"
+  },
+  {
+    "name": "Ahkom Technical / Vocational Centre",
+    "description": "",
+    "address": "Ahkom Lane, Kaina Site, Koidu",
+    "contact": "",
+    "email": "",
+    "website": "https://ahkom.org.uk/"
+  },
+  {
+    "name": "AIPRO",
+    "description": "The Globe for Professional Studies ",
+    "address": "Kingtom, Freetown",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "Banktech Institute of Management and Information Technology",
+    "description": "",
+    "address": "147 and 152 Circular Road, Freetown",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "Blue Crest College",
+    "description": "",
+    "address": "77 Wilkinson Road, Freetown",
+    "contact": "",
+    "email": "",
+    "website": "https://bluecrest.edu.sl/"
+  },
+  {
+    "name": "Bo Community College",
+    "description": "",
+    "address": "Bo",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "Canadian College of Modern Technology",
+    "description": "",
+    "address": "7 Silicon Hills, Mile 91",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "CAPA",
+    "description": "College of Accountancy and Public Administration",
+    "address": "138b Bai Bureh Road",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "Catholic Vocational Institute",
+    "description": "",
+    "address": "Kenema",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "College of Business & Information Technology",
+    "description": "",
+    "address": "7 Wilkinson Road, Freetown",
+    "contact": "",
+    "email": "registrar@cobit.sl",
+    "website": ""
+  },
+  {
+    "name": "College of Business Studies",
+    "description": "",
+    "address": "Old Wharf, Wellington",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "College of Health and Environmental Sciences",
+    "description": "",
+    "address": "Circular Road, Freetown",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "College of Professional Studies",
+    "description": "",
+    "address": "Tower Hill, Freetown",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "College of Travel and Tourism",
+    "description": "",
+    "address": "22 Walpole Street, Freetown",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "COMA",
+    "description": "College of Management and Administration",
+    "address": "Wellington, Freetown",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "Conforti Community Aid Children Organisation",
+    "description": "",
+    "address": "Wellington, Freetown",
+    "contact": "",
+    "email": "",
+    "website": "https://conforticommunityaidchildrensl.org/"
+  },
+  {
+    "name": "COSTECH",
+    "description": "College of Social Science and Technology",
+    "address": "Magburaka",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "Craftshare Vocational Training Center",
+    "description": "",
+    "address": "Government Reservation Road, Bo",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "Crown Technical University College",
+    "description": "",
+    "address": "2 Pike Street, Freetown",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "East Freetown International College",
+    "description": "",
+    "address": "8c Congress road",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  },
+  {
+    "name": "",
+    "description": "",
+    "address": "",
+    "contact": "",
+    "email": "",
+    "website": ""
+  }
+]
