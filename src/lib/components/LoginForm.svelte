@@ -2,7 +2,7 @@
 	const handleLogin = async () => console.log('logged in...');
 </script>
 
-<section>
+<section class="mx-5 md:mx-0">
 	<form
 		action=""
 		class="rounded-md bg-white p-8 shadow-md md:p-10"
@@ -15,7 +15,7 @@
 				<label for="" class="block text-sm text-gray-500">Email</label>
 				<input
 					type="email"
-					class="block rounded-md border-[1px] p-2 text-gray-600"
+					class="block w-full rounded-md border-[1px] p-2 text-gray-600"
 					placeholder="john@gmail.com"
 				/>
 			</div>
@@ -24,7 +24,7 @@
 				<label for="" class="block text-sm text-gray-500">Password</label>
 				<input
 					type="password"
-					class="block rounded-md border-[1px] p-2 text-gray-600"
+					class="block w-full rounded-md border-[1px] p-2 text-gray-600"
 					placeholder="password"
 				/>
 			</div>

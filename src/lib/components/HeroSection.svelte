@@ -3,9 +3,7 @@
 </script>
 
 <div class="">
-	<article
-		class="container mx-auto flex min-h-[90vh] flex-col items-center justify-center md:flex-row"
-	>
+	<article class="container mx-auto flex min-h-[90vh] flex-col  justify-center md:flex-row">
 		<!-- Intro text -->
 		<section class="basis-full px-3">
 			<h1 class="font-barlow text-3xl text-brand-blue md:text-5xl">Campus Gist</h1>
