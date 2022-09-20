@@ -1,3 +1,1 @@
-<h1 class="text-3xl p-2 font-roboto">
-  Hello world
-</h1>
+<h1 class="p-2 text-3xl">Hello world</h1>
