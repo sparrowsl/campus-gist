@@ -1,1 +1,5 @@
-<h1 class="p-2 text-3xl">Hello world</h1>
+<script>
+	import HeroSection from '../lib/components/HeroSection.svelte';
+</script>
+
+<HeroSection />

@@ -1,26 +1,23 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block main %}
+<section
+	class="uk-margin-small-top uk-width-3-4@s uk-width-1-2@m uk-margin-auto uk-box-shadow-large uk-border-rounded"
+>
+	<form action="" method="POST" class="create-gist-form uk-padding-small">
+		<fieldset class="uk-fieldset">
+			<legend class="uk-legend uk-text-bold">Update Gist</legend>
 
-{% block main %}
-  <section class="uk-margin-small-top uk-width-3-4@s uk-width-1-2@m
-        uk-margin-auto uk-box-shadow-large uk-border-rounded">
-    <form action="" method="POST" class="create-gist-form uk-padding-small">
-      <fieldset class="uk-fieldset">
-        <legend class="uk-legend uk-text-bold">Update Gist</legend>
+			<div class="uk-margin">
+				{{ form.gist_title.label(class="uk-form-label") }} {{ form.gist_title(class="uk-input
+				uk-border-rounded", placeholder="A Sweet Title") }}
+			</div>
 
-        <div class="uk-margin">
-          {{ form.gist_title.label(class="uk-form-label") }}
-          {{ form.gist_title(class="uk-input uk-border-rounded", placeholder="A Sweet Title") }}
-        </div>
+			<div class="uk-margin">{{ form.gist_content() }}</div>
 
-        <div class="uk-margin">
-          {{ form.gist_content() }}
-        </div>
-
-        <div class="uk-margin">
-          {{ form.submit(class="uk-button uk-border-rounded uk-text-bold create-gist-button") }}
-        </div>
-      </fieldset>
-    </form>
-    {{ ckeditor.load(pkg_type="basic") }}
-  </section>
+			<div class="uk-margin">
+				{{ form.submit(class="uk-button uk-border-rounded uk-text-bold create-gist-button") }}
+			</div>
+		</fieldset>
+	</form>
+	{{ ckeditor.load(pkg_type="basic") }}
+</section>
 {% endblock main %}

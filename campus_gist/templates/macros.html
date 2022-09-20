@@ -1,9 +1,7 @@
-{% macro display_form_errors(form_field) %}
-  {% if form_field.errors %}
-    <ul style="list-style: none;" class="uk-margin-remove uk-padding-remove">
-    {% for error in form_field.errors %}
-      <li><small class="uk-text-danger uk-text-italic">{{ error }}</small></li>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endmacro %}
+{% macro display_form_errors(form_field) %} {% if form_field.errors %}
+<ul style="list-style: none" class="uk-margin-remove uk-padding-remove">
+	{% for error in form_field.errors %}
+	<li><small class="uk-text-danger uk-text-italic">{{ error }}</small></li>
+	{% endfor %}
+</ul>
+{% endif %} {% endmacro %}

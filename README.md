@@ -7,23 +7,23 @@ A simple web app for students, to post gist about anything happening around camp
 ## Tech Stack
 
 - **Client:**
+
   - HTML5
   - CSS3
   - TailwindCSS
 
 - **Server:**
+
   - Node (Express.js)
 
 - **Database:**
   - MongoDB
-
 
 ## Features
 
 - Create Post with Rich Text Editor
 - Update, Delete and Edit Gists
 - Separate Chat Room
-
 
 ## Run Locally
 
@@ -32,26 +32,30 @@ A simple web app for students, to post gist about anything happening around camp
 - Node v16+ (recommended)
 - Git
 
-
 Clone the project
+
 ```bash
   git clone https://github.com/benjithorpe/campus-gist.git
 ```
 
 Go to the project directory
+
 ```bash
   cd campus-gist
 ```
 
 Install the dependencies
+
 ```bash
   npm install
 ```
 
 Start the dev server
+
 ```bash
   npm run dev
 ```
 
 ## Screenshots
+
 ![App Screenshot](./campus-gist-screenshot.png)

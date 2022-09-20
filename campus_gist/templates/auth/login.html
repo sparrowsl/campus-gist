@@ -1,35 +1,39 @@
-{% extends "base.html" %}
-{% import 'macros.html' as macros %}
+{% extends "base.html" %} {% import 'macros.html' as macros %} {% block main %}
+<section
+	class="uk-margin-large-top uk-width-3-4@s uk-width-1-2@m uk-margin-auto uk-box-shadow-large"
+>
+	<form
+		action="{{ url_for('login_page') }}"
+		method="POST"
+		class="login-form uk-padding-small uk-border-rounded"
+	>
+		{{ form.hidden_tag() }}
+		<fieldset class="uk-fieldset">
+			<legend class="uk-legend uk-text-bold">Login</legend>
 
-{% block main %}
-  <section class="uk-margin-large-top uk-width-3-4@s uk-width-1-2@m uk-margin-auto uk-box-shadow-large">
-    <form action="{{ url_for('login_page') }}" method="POST"
-        class="login-form uk-padding-small uk-border-rounded">
-      {{ form.hidden_tag() }}
-      <fieldset class="uk-fieldset">
-        <legend class="uk-legend uk-text-bold">Login</legend>
+			<div class="uk-margin">
+				{{ form.username.label(class="uk-form-label") }} {{ form.username(class="uk-input
+				uk-border-rounded", placeholder="johndoe") }} {{ macros.display_form_errors(form.username)
+				}}
+			</div>
 
-        <div class="uk-margin">
-          {{ form.username.label(class="uk-form-label") }}
-          {{ form.username(class="uk-input uk-border-rounded", placeholder="johndoe") }}
-          {{ macros.display_form_errors(form.username) }}
-        </div>
+			<div class="uk-margin">
+				{{ form.password.label(class="uk-form-label") }} {{ form.password(class="uk-input
+				uk-border-rounded", placeholder="********") }} {{ macros.display_form_errors(form.password)
+				}}
+			</div>
 
-        <div class="uk-margin">
-          {{ form.password.label(class="uk-form-label") }}
-          {{ form.password(class="uk-input uk-border-rounded", placeholder="********") }}
-          {{ macros.display_form_errors(form.password) }}
-        </div>
-
-        <div class="uk-margin-top">
-          {{ form.remember_me(class="uk-checkbox uk-border-circle uk-padding-small") }}
-          {{ form.remember_me.label(class="uk-text-muted uk-text-italic") }}
-        </div>
-        <div class="uk-margin">
-          {{ form.submit(class="uk-button uk-border-rounded uk-text-bold login-form-button") }}
-        </div>
-        <p class="uk-text-small">New here? <a href="{{ url_for('register_page') }}">Create an account</a></p>
-      </fieldset>
-    </form>
-  </section>
+			<div class="uk-margin-top">
+				{{ form.remember_me(class="uk-checkbox uk-border-circle uk-padding-small") }} {{
+				form.remember_me.label(class="uk-text-muted uk-text-italic") }}
+			</div>
+			<div class="uk-margin">
+				{{ form.submit(class="uk-button uk-border-rounded uk-text-bold login-form-button") }}
+			</div>
+			<p class="uk-text-small">
+				New here? <a href="{{ url_for('register_page') }}">Create an account</a>
+			</p>
+		</fieldset>
+	</form>
+</section>
 {% endblock main %}
