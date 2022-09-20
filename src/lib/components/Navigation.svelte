@@ -7,7 +7,7 @@
 <!-- bg-[#8A94AE] -->
 <header class="sticky top-0 bg-[#182747] md:shadow">
 	<nav
-		class="container relative mx-auto flex min-h-[10vh] items-center justify-between px-3 md:p-0"
+		class="container relative mx-auto flex min-h-[10vh] max-w-6xl items-center justify-between px-3"
 	>
 		<!-- Logo -->
 		<a href="/" class="block font-barlow text-lg font-extrabold text-white md:text-xl">
@@ -20,9 +20,9 @@
 				rounded-b-xl bg-white shadow-lg md:static md:flex md:flex-row md:gap-14 md:bg-transparent
 				md:shadow-none"
 		>
-			<ul class="flex flex-col gap-3 p-5 md:flex-row">
-				<li><a href="/" class="text-brand-blue hover:text-brand">Login</a></li>
-				<li><a href="/" class="text-brand-blue hover:text-brand">Register</a></li>
+			<ul class="flex flex-col gap-3 p-5 md:flex-row md:p-0">
+				<li><a href="/" class="text-brand-blue md:text-white">Login</a></li>
+				<li><a href="/" class="text-brand-blue md:text-white">Register</a></li>
 			</ul>
 		</div>
 
