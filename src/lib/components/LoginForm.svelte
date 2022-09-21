@@ -32,15 +32,15 @@
 
 			<button
 				type="submit"
-				class="font-pt-sans block rounded-full bg-brand p-2 font-semibold
+				class="block rounded-full bg-brand p-2 font-semibold
       text-white hover:bg-brand-blue"
 			>
 				Login
 			</button>
 		</fieldset>
 
-		<small class="font-pt-sans mt-5 block text-center text-sm text-gray-500">
-			Need an Account? <a href="/register" class="text-brand">Register Here</a>
+		<small class="mt-5 block text-center text-sm text-gray-500">
+			Need an account? <a href="/register" class="text-brand">Register Here</a>
 		</small>
 	</form>
 </section>
