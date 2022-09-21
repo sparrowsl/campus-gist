@@ -21,8 +21,18 @@
 				md:shadow-none"
 		>
 			<ul class="flex flex-col gap-3 p-5 md:flex-row md:p-0">
-				<li><a href="/" class="text-brand-blue md:text-white">Login</a></li>
-				<li><a href="/" class="text-brand-blue md:text-white">Register</a></li>
+				<li
+					class="rounded-full border border-gray-500 px-4 py-1 transition-colors
+					hover:border-white hover:bg-white"
+				>
+					<a href="/" class="text-brand-blue md:text-white md:hover:text-brand">Login</a>
+				</li>
+				<li
+					class="rounded-full border border-gray-500 px-4 py-1 transition-colors
+					hover:border-white hover:bg-white"
+				>
+					<a href="/register" class="text-brand-blue md:text-white md:hover:text-brand">Register</a>
+				</li>
 			</ul>
 		</div>
 
