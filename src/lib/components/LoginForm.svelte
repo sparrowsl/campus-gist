@@ -1,10 +1,24 @@
 <script>
-	let email = '';
-	let password = '';
+	import { loginValidation } from '$lib/utils/validate.js';
+
+	let email = 'john@mail';
+	let password = 'test';
 	let isLoggedIn = false;
+	let errorMessage = '';
 
 	const handleLogin = async () => {
+		errorMessage = '';
+
+		// Validate data and return any error if any
+		const { error } = loginValidation.validate({ email, password });
+		if (error) {
+			errorMessage = error.message;
+			return;
+		}
+
 		if (email && password) console.log({ email, password });
+
+		// TODO: send details to login to validate
 	};
 </script>
 
@@ -39,6 +53,10 @@
 					placeholder="password"
 				/>
 			</div>
+
+			{#if errorMessage}
+				<p class="text-center text-sm italic text-red-400">{errorMessage}</p>
+			{/if}
 
 			<button
 				type="submit"
