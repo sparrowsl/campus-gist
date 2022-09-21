@@ -2,6 +2,7 @@
 	import { institutes } from '$lib/stores/universities.js';
 
 	let tac = false;
+	let isRegistered = false;
 
 	const handleRegister = async () => {
 		console.log('TaC accepted?:', tac);
@@ -88,7 +89,11 @@
 					class="block rounded-full bg-brand p-2 font-semibold text-white
             hover:bg-brand-blue disabled:cursor-not-allowed disabled:bg-brand-blue"
 				>
-					Register
+					{#if isRegistered}
+						<img src="/svg/oval.svg" alt="" class="mx-auto h-6 p-0" />
+					{:else}
+						Register
+					{/if}
 				</button>
 			</fieldset>
 

@@ -16,8 +16,10 @@
 
 		<!-- Menu Items -->
 		<div
-			class="{openMenu ? 'flex' : 'hidden'} absolute right-0 top-full mx-5 mt-1 w-fit flex-col
-				rounded-b-xl bg-white shadow-lg md:static md:flex md:flex-row md:gap-14 md:bg-transparent
+			class="{openMenu
+				? 'flex'
+				: 'hidden'} absolute right-0 top-full mx-5 mt-1 w-fit flex-col rounded-b-xl
+				bg-white shadow-lg md:static md:mx-0 md:flex md:flex-row md:gap-14 md:bg-transparent
 				md:shadow-none"
 		>
 			<ul class="flex flex-col gap-3 p-5 md:flex-row md:p-0">

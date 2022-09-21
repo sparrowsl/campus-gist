@@ -1,5 +1,11 @@
 <script>
-	const handleLogin = async () => console.log('logged in...');
+	let email = '';
+	let password = '';
+	let isLoggedIn = false;
+
+	const handleLogin = async () => {
+		if (email && password) console.log({ email, password });
+	};
 </script>
 
 <!-- Adding a flex-basis because of the parent component has flex -->
@@ -16,6 +22,8 @@
 				<label for="" class="block text-sm text-gray-500">Email</label>
 				<input
 					type="email"
+					bind:value={email}
+					required
 					class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
 					placeholder="john@gmail.com"
 				/>
@@ -25,6 +33,8 @@
 				<label for="" class="block text-sm text-gray-500">Password</label>
 				<input
 					type="password"
+					bind:value={password}
+					required
 					class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
 					placeholder="password"
 				/>
@@ -35,7 +45,11 @@
 				class="block rounded-full bg-brand p-2 font-semibold
       text-white hover:bg-brand-blue"
 			>
-				Login
+				{#if isLoggedIn}
+					<img src="/svg/oval.svg" alt="" class="mx-auto h-6 p-0" />
+				{:else}
+					Login
+				{/if}
 			</button>
 		</fieldset>
 
