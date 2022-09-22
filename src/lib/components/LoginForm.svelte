@@ -1,8 +1,9 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { loginValidation } from '$lib/utils/validate.js';
 
-	let email = 'john@mail';
-	let password = 'test';
+	let email = '';
+	let password = '';
 	let isLoggedIn = false;
 	let errorMessage = '';
 
@@ -11,14 +12,20 @@
 
 		// Validate data and return any error if any
 		const { error } = loginValidation.validate({ email, password });
+
 		if (error) {
 			errorMessage = error.message;
 			return;
 		}
-
-		if (email && password) console.log({ email, password });
-
 		// TODO: send details to login to validate
+
+		// Assume everything is ok, navigate to the news feed page
+		if (email && password) {
+			isLoggedIn = true;
+			console.log({ email, password });
+
+			setTimeout(() => goto('/feed'), 2000);
+		}
 	};
 </script>
 
@@ -55,7 +62,9 @@
 			</div>
 
 			{#if errorMessage}
-				<p class="text-center text-sm italic text-red-400">{errorMessage}</p>
+				<p class="text-center text-sm italic text-red-500">
+					{errorMessage}
+				</p>
 			{/if}
 
 			<button
