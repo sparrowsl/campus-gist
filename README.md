@@ -2,7 +2,7 @@
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
-A simple web app for students, to post gist about anything happening around campus.
+A web app for students, to post gist about anything happening in their institutions, and chat with others.
 
 ## Tech Stack
 

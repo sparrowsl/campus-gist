@@ -4,7 +4,6 @@
 </script>
 
 <Navigation />
-
 <main>
 	<slot />
 </main>
