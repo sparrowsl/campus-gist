@@ -2,18 +2,20 @@
 	import Icon from '@iconify/svelte';
 	import CardContexualMenu from '../CardContexualMenu.svelte';
 	import CardImage from '../CardImage.svelte';
+
+	export let feed;
 </script>
 
-<div class="mx-auto flex w-[37.5rem] gap-3 rounded-md border p-5 shadow-md">
+<div class="mx-auto flex gap-3 rounded-md border bg-white p-3 shadow-md md:w-[37.5rem] md:p-5">
 	<!-- Card profile -->
-	<CardImage />
+	<CardImage src={feed.author.image} />
 	<!-- User info -->
 	<section class="flex flex-col gap-3">
 		<div class="flex justify-between">
 			<!-- User name and full name -->
 			<div>
-				<h2 class="font-barlow font-bold">John Doe</h2>
-				<span class="text-sm text-brand">@johndoe</span>
+				<h2 class="font-pt-sans text-sm font-bold md:text-base">{feed.author.fullname}</h2>
+				<span class="text-xs text-brand md:text-sm">@{feed.author.username}</span>
 			</div>
 
 			<!-- Contexual Menu -->
@@ -21,15 +23,14 @@
 		</div>
 
 		<!-- User text/post -->
-		<p class="text-gray-600">
-			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis doloribus blanditiis
-			eligendi. Perferendis dolorem veritatis sunt quaerat aliquid illum esse.
+		<p class="text-sm text-gray-600 md:text-base">
+			{feed.content}
 		</p>
 
 		<!-- Comments -->
-		<div class="ml-auto flex items-center gap-1 text-sm text-gray-500">
+		<div class="ml-auto flex items-center gap-1 text-xs text-gray-500 md:text-sm">
 			<Icon icon="bi:chat-dots" />
-			<span> &lbrace;0&rbrace; comments </span>
+			<span class="italic">&lbrace;{feed.comments.length}&rbrace; comments</span>
 		</div>
 	</section>
 </div>

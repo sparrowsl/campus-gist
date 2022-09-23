@@ -9,14 +9,14 @@
 	>
 		<!-- Intro text -->
 		<section class="basis-full px-3 text-center md:text-left">
-			<h1 class="mb-3 font-barlow text-3xl text-brand-blue md:mb-10 md:text-5xl">Campus Gist</h1>
+			<h1 class="mb-3 font-pt-sans text-3xl text-brand-blue md:mb-10 md:text-5xl">Campus Gist</h1>
 
 			<p class="mb-3 text-brand-text md:text-lg">
 				Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Odio vero ipsam ipsum, inventore
 				sequi expedita excepturi illum vitae asperiores omnis.
 			</p>
 
-			<blockquote class="font-barlow italic text-brand">
+			<blockquote class="font-pt-sans italic text-brand">
 				Meet, discuss, joke &amp; share ideas with new friends from different institutions.
 			</blockquote>
 		</section>

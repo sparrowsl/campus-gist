@@ -10,7 +10,7 @@
 		class="container relative mx-auto flex min-h-[10vh] max-w-6xl items-center justify-between px-3"
 	>
 		<!-- Logo -->
-		<a href="/" class="block font-barlow text-lg font-extrabold text-white md:text-xl">
+		<a href="/" class="block font-pt-sans text-lg font-extrabold text-white md:text-xl">
 			Campus Gist
 		</a>
 

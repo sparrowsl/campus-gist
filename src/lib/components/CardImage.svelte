@@ -1,1 +1,5 @@
-<img src="/images/default.jpg" alt="" class="h-12 w-12 rounded-full" />
+<script>
+	export let src;
+</script>
+
+<img {src} alt="" class="h-12 w-12 rounded-full" />
