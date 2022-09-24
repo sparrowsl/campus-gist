@@ -3,22 +3,9 @@
 	import TopProfile from './TopProfile.svelte';
 
 	const navIcons = [
-		{
-			name: 'Search',
-			icon: 'bytesize:search'
-		},
-		{
-			name: 'Alerts',
-			icon: 'clarity:notification-outline-badged'
-		},
-		{
-			name: 'Chats',
-			icon: 'bx:message-detail'
-		}
-		// {
-		// 	name: 'Settings',
-		// 	icon: 'ant-design:setting-outlined'
-		// }
+		{ icon: 'bytesize:search' },
+		{ icon: 'clarity:notification-outline-badged' },
+		{ icon: 'bx:message-detail' }
 	];
 </script>
 
@@ -32,20 +19,17 @@
 			Campus Gist
 		</a>
 
-		<section class="flex items-center gap-5 md:gap-10">
-			<ul class="flex gap-5">
+		<div class="flex items-center gap-8 md:gap-10">
+			<div class="flex gap-6">
 				{#each navIcons as navIcon}
-					<li>
-						<a href="/feed" class="flex flex-col items-center gap-1 text-white">
-							<Icon icon={navIcon.icon} class="text-sm md:text-lg" />
-							<span class="text-xs"> {navIcon.name} </span>
-						</a>
-					</li>
+					<a href="/feed" class="flex flex-col items-center gap-1 text-white">
+						<Icon icon={navIcon.icon} class="text-lg md:text-xl" />
+					</a>
 				{/each}
-			</ul>
+			</div>
 
 			<!-- Profile Image -->
 			<TopProfile />
-		</section>
+		</div>
 	</nav>
 </header>
