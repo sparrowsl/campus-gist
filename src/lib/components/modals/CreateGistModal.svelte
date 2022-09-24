@@ -1,15 +1,12 @@
 <script>
 	import { fly } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
-	import { confetti } from '@neoconfetti/svelte';
 	import Spinner from '../Spinner.svelte';
 	import { feeds } from '$lib/stores/feeds.js';
 	import { createGistModal } from '$lib/stores/modals.js';
 
 	let textInput = 'lorem ipsum dolor sit amet';
 	let hasPosted = false;
-	let useConfetii = false;
-
 	$: disabled = textInput ? false : true;
 
 	const dummyFeed = {
@@ -29,7 +26,6 @@
 		// Pass the new data as the content
 		dummyFeed.content = textInput;
 
-		useConfetii = true;
 		setTimeout(() => {
 			$createGistModal = false;
 			// Add to the feeds store
@@ -45,10 +41,6 @@
 	out:fly={{ y: 500, duration: 300 }}
 	class="fixed inset-0 grid h-screen place-content-center bg-black bg-opacity-75"
 >
-	{#if useConfetii}
-		<div use:confetti={{ particleCount: 300, duration: 2000 }} />
-	{/if}
-
 	<form
 		action=""
 		on:submit|preventDefault={postGist}
