@@ -8,7 +8,7 @@
 	<img
 		src="/images/default.jpg"
 		alt="default profile"
-		class="h-9 rounded-full hover:cursor-pointer md:h-12 md:w-12"
+		class="h-9 w-9 rounded-full hover:cursor-pointer md:h-10 md:w-10 lg:h-12 lg:w-12"
 		on:click={() => (openTopProfile = !openTopProfile)}
 	/>
 
