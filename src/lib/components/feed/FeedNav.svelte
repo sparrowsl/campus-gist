@@ -3,9 +3,9 @@
 	import TopProfile from './TopProfile.svelte';
 
 	const navIcons = [
-		{ icon: 'bytesize:search' },
-		{ icon: 'clarity:notification-outline-badged' },
-		{ icon: 'bx:message-detail' }
+		{ icon: 'bytesize:search', href: '/search' },
+		{ icon: 'clarity:notification-outline-badged', href: '/gists' },
+		{ icon: 'bx:message-detail', href: '/gists' }
 	];
 </script>
 
@@ -22,7 +22,7 @@
 		<div class="flex items-center gap-8 md:gap-10">
 			<div class="flex gap-6">
 				{#each navIcons as navIcon}
-					<a href="/gists" class="flex flex-col items-center gap-1 text-white">
+					<a href={navIcon.href} class="flex flex-col items-center gap-1 text-white">
 						<Icon icon={navIcon.icon} class="text-lg md:text-xl" />
 					</a>
 				{/each}

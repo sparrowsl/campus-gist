@@ -4,7 +4,6 @@ export const prerender = 'auto';
 
 export function load({ params }) {
 	if (params.slug > 0 && params.slug < 5) {
-		console.log(params.slug);
 		return {
 			id: params.slug,
 			title: 'Hello world!',
