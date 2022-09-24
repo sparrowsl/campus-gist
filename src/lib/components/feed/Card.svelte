@@ -1,12 +1,17 @@
 <script>
 	import Icon from '@iconify/svelte';
+	import { scale } from 'svelte/transition';
+	import { feeds } from '$lib/stores/feeds.js';
 	import CardContexualMenu from '../CardContexualMenu.svelte';
 	import CardImage from '../CardImage.svelte';
 
 	export let feed;
+
+	const deleteGist = (gist) => ($feeds = $feeds.filter((feed) => feed.id !== gist.id));
 </script>
 
 <div
+	out:scale={{ duration: 250 }}
 	class="mx-auto flex w-full gap-3 rounded-md border bg-white p-3 shadow-md md:w-[37.5rem] md:p-5"
 >
 	<!-- Card profile -->
@@ -21,7 +26,7 @@
 			</div>
 
 			<!-- Contexual Menu -->
-			<CardContexualMenu />
+			<CardContexualMenu on:delete={deleteGist(feed)} />
 		</div>
 
 		<!-- User text/post/gist -->
@@ -30,7 +35,7 @@
 		<!-- number of comments on the post/gist -->
 		<div class="ml-auto flex items-center gap-1 text-xs text-gray-500 md:text-sm">
 			<Icon icon="bi:chat-dots" />
-			<span class="italic">&lbrace;{feed.comments.length || 0}&rbrace; comments</span>
+			<span class="italic">&lbrace;{feed.comments?.length || 0}&rbrace; comments</span>
 		</div>
 	</section>
 </div>

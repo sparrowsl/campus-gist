@@ -22,7 +22,7 @@
 
 		<!-- Display all the feeds -->
 		<div class="flex flex-col gap-3">
-			{#each $feeds as feed}
+			{#each $feeds as feed (feed)}
 				<Card {feed} />
 			{/each}
 		</div>

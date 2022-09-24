@@ -26,6 +26,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@neoconfetti/svelte": "^1.0.0",
 		"joi": "^17.6.0"
 	}
 }
