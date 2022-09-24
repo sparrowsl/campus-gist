@@ -1,5 +1,6 @@
 <script>
 	import { institutes } from '$lib/stores/universities.js';
+	import Spinner from '$lib/components/Spinner.svelte';
 
 	let tac = false;
 	let isRegistered = false;
@@ -90,7 +91,7 @@
             hover:bg-brand-blue disabled:cursor-not-allowed disabled:bg-brand-blue"
 				>
 					{#if isRegistered}
-						<img src="/svg/oval.svg" alt="" class="mx-auto h-6 p-0" />
+						<Spinner />
 					{:else}
 						Register
 					{/if}

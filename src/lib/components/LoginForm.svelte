@@ -1,6 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { loginValidation } from '$lib/utils/validate.js';
+	import Spinner from './Spinner.svelte';
 
 	let email = '';
 	let password = '';
@@ -73,7 +74,7 @@
       text-white hover:bg-brand-blue"
 			>
 				{#if isLoggedIn}
-					<img src="/svg/oval.svg" alt="" class="mx-auto h-6 p-0" />
+					<Spinner />
 				{:else}
 					Login
 				{/if}
