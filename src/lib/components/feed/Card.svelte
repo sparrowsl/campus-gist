@@ -6,11 +6,13 @@
 	export let feed;
 </script>
 
-<div class="mx-auto flex gap-3 rounded-md border bg-white p-3 shadow-md md:w-[37.5rem] md:p-5">
+<div
+	class="mx-auto flex w-full gap-3 rounded-md border bg-white p-3 shadow-md md:w-[37.5rem] md:p-5"
+>
 	<!-- Card profile -->
 	<CardImage src={feed.author.image} />
 	<!-- User info -->
-	<section class="flex flex-col gap-3">
+	<section class="flex w-full flex-col gap-3">
 		<div class="flex justify-between">
 			<!-- User name and full name -->
 			<div>
@@ -30,7 +32,7 @@
 		<!-- Comments -->
 		<div class="ml-auto flex items-center gap-1 text-xs text-gray-500 md:text-sm">
 			<Icon icon="bi:chat-dots" />
-			<span class="italic">&lbrace;{feed.comments.length}&rbrace; comments</span>
+			<span class="italic">&lbrace;{feed.comments.length || 0}&rbrace; comments</span>
 		</div>
 	</section>
 </div>
