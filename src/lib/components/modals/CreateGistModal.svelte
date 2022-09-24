@@ -1,5 +1,5 @@
 <script>
-	import { goto } from '$app/navigation';
+	import { fly } from 'svelte/transition';
 	import Spinner from '../Spinner.svelte';
 	import { feeds } from '$lib/stores/feeds.js';
 	import { createGistModal } from '$lib/stores/modals.js';
@@ -37,7 +37,11 @@
 	$: console.log($feeds);
 </script>
 
-<section class="fixed inset-0 grid h-screen place-content-center bg-black bg-opacity-75">
+<section
+	in:fly={{ y: -500, duration: 300 }}
+	out:fly={{ y: 500, duration: 300 }}
+	class="fixed inset-0 grid h-screen place-content-center bg-black bg-opacity-75"
+>
 	<form
 		action=""
 		on:submit|preventDefault={postGist}

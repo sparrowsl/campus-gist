@@ -24,12 +24,10 @@
 			<CardContexualMenu />
 		</div>
 
-		<!-- User text/post -->
-		<p class="text-sm text-gray-600 md:text-base">
-			{feed.content}
-		</p>
+		<!-- User text/post/gist -->
+		<p class="text-sm text-gray-600 md:text-base">{feed.content}</p>
 
-		<!-- Comments -->
+		<!-- number of comments on the post/gist -->
 		<div class="ml-auto flex items-center gap-1 text-xs text-gray-500 md:text-sm">
 			<Icon icon="bi:chat-dots" />
 			<span class="italic">&lbrace;{feed.comments.length || 0}&rbrace; comments</span>
