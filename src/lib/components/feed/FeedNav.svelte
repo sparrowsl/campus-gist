@@ -12,7 +12,7 @@
 			icon: 'clarity:notification-outline-badged'
 		},
 		{
-			name: 'Messages',
+			name: 'Chats',
 			icon: 'bx:message-detail'
 		}
 		// {

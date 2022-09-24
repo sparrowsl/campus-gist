@@ -1,13 +1,50 @@
-<section class="group relative">
-	<img src="/images/default.jpg" alt="default profile" class="h-9 rounded-full md:h-12 md:w-12" />
+<script>
+	import Icon from '@iconify/svelte';
+
+	let openTopProfile = false;
+</script>
+
+<section class="relative">
+	<img
+		src="/images/default.jpg"
+		alt="default profile"
+		class="h-9 rounded-full hover:cursor-pointer md:h-12 md:w-12"
+		on:click={() => (openTopProfile = !openTopProfile)}
+	/>
 
 	<!-- Profile short menu -->
 	<ul
-		class="absolute top-full -right-1 mt-2 hidden flex-col gap-2 rounded-md bg-white py-3 px-7 shadow-lg
-    group-hover:flex md:-right-0 md:top-[85%]"
+		class="{openTopProfile
+			? 'flex min-h-full'
+			: 'hidden h-0'} absolute top-full -right-1 mt-2 w-fit flex-col gap-4 rounded-sm
+			 bg-white py-4 px-5 shadow-md md:-right-0"
 	>
-		<li><a href="/feed" class="text-sm text-brand-blue hover:text-brand">profile</a></li>
-		<li><a href="/feed" class="text-sm text-brand-blue hover:text-brand">settings</a></li>
-		<li><a href="/" class="text-sm text-brand-blue hover:text-brand">log out</a></li>
+		<li>
+			<a
+				href="/feed"
+				class="mb-1 flex flex-col border-b pb-2 text-center text-xs text-brand-blue hover:text-brand"
+			>
+				<span class="font-sm text-base font-extrabold text-brand">John Doe</span>
+				<span class="text-xs text-blue-500">See your profile</span>
+			</a>
+		</li>
+		<li>
+			<a
+				href="/feed"
+				class="flex items-center gap-2 text-xs text-brand-blue hover:text-brand md:text-sm"
+			>
+				<Icon class="text-base md:text-lg" icon="ant-design:setting-outlined" />
+				<span> Settings&nbsp;&amp;&nbsp;Privacy </span>
+			</a>
+		</li>
+		<li>
+			<a
+				href="/"
+				class="flex items-center gap-2 text-xs text-brand-blue hover:text-red-500 md:text-sm"
+			>
+				<Icon class="text-base md:text-lg" icon="mdi-light:logout" />
+				<span> Logout </span>
+			</a>
+		</li>
 	</ul>
 </section>

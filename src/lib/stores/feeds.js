@@ -4,7 +4,7 @@ export const feeds = writable([
 	{
 		id: 0,
 		content:
-			'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
+			'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae',
 		author: {
 			username: 'johndoe',
 			fullname: 'John Doe',
@@ -16,7 +16,7 @@ export const feeds = writable([
 	{
 		id: 1,
 		content:
-			'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
+			'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam',
 		author: {
 			username: 'janedoe',
 			fullname: 'Jane Doe',
@@ -28,7 +28,7 @@ export const feeds = writable([
 	{
 		id: 2,
 		content:
-			'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
+			'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum',
 		author: {
 			username: 'jack',
 			fullname: 'Jack Smith',
