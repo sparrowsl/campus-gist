@@ -22,7 +22,7 @@
 		<div class="flex items-center gap-8 md:gap-10">
 			<div class="flex gap-6">
 				{#each navIcons as navIcon}
-					<a href="/feed" class="flex flex-col items-center gap-1 text-white">
+					<a href="/gists" class="flex flex-col items-center gap-1 text-white">
 						<Icon icon={navIcon.icon} class="text-lg md:text-xl" />
 					</a>
 				{/each}

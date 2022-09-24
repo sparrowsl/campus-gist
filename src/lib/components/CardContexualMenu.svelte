@@ -15,13 +15,13 @@
 		class="absolute right-4 top-0 hidden flex-col gap-2 rounded border bg-white px-5
 		py-3 shadow-xl group-hover:flex"
 	>
-		<a href="/feed/edit-feed" class="text-xs text-gray-500 hover:text-blue-600"> edit </a>
-		<a
+		<a href="/gists/edit" class="text-xs text-gray-500 hover:text-blue-600"> edit </a>
+		<button
+			type="button"
 			on:click={() => dispatch('delete')}
-			href="/feed"
 			class="text-xs text-gray-500 hover:text-red-600"
 		>
 			delete
-		</a>
+		</button>
 	</div>
 </div>

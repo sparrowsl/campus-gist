@@ -25,7 +25,7 @@
 			isLoggedIn = true;
 			console.log({ email, password });
 
-			setTimeout(() => goto('/feed'), 2000);
+			setTimeout(() => goto('/gists'), 2000);
 		}
 	};
 </script>

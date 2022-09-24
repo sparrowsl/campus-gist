@@ -17,7 +17,7 @@
 			text-sm font-bold text-white hover:bg-brand hover:shadow-sm hover:shadow-brand-blue
 			md:w-[37.5rem] md:text-base"
 		>
-			Create New Feed
+			Create New Gist
 		</button>
 
 		<!-- Display all the feeds -->
