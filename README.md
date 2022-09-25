@@ -4,19 +4,21 @@
 
 A web app for students, to post gist about anything happening in their institutions, and chat with others.
 
-## Tech Stack
+## Tech Stack (MENS)
 
 - **Client:**
 
   - HTML5
   - CSS3
   - TailwindCSS
+  - SvelteKit
 
 - **Server:**
 
   - Node (Express.js)
 
 - **Database:**
+
   - MongoDB
 
 ## Features

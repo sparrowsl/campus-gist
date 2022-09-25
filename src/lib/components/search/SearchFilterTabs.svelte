@@ -1,6 +1,5 @@
 <script>
 	import { searchFilter } from '$lib/stores/search.js';
-	const filters = ['students', 'institutions'];
 </script>
 
 <div class="my-3 flex w-full bg-white">
