@@ -1,7 +1,10 @@
 <script>
+	import { afterNavigate } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 
 	let openTopProfile = false;
+
+	afterNavigate(() => (openTopProfile = false));
 </script>
 
 <section class="relative">
@@ -16,7 +19,7 @@
 	<ul
 		class="{openTopProfile
 			? 'flex min-h-full'
-			: 'hidden h-0'} absolute top-full -right-1 mt-2 w-fit flex-col gap-4 rounded-sm
+			: 'hidden h-0'} absolute top-full -right-1 z-50 mt-2 w-fit flex-col gap-4 rounded-sm
 			 bg-white py-4 px-5 shadow-md md:-right-0"
 	>
 		<li>

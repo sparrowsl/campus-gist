@@ -1,5 +1,5 @@
 <script>
-	import NotificationCard from '../../../lib/components/notification/NotificationCard.svelte';
+	import NotificationCard from '$lib/components/notification/NotificationCard.svelte';
 </script>
 
 <article class="container mx-auto min-h-screen max-w-6xl p-3 md:max-w-2xl">

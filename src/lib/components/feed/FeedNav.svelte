@@ -5,7 +5,7 @@
 	const navIcons = [
 		{ icon: 'bytesize:search', href: '/search' },
 		{ icon: 'clarity:notification-outline-badged', href: '/notifications' },
-		{ icon: 'bx:message-detail', href: '/gists' }
+		{ icon: 'bx:message-detail', href: '/messages' }
 	];
 </script>
 
