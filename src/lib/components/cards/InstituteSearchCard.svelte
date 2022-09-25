@@ -4,7 +4,7 @@
 	export let institute;
 </script>
 
-<figure transition:scale class="flex gap-2 border bg-white p-5 transition-shadow hover:shadow">
+<figure in:scale class="flex gap-2 border bg-white p-5 transition-shadow hover:shadow">
 	<img src="/images/default.jpg" alt="" class="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" />
 
 	<!-- details -->
