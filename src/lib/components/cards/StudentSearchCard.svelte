@@ -10,7 +10,10 @@
 	<!-- details -->
 	<figcaption>
 		<h3 class="font-pt-sans text-xl font-extrabold text-brand-blue">{student.name}</h3>
-		<p class="mb-1 text-sm text-gray-700">@{student.username}</p>
-		<span class="block text-sm text-gray-600">{student.institute.name}</span>
+		<p class="mb-1 text-sm text-brand-blue">@{student.username}</p>
+		<a href="mailto:{student.email}" class="text-sm text-blue-600 hover:text-brand-blue"
+			>{student.email}</a
+		>
+		<p class="mt-1 text-sm text-gray-600">{student.institute.name}</p>
 	</figcaption>
 </figure>

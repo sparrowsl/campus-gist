@@ -1,32 +1,38 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import { searchFilter } from '$lib/stores/search.js';
+	import {
+		searchFilter,
+		searchedStudent,
+		studentSearchResults,
+		filteredResults
+	} from '$lib/stores/search.js';
 	import Spinner from '$lib/components/Spinner.svelte';
 
-	let searchValue = '';
-	let hasSearch = false;
-
-	function searchFor() {
-		hasSearch = true;
-		setTimeout(() => (hasSearch = false), 3000);
+	$: if ($searchedStudent) {
+		$filteredResults = $studentSearchResults.filter(
+			(student) =>
+				student.username.toLowerCase().includes($searchedStudent.trim().toLowerCase()) ||
+				student.name.toLowerCase().includes($searchedStudent.trim().toLowerCase())
+		);
+	} else {
+		$filteredResults = $studentSearchResults;
 	}
 </script>
 
-<form action="" on:submit|preventDefault={searchFor}>
+<form action="" on:submit|preventDefault>
 	<div class="flex">
 		<input
 			type="text"
-			bind:value={searchValue}
+			bind:value={$searchedStudent}
 			placeholder="Search for {$searchFilter}..."
 			class="w-full border-gray-300 bg-gray-50 focus:rounded-md"
 		/>
 		<button
 			type="submit"
-			disabled={searchValue ? false : true}
-			class="rounded-sm bg-brand-blue px-5 text-white hover:bg-brand
-      disabled:cursor-not-allowed disabled:bg-brand-blue"
+			disabled
+			class="cursor-progress rounded-sm bg-brand px-5 text-white disabled:bg-brand-blue"
 		>
-			{#if hasSearch}
+			{#if $searchedStudent}
 				<Spinner />
 			{:else}
 				<Icon icon="bytesize:search" class="text-lg md:text-2xl" />
