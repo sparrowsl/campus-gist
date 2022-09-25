@@ -1,7 +1,10 @@
 <script>
+	import { afterNavigate } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 
 	let openMenu = false;
+
+	afterNavigate(() => (openMenu = false));
 </script>
 
 <!-- bg-[#8A94AE] -->
@@ -41,7 +44,7 @@
 		<!-- Menu toggle -->
 		<div class="md:hidden" on:click={() => (openMenu = !openMenu)}>
 			<Icon
-				icon={openMenu ? 'ei:close' : 'heroicons-solid:menu-alt-3'}
+				icon={openMenu ? 'eva:close-fill' : 'heroicons-solid:menu-alt-3'}
 				class="block cursor-pointer text-3xl text-white"
 			/>
 		</div>
