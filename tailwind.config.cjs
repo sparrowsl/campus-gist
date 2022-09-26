@@ -11,7 +11,7 @@ module.exports = {
 			},
 			fontFamily: {
 				roboto: ['Roboto', 'Arial', 'sans-serif'],
-				"pt-sans": ['PT Sans',"Arial", "sans-serif"]
+				'pt-sans': ['PT Sans', 'Arial', 'sans-serif']
 			}
 		}
 	},
