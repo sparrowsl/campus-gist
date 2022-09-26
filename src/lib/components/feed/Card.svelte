@@ -3,8 +3,8 @@
 	import { fade, scale } from 'svelte/transition';
 	import dayjs from 'dayjs';
 	import { feeds } from '$lib/stores/feeds.js';
-	import CardContexualMenu from '../CardContexualMenu.svelte';
-	import CardImage from '../CardImage.svelte';
+	import CardContexualMenu from '../cards/CardContexualMenu.svelte';
+	import CardImage from '../cards/CardImage.svelte';
 
 	export let feed;
 

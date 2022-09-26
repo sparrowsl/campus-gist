@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { loginValidation } from '$lib/utils/validate.js';
-	import Spinner from './Spinner.svelte';
+	import Spinner from '../Spinner.svelte';
 
 	let email = '';
 	let password = '';
