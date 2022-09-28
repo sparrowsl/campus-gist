@@ -1,5 +1,7 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
+	import { browser } from '$app/environment';
+	import { currentUser } from '$lib/stores/users.js';
 	import Icon from '@iconify/svelte';
 
 	let openTopProfile = false;
@@ -10,7 +12,7 @@
 <section class="relative">
 	<img
 		src="/images/default.jpg"
-		alt="default profile"
+		alt=" profile"
 		class="h-9 w-9 rounded-full hover:cursor-pointer md:h-10 md:w-10 lg:h-12 lg:w-12"
 		on:click={() => (openTopProfile = !openTopProfile)}
 	/>
@@ -24,16 +26,16 @@
 	>
 		<li>
 			<a
-				href="/feed"
+				href="/gists"
 				class="mb-1 flex flex-col border-b pb-2 text-center text-xs text-brand-blue hover:text-brand"
 			>
-				<span class="font-sm text-base font-extrabold text-brand">John Doe</span>
+				<span class="font-sm text-base font-extrabold text-brand"> John Doe </span>
 				<span class="text-xs text-blue-500">See your profile</span>
 			</a>
 		</li>
 		<li>
 			<a
-				href="/feed"
+				href="/gists"
 				class="flex items-center gap-2 text-xs text-brand-blue hover:text-brand md:text-sm"
 			>
 				<Icon class="text-base md:text-lg" icon="ant-design:setting-outlined" />
