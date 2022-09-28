@@ -21,6 +21,10 @@
 	<section class="flex flex-col gap-3">
 		{#each $feeds as feed (feed)}
 			<Card {feed} />
+		{:else}
+			<p class="text-center text-brand-blue italic mt-10 animate-pulse">
+				No gist found, create new gist...
+			</p>
 		{/each}
 	</section>
 </article>

@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { browser, dev, prerendering } from '$app/environment';
 	import { loginValidation } from '$lib/utils/validate.js';
 	import Spinner from '../Spinner.svelte';
 
@@ -18,14 +19,29 @@
 			errorMessage = error.message;
 			return;
 		}
-		// TODO: send details to login to validate
+		// Check if user exists in the dummy database
+		const res = await fetch('/data/users.json', {
+			method: 'POST',
+			body: { email, password }
+		});
+
+		if (!res.ok) return;
+
+		const data = await res.json();
+		const user = data.find((el) => el.email === email);
+
+		// If there is no user, send invalid message
+		if (!user) {
+			errorMessage = 'Invalid username or password!';
+			return;
+		}
 
 		// Assume everything is ok, navigate to the news feed page
-		if (email && password) {
-			isLoggedIn = true;
-			console.log({ email, password });
-
+		if (user && user.login.password === password && browser) {
+			localStorage.setItem('currentUser', JSON.stringify(user));
+			console.log(user);
 			setTimeout(() => goto('/gists'), 2000);
+			isLoggedIn = true;
 		}
 	};
 </script>
@@ -70,8 +86,11 @@
 
 			<button
 				type="submit"
-				class="block rounded-full bg-brand p-2 font-semibold
-      text-white hover:bg-brand-blue"
+				disabled={isLoggedIn ? true : false}
+				class="{isLoggedIn
+					? ''
+					: 'hover:bg-brand'} block rounded-full bg-brand-blue p-2 font-semibold
+      text-white disabled:cursor-not-allowed"
 			>
 				{#if isLoggedIn}
 					<Spinner />

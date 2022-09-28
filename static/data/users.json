@@ -1,0 +1,290 @@
+[
+	{
+		"gender": "male",
+		"name": {
+			"title": "Mr",
+			"first": "Moritz",
+			"last": "Stolte"
+		},
+		"location": {
+			"street": {
+				"number": 7677,
+				"name": "Neue Straße"
+			},
+			"city": "Weinheim",
+			"state": "Sachsen-Anhalt",
+			"country": "Germany",
+			"postcode": 80041,
+			"coordinates": {
+				"latitude": "-52.4584",
+				"longitude": "-79.0184"
+			},
+			"timezone": {
+				"offset": "+9:30",
+				"description": "Adelaide, Darwin"
+			}
+		},
+		"email": "moritz.stolte@example.com",
+		"login": {
+			"uuid": "bdecbedc-34d7-4626-bc37-f5f0270e0c51",
+			"username": "blueladybug990",
+			"password": "richards",
+			"salt": "osZBAixp",
+			"md5": "f866ceabfe1f416cc24855d054c57e64",
+			"sha1": "5aa3b4c41054ae8b1d39aa6d177ce23fddf89865",
+			"sha256": "0dfbae07840c953f7a06c1ce46c8b4341a076e551d563481c29d8235dd562a9b"
+		},
+		"dob": {
+			"date": "1964-07-29T22:15:28.307Z",
+			"age": 58
+		},
+		"registered": {
+			"date": "2022-01-22T08:14:30.970Z",
+			"age": 0
+		},
+		"phone": "0140-8073048",
+		"cell": "0178-6797421",
+		"id": {
+			"name": "SVNR",
+			"value": "48 290764 S 274"
+		},
+		"picture": {
+			"large": "https://randomuser.me/api/portraits/men/1.jpg",
+			"medium": "https://randomuser.me/api/portraits/med/men/1.jpg",
+			"thumbnail": "https://randomuser.me/api/portraits/thumb/men/1.jpg"
+		},
+		"institute": {
+			"fullname": "Canadian College of Science and Technology",
+			"abbreviation": "CCMT",
+			"address": "7 Silicon Hills, Mile 91",
+			"contact": "0140-8393044",
+			"email": "ccmt@gmail.com",
+			"website": "https://www.ccmt.com"
+		},
+		"nat": "DE"
+	},
+	{
+		"gender": "female",
+		"name": {
+			"title": "Ms",
+			"first": "Rushali",
+			"last": "Prajapati"
+		},
+		"location": {
+			"street": {
+				"number": 9827,
+				"name": "Car St"
+			},
+			"city": "Nanded",
+			"state": "Gujarat",
+			"country": "India",
+			"postcode": 66662,
+			"coordinates": {
+				"latitude": "-2.0961",
+				"longitude": "140.3430"
+			},
+			"timezone": {
+				"offset": "+5:00",
+				"description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
+			}
+		},
+		"email": "rushali.prajapati@example.com",
+		"login": {
+			"uuid": "dabec731-7869-4aaa-9bf1-a5a72a247326",
+			"username": "brownostrich154",
+			"password": "handyman",
+			"salt": "BkNipDnj",
+			"md5": "a1e91ee60e7611b87e7e77bf81cf5442",
+			"sha1": "d668e5f02b40e003955510a60d4169d54cc1f157",
+			"sha256": "8ff6c1cc125b0ac92e440dba032c43145e7a1d2e862be4a4b1e6b494764ca2ea"
+		},
+		"dob": {
+			"date": "1946-05-10T08:18:45.744Z",
+			"age": 76
+		},
+		"registered": {
+			"date": "2010-02-02T17:14:43.527Z",
+			"age": 12
+		},
+		"phone": "9117025910",
+		"cell": "7820427163",
+		"id": {
+			"name": "UIDAI",
+			"value": "594731999450"
+		},
+		"picture": {
+			"large": "https://randomuser.me/api/portraits/women/46.jpg",
+			"medium": "https://randomuser.me/api/portraits/med/women/46.jpg",
+			"thumbnail": "https://randomuser.me/api/portraits/thumb/women/46.jpg"
+		},
+		"nat": "IN"
+	},
+	{
+		"gender": "female",
+		"name": {
+			"title": "Miss",
+			"first": "Signe",
+			"last": "Thomsen"
+		},
+		"location": {
+			"street": {
+				"number": 498,
+				"name": "Brombærvej"
+			},
+			"city": "Rødvig Stevns",
+			"state": "Hovedstaden",
+			"country": "Denmark",
+			"postcode": 88533,
+			"coordinates": {
+				"latitude": "-49.0624",
+				"longitude": "67.1085"
+			},
+			"timezone": {
+				"offset": "+9:30",
+				"description": "Adelaide, Darwin"
+			}
+		},
+		"email": "signe.thomsen@example.com",
+		"login": {
+			"uuid": "0067f22b-038e-4305-9417-4b1a69e7c61e",
+			"username": "angrycat620",
+			"password": "sparrow",
+			"salt": "lZxV2sPG",
+			"md5": "58f99b7010d8c9ed921568b85bb4b10a",
+			"sha1": "22ca7abd4336c7bccae762fa0c8752bcb96d8a60",
+			"sha256": "75f2ea38c2f642c224aaef9989d617ffc88e1dd6da834a1c7f60a584e40378c7"
+		},
+		"dob": {
+			"date": "1978-02-05T21:17:19.923Z",
+			"age": 44
+		},
+		"registered": {
+			"date": "2009-02-08T01:16:20.104Z",
+			"age": 13
+		},
+		"phone": "14138311",
+		"cell": "09904130",
+		"id": {
+			"name": "CPR",
+			"value": "050278-4576"
+		},
+		"picture": {
+			"large": "https://randomuser.me/api/portraits/women/53.jpg",
+			"medium": "https://randomuser.me/api/portraits/med/women/53.jpg",
+			"thumbnail": "https://randomuser.me/api/portraits/thumb/women/53.jpg"
+		},
+		"nat": "DK"
+	},
+	{
+		"gender": "female",
+		"name": {
+			"title": "Mrs",
+			"first": "Mar",
+			"last": "Núñez"
+		},
+		"location": {
+			"street": {
+				"number": 5639,
+				"name": "Avenida de La Albufera"
+			},
+			"city": "Orihuela",
+			"state": "Ceuta",
+			"country": "Spain",
+			"postcode": 71896,
+			"coordinates": {
+				"latitude": "77.4648",
+				"longitude": "157.1442"
+			},
+			"timezone": {
+				"offset": "+4:00",
+				"description": "Abu Dhabi, Muscat, Baku, Tbilisi"
+			}
+		},
+		"email": "mar.nunez@example.com",
+		"login": {
+			"uuid": "6904bdf0-e01b-44d3-95cd-4a8d02995817",
+			"username": "orangebear689",
+			"password": "eeeeeeee",
+			"salt": "vmkqXLS0",
+			"md5": "4d66ae0b9693112fb2e2307ad8be3461",
+			"sha1": "3454327345be2259180225bc91ee508719eee1bc",
+			"sha256": "cd8f01e0e9fd82d52bba341a8b3ab14d8ef551258eaf1ab869b4aaa2fc7a4083"
+		},
+		"dob": {
+			"date": "1949-07-09T05:59:11.261Z",
+			"age": 73
+		},
+		"registered": {
+			"date": "2016-06-01T01:13:43.805Z",
+			"age": 6
+		},
+		"phone": "917-539-258",
+		"cell": "610-033-819",
+		"id": {
+			"name": "DNI",
+			"value": "50320421-I"
+		},
+		"picture": {
+			"large": "https://randomuser.me/api/portraits/women/63.jpg",
+			"medium": "https://randomuser.me/api/portraits/med/women/63.jpg",
+			"thumbnail": "https://randomuser.me/api/portraits/thumb/women/63.jpg"
+		},
+		"nat": "ES"
+	},
+	{
+		"gender": "male",
+		"name": {
+			"title": "Mr",
+			"first": "Arnaud",
+			"last": "Mackay"
+		},
+		"location": {
+			"street": {
+				"number": 8319,
+				"name": "Duke St"
+			},
+			"city": "Clinton",
+			"state": "Alberta",
+			"country": "Canada",
+			"postcode": "X4Y 1F0",
+			"coordinates": {
+				"latitude": "-66.6734",
+				"longitude": "-39.8027"
+			},
+			"timezone": {
+				"offset": "+2:00",
+				"description": "Kaliningrad, South Africa"
+			}
+		},
+		"email": "arnaud.mackay@example.com",
+		"login": {
+			"uuid": "d6320fe1-6260-478c-94b9-a699297b5324",
+			"username": "heavydog872",
+			"password": "century",
+			"salt": "rlwNS9I5",
+			"md5": "375c1f6c9ea67256d9574f14e38cedcf",
+			"sha1": "c759210b0c6a9be48d82ff48456c0697f9980cc8",
+			"sha256": "a0a4452387e74baa5834669cb0ea3b80410f2dfbfe202a3b9934cbe225d60b49"
+		},
+		"dob": {
+			"date": "1954-02-22T12:23:10.560Z",
+			"age": 68
+		},
+		"registered": {
+			"date": "2010-11-14T04:17:14.746Z",
+			"age": 11
+		},
+		"phone": "L05 L02-7793",
+		"cell": "L57 K16-1326",
+		"id": {
+			"name": "SIN",
+			"value": "600306336"
+		},
+		"picture": {
+			"large": "https://randomuser.me/api/portraits/men/9.jpg",
+			"medium": "https://randomuser.me/api/portraits/med/men/9.jpg",
+			"thumbnail": "https://randomuser.me/api/portraits/thumb/men/9.jpg"
+		},
+		"nat": "CA"
+	}
+]
