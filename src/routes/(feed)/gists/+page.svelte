@@ -1,8 +1,11 @@
 <script>
 	import Card from '$lib/components/feed/Card.svelte';
-	import { feeds } from '$lib/stores/feeds.js';
+	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
 	import CreateGistModal from '$lib/components/modals/CreateGistModal.svelte';
+
+	export let data;
+	$gists = data.data;
 </script>
 
 <article class="container mx-auto min-h-screen max-w-6xl p-3">
@@ -17,12 +20,12 @@
 		Create New Gist
 	</button>
 
-	<!-- Display all the feeds -->
+	<!-- Display all the gists -->
 	<section class="flex flex-col gap-3">
-		{#each $feeds as feed (feed)}
-			<Card {feed} />
+		{#each $gists as gist (gist)}
+			<Card {gist} />
 		{:else}
-			<p class="text-center text-brand-blue italic mt-10 animate-pulse">
+			<p class="mt-10 animate-pulse text-center italic text-brand-blue">
 				No gist found, create new gist...
 			</p>
 		{/each}

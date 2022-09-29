@@ -1,21 +1,16 @@
 import { error } from '@sveltejs/kit';
-// import myJson from '/data/students.json' assert { type: 'json' };
 
 export const prerender = 'auto';
 
 export async function load({ params, fetch }) {
-	const res = await fetch('/data/students.json');
-	const data = await res.json();
+	const res = await fetch('/data/gists.json');
 
-	if (params.slug > 0 && params.slug < 5) {
-		console.log(data);
-		return {
-			id: params.slug,
-			data,
-			title: 'Hello world!',
-			content: 'Welcome to our blog. Lorem ipsum dolor sit amet...'
-		};
+	if (res.ok) {
+		const data = await res.json();
+		const gist = data.find((gist) => gist.id === parseInt(params.slug));
+
+		if (!gist) throw error(404, `Gist with the id of ${params.slug} was Not Found`);
+
+		return { gist };
 	}
-
-	throw error(404, `Gist with an id of ${params.slug} was Not Found`);
 }

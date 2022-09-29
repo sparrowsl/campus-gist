@@ -8,7 +8,7 @@
 <div class="group pointer-events-auto relative h-fit">
 	<Icon
 		icon="bi:three-dots-vertical"
-		class="text-lg text-gray-400 hover:cursor-pointer hover:text-brand"
+		class="-z-10 text-lg text-gray-400 hover:cursor-pointer hover:text-brand"
 	/>
 
 	<div

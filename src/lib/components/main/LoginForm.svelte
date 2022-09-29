@@ -19,30 +19,12 @@
 			errorMessage = error.message;
 			return;
 		}
-		// Check if user exists in the dummy database
-		const res = await fetch('/data/users.json', {
-			method: 'POST',
-			body: { email, password }
-		});
 
-		if (!res.ok) return;
-
-		const data = await res.json();
-		const user = data.find((el) => el.email === email);
-
-		// If there is no user, send invalid message
-		if (!user) {
-			errorMessage = 'Invalid username or password!';
-			return;
-		}
-
-		// Assume everything is ok, navigate to the news feed page
-		if (user && user.login.password === password && browser) {
-			localStorage.setItem('currentUser', JSON.stringify(user));
-			console.log(user);
-			setTimeout(() => goto('/gists'), 2000);
-			isLoggedIn = true;
-		}
+		isLoggedIn = true;
+		setTimeout(() => goto('/gists'), 2000);
+		// TODO: Check if user exists in the database
+		// TODO: If there is no user, send invalid message
+		// TODO: Assume everything is ok, navigate to the gists page
 	};
 </script>
 

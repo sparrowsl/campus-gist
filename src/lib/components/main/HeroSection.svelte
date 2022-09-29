@@ -3,8 +3,8 @@
 </script>
 
 <section
-	class="container mx-auto flex min-h-screen max-w-6xl flex-col justify-center gap-10
-		md:min-h-[80vh] md:flex-row md:items-center"
+	class="container mx-auto flex min-h-screen max-w-6xl flex-col justify-center gap-10 py-10
+		md:min-h-[80vh] md:flex-row md:items-center md:py-0"
 >
 	<!-- Intro text -->
 	<div class="basis-full px-3 text-center md:text-left">

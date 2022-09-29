@@ -1,14 +1,14 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import { fade, scale } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import dayjs from 'dayjs';
-	import { feeds } from '$lib/stores/feeds.js';
+	import { gists } from '$lib/stores/gists.js';
 	import CardContexualMenu from '../cards/CardContexualMenu.svelte';
 	import CardImage from '../cards/CardImage.svelte';
 
-	export let feed;
+	export let gist;
 
-	const deleteGist = (gist) => ($feeds = $feeds.filter((feed) => feed.id !== gist.id));
+	const deleteGist = (gist) => ($gists = $gists.filter((feed) => feed.id !== gist.id));
 </script>
 
 <div
@@ -16,15 +16,15 @@
 	class="mx-auto flex w-full gap-3 rounded-md border bg-white p-3 shadow-sm md:w-[37.5rem] md:p-5"
 >
 	<!-- Card profile -->
-	<CardImage src={feed.author.image} />
+	<CardImage src={gist.author.image} />
 	<!-- User info -->
 	<section class="flex w-full flex-col gap-3">
 		<div class="flex justify-between">
 			<!-- User name and full name -->
 			<div class="flex flex-col">
 				<h2 class="font-pt-sans text-sm font-bold md:text-base">
-					{feed.author.fullname}
-					<span class="ml-1 text-xs text-blue-400 md:text-sm">@{feed.author.username}</span>
+					{gist.author.fullname}
+					<span class="ml-1 text-xs text-blue-400 md:text-sm">@{gist.author.username}</span>
 				</h2>
 				<span class="text-xs italic text-gray-500 md:text-sm">
 					{dayjs().format('DD MMMM YYYY')}
@@ -32,20 +32,20 @@
 			</div>
 
 			<!-- Contexual Menu -->
-			<CardContexualMenu on:delete={deleteGist(feed)} />
+			<CardContexualMenu on:delete={deleteGist(gist)} />
 		</div>
 
 		<!-- User text/post/gist -->
 		<p class="text-sm text-gray-600 md:text-base">
-			{feed.content.slice(0, 70)}...
-			<a href="/gists/{feed.id}" class="text-sm italic text-blue-400">read more</a>
+			{gist.body.slice(0, 70)}...
+			<a href="/gists/{gist.id}" class="text-sm italic text-blue-400">read more</a>
 		</p>
 
 		<!-- number of comments on the post/gist -->
 		<div class="ml-auto flex items-center gap-1 text-xs text-gray-500 md:text-sm">
 			<Icon icon="bi:chat-dots" />
 			<span class="italic">
-				&lbrace;{feed.comments?.length || 0}&rbrace; {feed.comments?.length === 1
+				&lbrace;{gist.comments?.length || 0}&rbrace; {gist.comments?.length === 1
 					? 'comment'
 					: 'comments'}
 			</span>

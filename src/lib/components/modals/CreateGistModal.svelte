@@ -2,7 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 	import Spinner from '../Spinner.svelte';
-	import { feeds } from '$lib/stores/feeds.js';
+	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
 
 	let textInput = 'lorem ipsum dolor sit amet';
@@ -22,23 +22,23 @@
 		hasPosted = true;
 		disabled = true;
 		// Generate new id
-		dummyFeed.id = $feeds.length + 1;
+		dummyFeed.id = $gists.length + 1;
 		// Pass the new data as the content
 		dummyFeed.content = textInput;
 
 		setTimeout(() => {
 			$createGistModal = false;
-			// Add to the feeds store
-			$feeds = [dummyFeed, ...$feeds];
+			// Add to the gists store
+			$gists = [dummyFeed, ...$gists];
 		}, 1500);
 	};
 
-	$: console.log($feeds);
+	$: console.log($gists);
 </script>
 
 <section
-	in:fly={{ y: -500, duration: 300 }}
-	out:fly={{ y: 500, duration: 300 }}
+	in:fly={{ y: 500, duration: 300 }}
+	out:fly={{ y: -500, duration: 300 }}
 	class="fixed inset-0 grid h-screen place-content-center bg-black bg-opacity-75"
 >
 	<form
