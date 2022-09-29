@@ -3,10 +3,7 @@
 	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
 	import CreateGistModal from '$lib/components/modals/CreateGistModal.svelte';
-	import CreateGist from '../../../lib/components/feed/CreateGist.svelte';
-
-	export let data;
-	$gists = data.gists;
+	import CreateGist from '$lib/components/feed/CreateGist.svelte';
 </script>
 
 <article class="container relative mx-auto min-h-screen max-w-6xl p-3">

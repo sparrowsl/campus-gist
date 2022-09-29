@@ -1,6 +1,5 @@
 <script>
 	import { goto } from '$app/navigation';
-	import { browser, dev, prerendering } from '$app/environment';
 	import { loginValidation } from '$lib/utils/validate.js';
 	import Spinner from '../Spinner.svelte';
 
