@@ -12,7 +12,7 @@
 	<a href="/gists" class="text-blue-500 underline">back to gists</a>
 
 	<section class="mx-auto mt-10 min-h-[75vh] bg-white p-5">
-		<h1 class="text-3xl text-brand">Profile Page</h1>
+		<h1 class="text-center text-2xl text-brand">Profile Page</h1>
 
 		<section class="p-5">
 			<!-- User details -->
@@ -26,7 +26,7 @@
 			</div>
 
 			<div class="mt-2">
-				<p class="text-sm text-brand-blue">{user.institute}</p>
+				<p class="text-brand-blue">{user.institute}</p>
 				<p class="mt-2 text-sm font-light text-brand-blue">{user.bio}</p>
 			</div>
 		</section>
@@ -38,7 +38,7 @@
 						type="text"
 						bind:value={user.name}
 						placeholder="John H. Doe"
-						class="w-full rounded border-gray-200 text-sm text-brand-blue"
+						class="w-full rounded border-gray-200 text-sm font-light text-brand-blue"
 					/>
 				</div>
 				<div>
@@ -46,7 +46,7 @@
 						type="text"
 						bind:value={user.username}
 						placeholder="johndoe"
-						class="w-full rounded border-gray-200 text-sm text-brand-blue"
+						class="w-full rounded border-gray-200 text-sm font-light text-brand-blue"
 					/>
 				</div>
 				<div>
@@ -54,7 +54,7 @@
 						type="text"
 						bind:value={user.email}
 						placeholder="johndoe@gmail.com"
-						class="w-full rounded border-gray-200 text-sm text-brand-blue"
+						class="w-full rounded border-gray-200 text-sm font-light text-brand-blue"
 					/>
 				</div>
 				<div>
@@ -62,14 +62,14 @@
 						type="text"
 						bind:value={user.institute}
 						placeholder="College of Digital Excellence"
-						class="w-full rounded border-gray-200 text-sm text-brand-blue"
+						class="w-full rounded border-gray-200 text-sm font-light text-brand-blue"
 					/>
 				</div>
 				<div>
 					<textarea
 						bind:value={user.bio}
 						placeholder="write something about yourself."
-						class="h-24 w-full resize-none rounded border-gray-200 text-sm text-brand-blue"
+						class="h-24 w-full resize-none rounded border-gray-200 text-sm font-light text-brand-blue"
 					/>
 				</div>
 

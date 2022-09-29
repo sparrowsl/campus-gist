@@ -24,7 +24,7 @@
 			<InstituteSearchCard {institute} />
 		{:else}
 			<div class="w-full grid place-content-center">
-				<p class="text-center">No Institute Found</p>
+				<p class="text-center text-brand-blue">No Institute Found</p>
 			</div>
 		{/each}
 	</div>

@@ -3,6 +3,8 @@
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
+
+	export let editGistId;
 </script>
 
 <div class="group pointer-events-auto relative h-fit">
@@ -15,7 +17,7 @@
 		class="absolute right-4 top-0 hidden flex-col gap-2 rounded border bg-white px-5
 		py-3 shadow-xl group-hover:flex"
 	>
-		<a href="/gists/edit" class="text-xs text-gray-500 hover:text-blue-600"> edit </a>
+		<a href="/gists/edit/{editGistId}" class="text-xs text-gray-500 hover:text-blue-600"> edit </a>
 		<button
 			type="button"
 			on:click={() => dispatch('delete')}

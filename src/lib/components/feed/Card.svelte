@@ -8,7 +8,7 @@
 
 	export let gist;
 
-	const deleteGist = (gist) => ($gists = $gists.filter((feed) => feed.id !== gist.id));
+	const deleteGist = async (gist) => await ($gists = $gists.filter((feed) => feed.id !== gist.id));
 </script>
 
 <div
@@ -32,7 +32,7 @@
 			</div>
 
 			<!-- Contexual Menu -->
-			<CardContexualMenu on:delete={deleteGist(gist)} />
+			<CardContexualMenu editGistId={gist.id} on:delete={deleteGist(gist)} />
 		</div>
 
 		<!-- User text/post/gist -->

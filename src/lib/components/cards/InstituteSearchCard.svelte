@@ -9,7 +9,7 @@
 
 	<!-- details -->
 	<figcaption>
-		<h3 class="mb-1 text-base font-extrabold text-brand-blue md:mb-0 md:text-lg">
+		<h3 class="mb-1 text-sm font-extrabold text-brand-blue md:mb-0 md:text-base">
 			{institute.name}
 		</h3>
 		<p class="mb-1 text-xs text-brand-blue md:text-sm">{institute.address}</p>
@@ -19,6 +19,8 @@
 		>
 			{institute.email || 'No Email Address'}
 		</a>
-		<p class="mt-1 text-xs text-gray-600 md:text-sm">{institute.contact || 'No Contact info'}</p>
+		<p class="{institute.contact ? 'text-gray-600' : 'text-gray-400'} mt-1 text-xs md:text-sm">
+			{institute.contact || 'No Contact info'}
+		</p>
 	</figcaption>
 </figure>
