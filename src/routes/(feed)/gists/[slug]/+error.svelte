@@ -7,11 +7,7 @@
 		{$page.status}
 	</h1>
 	<p class="text-brand-blue md:text-lg">{$page.error.message}</p>
-	<a
-		href="/gists"
-		class="mx-auto mt-4 block rounded-md border border-brand-blue px-4 py-2 text-brand
-		hover:bg-brand-blue hover:text-white"
-	>
+	<a href="/gists" class="mx-auto mt-4 block px-4 py-2 text-brand underline hover:no-underline">
 		back to gists
 	</a>
 </section>

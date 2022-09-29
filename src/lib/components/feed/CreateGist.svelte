@@ -1,17 +1,13 @@
 <script>
-	import Card from '$lib/components/feed/Card.svelte';
-	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
-	import CreateGistModal from '$lib/components/modals/CreateGistModal.svelte';
+	import Icon from '@iconify/svelte';
 </script>
 
-<!-- Button to activate modal for creating new feed -->
 <button
 	type="button"
 	on:click={() => ($createGistModal = true)}
-	class="mx-auto mb-3 block w-full rounded-sm bg-brand-blue p-2 text-center font-pt-sans
-			text-sm font-bold text-white hover:bg-brand hover:shadow-sm hover:shadow-brand-blue
-			md:w-[37.5rem] md:text-base"
+	class="fixed bottom-5 right-3 z-10 grid h-12 w-12 place-content-center rounded-full bg-brand-blue
+	shadow-sm hover:bg-brand hover:shadow-brand-blue md:right-14 lg:right-72 lg:bottom-16"
 >
-	Create New Gist
+	<Icon icon="carbon:add" class="text-3xl text-gray-300" />
 </button>

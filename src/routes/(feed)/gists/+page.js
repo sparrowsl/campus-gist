@@ -5,7 +5,7 @@ export const load = async ({ fetch }) => {
 
 	if (res.ok) {
 		const data = await res.json();
-		return { data };
+		return { gists: data.reverse() };
 	}
 
 	throw error(404, `No Gists Was Found`);

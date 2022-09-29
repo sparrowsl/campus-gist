@@ -1,6 +1,6 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import { fade } from 'svelte/transition';
+	import { scale } from 'svelte/transition';
 	import dayjs from 'dayjs';
 	import { gists } from '$lib/stores/gists.js';
 	import CardContexualMenu from '../cards/CardContexualMenu.svelte';
@@ -12,7 +12,7 @@
 </script>
 
 <div
-	in:fade
+	in:scale
 	class="mx-auto flex w-full gap-3 rounded-md border bg-white p-3 shadow-sm md:w-[37.5rem] md:p-5"
 >
 	<!-- Card profile -->
@@ -38,7 +38,9 @@
 		<!-- User text/post/gist -->
 		<p class="text-sm text-gray-600 md:text-base">
 			{gist.body.slice(0, 70)}...
-			<a href="/gists/{gist.id}" class="text-sm italic text-blue-400">read more</a>
+			<a href="/gists/{gist.id}" class="text-sm italic text-blue-400" data-sveltekit-prefetch>
+				read more
+			</a>
 		</p>
 
 		<!-- number of comments on the post/gist -->

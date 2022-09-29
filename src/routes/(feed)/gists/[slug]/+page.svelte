@@ -1,5 +1,11 @@
 <script>
-	export let data;
+	// export let data;
+	import { page } from '$app/stores';
+	import { gists } from '$lib/stores/gists.js';
+
+	const urlPath = $page.url.pathname;
+	const gistId = parseInt(urlPath.split('/')[2]);
+	const gist = $gists.find((gist) => gist.id === gistId);
 </script>
 
 <article class="container mx-auto min-h-[90vh] max-w-xl p-3">
@@ -10,7 +16,8 @@
 
 	<!-- Display the content of gist -->
 	<div class="border-b border-gray-300 pb-5">
-		<p>{JSON.stringify(data.gist)}</p>
-		<p class="text-lg font-light text-gray-800 md:text-xl">{data.gist.body}</p>
+		{#if gist}
+			<p class="text-lg font-light text-gray-800 md:text-xl">{gist.body}</p>
+		{/if}
 	</div>
 </article>
