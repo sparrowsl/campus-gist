@@ -22,18 +22,13 @@
 			: 'hidden h-0'} absolute top-full -right-1 z-50 mt-2 w-fit flex-col gap-4 rounded-sm
 			 bg-white py-4 px-5 shadow-md md:-right-0"
 	>
-		<li>
-			<a
-				href="/profile"
-				class="mb-1 flex flex-col border-b pb-2 text-left text-xs text-brand-blue hover:text-brand"
-			>
-				<span class="font-sm text-base font-extrabold text-brand"> John Doe </span>
-				<span class="text-xs text-blue-500">See your profile</span>
-			</a>
+		<li class="mb-1 flex flex-col border-b pb-2 text-left text-xs text-brand-blue hover:text-brand">
+			<span class="font-sm mb-1 block text-base font-extrabold text-brand"> John Doe </span>
+			<span class="text-xs text-blue-800">johndoe@gmail.com</span>
 		</li>
 		<li>
 			<a
-				href="/gists"
+				href="/settings"
 				class="flex items-center gap-2 text-xs text-brand-blue hover:text-brand md:text-sm"
 			>
 				<Icon class="text-base md:text-lg" icon="ant-design:setting-outlined" />

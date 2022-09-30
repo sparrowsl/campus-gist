@@ -1,6 +1,6 @@
 <script>
-	import { createGistModal } from '$lib/stores/modals.js';
 	import Icon from '@iconify/svelte';
+	import { createGistModal } from '$lib/stores/modals.js';
 </script>
 
 <button

@@ -26,17 +26,23 @@
 				md:shadow-none"
 		>
 			<ul class="flex flex-col gap-3 p-5 md:flex-row md:p-0">
-				<li
-					class="rounded-full border border-gray-500 px-4 py-1 transition-colors
-					hover:border-white hover:bg-white"
-				>
-					<a href="/" class="text-brand-blue md:text-white md:hover:text-brand">Login</a>
+				<li class="">
+					<a
+						href="/"
+						class="rounded bg-white px-6 py-2 text-brand transition-colors
+						hover:bg-brand-blue hover:text-white"
+					>
+						Login
+					</a>
 				</li>
-				<li
-					class="rounded-full border border-gray-500 px-4 py-1 transition-colors
-					hover:border-white hover:bg-white"
-				>
-					<a href="/register" class="text-brand-blue md:text-white md:hover:text-brand">Register</a>
+				<li class="">
+					<a
+						href="/register"
+						class="rounded bg-white px-6 py-2 text-brand transition-colors
+						hover:bg-brand-blue hover:text-white"
+					>
+						Register
+					</a>
 				</li>
 			</ul>
 		</div>
