@@ -3,7 +3,7 @@
 	import Icon from '@iconify/svelte';
 	import Logo from '../Logo.svelte';
 
-	let openMenu = true;
+	let openMenu = false;
 
 	afterNavigate(() => (openMenu = false));
 </script>

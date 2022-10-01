@@ -15,7 +15,7 @@
 			icon: 'carbon:user-multiple'
 		},
 		{
-			title: 'Share messages, ideas and events',
+			title: 'Share thoughts, ideas and events',
 			summary:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
 			icon: 'fluent:share-28-regular'
@@ -25,6 +25,19 @@
 			summary:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
 			icon: 'bi:search'
+		},
+		{
+			title: 'Brainstorm on problems and their solutions',
+			summary:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
+			icon: 'academicons:ideas-repec'
+		},
+		{
+			title: 'Build a better future for tomorrow',
+			summary:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
+			icon: 'et:profile-male'
+			// et:profile-female
 		}
 	];
 </script>
@@ -42,17 +55,15 @@
 			</p>
 		</div>
 
-		<section class="mb-10 grid gap-5 px-5 md:grid-cols-2 md:p-10 lg:gap-7">
-			<!-- First grid section -->
+		<section class="mb-10 grid gap-5 px-5 md:grid-cols-2 md:p-10 lg:grid-cols-3 lg:gap-7 lg:px-0">
+			<!-- Features grid section -->
 			{#each features as feature}
 				<div
 					class="flex flex-col gap-3 rounded-md bg-white p-5 shadow-sm hover:shadow-lg
-					md:flex-row md:gap-5 md:p-10 lg:max-w-md"
+					md:flex-row md:gap-5 md:p-6"
 				>
-					<Icon
-						icon={feature.icon}
-						class="mx-auto mt-1 h-fit text-6xl text-brand-blue md:m-0 md:text-8xl lg:h-auto"
-					/>
+					<Icon icon={feature.icon} class="mx-auto h-fit text-6xl text-brand-blue md:text-8xl" />
+
 					<div class="text-center md:text-left">
 						<h2 class="mb-3 mt-0 text-lg font-bold text-brand">{feature.title}</h2>
 						<p class="font-pt-sans text-brand-blue">{feature.summary}</p>
