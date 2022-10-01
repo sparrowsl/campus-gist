@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { loginValidation } from '$lib/utils/validate.js';
-	import Spinner from '../Spinner.svelte';
+	import Spinner from '$lib/components/Spinner.svelte';
 
 	let email = '';
 	let password = '';
@@ -20,7 +20,7 @@
 		}
 
 		isLoggedIn = true;
-		setTimeout(() => goto('/gists'), 2000);
+		setTimeout(() => goto('/gists'), 1500);
 		// TODO: Check if user exists in the database
 		// TODO: If there is no user, send invalid message
 		// TODO: Assume everything is ok, navigate to the gists page
@@ -28,14 +28,16 @@
 </script>
 
 <!-- Adding a flex-basis because of the parent component has flex -->
-<section class="mx-5 basis-full md:mx-0 md:grid md:place-content-center">
+<section class="grid min-h-[90vh] place-content-center">
 	<form
 		action=""
 		class="rounded-md bg-white p-8 shadow-md md:w-96 md:p-10"
 		on:submit|preventDefault={handleLogin}
 	>
 		<fieldset class="grid gap-5">
-			<legend class="mb-5 text-lg font-semibold text-brand-blue">Login Now</legend>
+			<legend class="mb-5 w-full text-center text-lg font-semibold text-brand-blue">
+				Login Now
+			</legend>
 
 			<div>
 				<label for="" class="block text-sm text-gray-500">Email</label>

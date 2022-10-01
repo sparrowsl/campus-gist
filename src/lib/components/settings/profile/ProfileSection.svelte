@@ -11,7 +11,7 @@
 	};
 </script>
 
-<section in:fade class="mx-auto max-w-2xl bg-white px-2 md:px-5">
+<section in:fade class="mx-auto w-full max-w-2xl bg-white pl-5 md:px-5">
 	<h2 class="mb-5 text-center font-pt-sans text-2xl text-brand">Profile Settings</h2>
 
 	<ProfileDisplay {user} />

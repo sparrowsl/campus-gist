@@ -3,7 +3,7 @@
 	import Icon from '@iconify/svelte';
 	import Logo from '../Logo.svelte';
 
-	let openMenu = true;
+	let openMenu = false;
 
 	afterNavigate(() => (openMenu = false));
 </script>
@@ -27,7 +27,7 @@
 			<ul class="flex flex-col gap-5 p-5 md:flex-row md:p-0">
 				<li class="">
 					<a
-						href="/"
+						href="/login"
 						class="block w-full rounded bg-brand-blue px-6 py-2 text-center text-sm
 						text-white hover:bg-brand"
 					>

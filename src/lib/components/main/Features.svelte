@@ -30,8 +30,19 @@
 </script>
 
 <div class="border-t border-[#dce2fa] bg-[rgb(225,_230,_249)]">
-	<article class="container mx-auto grid min-h-[90vh] max-w-6xl place-content-center">
-		<section class="grid gap-5 px-5 py-10 md:grid-cols-2 md:p-10 lg:gap-7">
+	<article class="mx-auto grid min-h-[90vh] max-w-6xl place-content-center">
+		<!-- Summary -->
+		<div class="py-10">
+			<h2 class="mb-3 text-center text-2xl font-bold text-brand">
+				What will you gain by using this platform?
+			</h2>
+			<p class="mx-auto max-w-lg text-center font-light text-gray-600 md:text-lg">
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae tempora saepe repellendus
+				adipisci ut maiores?
+			</p>
+		</div>
+
+		<section class="mb-10 grid gap-5 px-5 md:grid-cols-2 md:p-10 lg:gap-7">
 			<!-- First grid section -->
 			{#each features as feature}
 				<div

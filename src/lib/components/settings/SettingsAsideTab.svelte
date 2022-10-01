@@ -18,10 +18,8 @@
 	];
 </script>
 
-<aside class="sticky top-0 w-fit md:static md:w-full">
-	<!-- <a href="/gists" >back</a> -->
-
-	<!-- Settings Tab options -->
+<aside class="w-fit md:static md:w-full">
+	<!-- Tab options -->
 	<div class="mt-10 w-fit md:w-full">
 		<ul class="grid gap-5 py-3 md:place-content-center">
 			{#each tabsHeader as tab}

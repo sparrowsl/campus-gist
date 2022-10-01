@@ -6,7 +6,7 @@
 	<!-- User details -->
 	<div class="flex items-center gap-3">
 		<img
-			src="/images/default.jpg"
+			src="/images/default.png"
 			alt="{user.name}'s profile"
 			class="h-20 w-20 rounded-full border-2 border-brand-blue"
 		/>
@@ -17,8 +17,8 @@
 		</div>
 	</div>
 
-	<div class="mt-2">
+	<div class="mt-2 md:mt-5">
 		<p class="text-brand-blue">{user.institute}</p>
-		<p class="mt-2 text-sm font-light text-brand-blue">{user.bio}</p>
+		<p class="mt-2 text-sm font-light text-brand-blue md:text-base">{user.bio}</p>
 	</div>
 </section>

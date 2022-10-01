@@ -1,5 +1,1 @@
-<script>
-	export let name = 'oval';
-</script>
-
-<img src="/svg/{name}.svg" alt="" class="mx-auto h-6 p-0" />
+<img src="/svg/oval.svg" alt="" loading="lazy" class="mx-auto h-6 p-0" />

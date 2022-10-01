@@ -9,7 +9,7 @@
 </script>
 
 <article class="container relative mx-auto min-h-screen max-w-6xl p-3">
-	<!-- Button to activate pop up for creating new feed -->
+	<!-- Button to open modal for creating new feed -->
 	<CreateGist />
 
 	<!-- Display all the gists -->

@@ -51,7 +51,7 @@
 				</div>
 
 				<div>
-					<label for="" class="block text-sm text-gray-500">Institutions</label>
+					<label for="" class="block text-sm text-gray-500">Institution</label>
 					<select name="" id="" class="w-full rounded-md border-gray-200 p-2 text-gray-600">
 						{#each $institutes as institute}
 							<option value="" class="">{institute.name}</option>
@@ -99,7 +99,7 @@
 			</fieldset>
 
 			<p class="mt-6 text-center text-sm text-gray-500">
-				Already have an account? <a href="/" class="text-blue-600">Login Here</a>
+				Already have an account? <a href="/login" class="text-brand">Login Here</a>
 			</p>
 		</form>
 	</section>
