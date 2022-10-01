@@ -1,8 +1,9 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
 	import Icon from '@iconify/svelte';
+	import Logo from '../Logo.svelte';
 
-	let openMenu = false;
+	let openMenu = true;
 
 	afterNavigate(() => (openMenu = false));
 </script>
@@ -13,9 +14,7 @@
 		class="container relative mx-auto flex min-h-[10vh] max-w-6xl items-center justify-between px-3"
 	>
 		<!-- Logo -->
-		<a href="/" class="block font-pt-sans text-lg font-extrabold text-white md:text-xl">
-			Campus Gist
-		</a>
+		<Logo />
 
 		<!-- Menu Items -->
 		<div
@@ -25,12 +24,12 @@
 				bg-white shadow-lg md:static md:m-0 md:flex md:flex-row md:gap-14 md:bg-transparent
 				md:shadow-none"
 		>
-			<ul class="flex flex-col gap-3 p-5 md:flex-row md:p-0">
+			<ul class="flex flex-col gap-5 p-5 md:flex-row md:p-0">
 				<li class="">
 					<a
 						href="/"
-						class="rounded bg-white px-6 py-2 text-brand transition-colors
-						hover:bg-brand-blue hover:text-white"
+						class="block w-full rounded bg-brand-blue px-6 py-2 text-center text-sm
+						text-white hover:bg-brand"
 					>
 						Login
 					</a>
@@ -38,8 +37,8 @@
 				<li class="">
 					<a
 						href="/register"
-						class="rounded bg-white px-6 py-2 text-brand transition-colors
-						hover:bg-brand-blue hover:text-white"
+						class="block w-full rounded bg-brand-blue px-6 py-2 text-center text-sm
+						text-white hover:bg-brand"
 					>
 						Register
 					</a>

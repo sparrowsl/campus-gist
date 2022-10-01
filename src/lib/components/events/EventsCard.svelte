@@ -1,12 +1,12 @@
 <script>
-	import CardImage from '../cards/CardImage.svelte';
-	import dayjs from 'dayjs';
 	import { fly } from 'svelte/transition';
+	import dayjs from 'dayjs';
+	import CardImage from '../cards/CardImage.svelte';
 </script>
 
 <div
 	in:fly={{ y: 500 }}
-	class="flex w-full gap-2 border-b border-[rgb(37,_49,_109,_0.15)] bg-white p-3"
+	class="mb-2 flex w-full gap-2 rounded border-b-2 border-[rgb(37,_49,_109,_0.25)] bg-white p-3"
 >
 	<CardImage src="/images/default.jpg" />
 	<!-- Notification Message -->
