@@ -8,5 +8,5 @@ export const load = async ({ fetch }) => {
 		return { gists: data.reverse() };
 	}
 
-	throw error(404, `No Gists Was Found`);
+	throw error(404, `No Gist Was Found`);
 };

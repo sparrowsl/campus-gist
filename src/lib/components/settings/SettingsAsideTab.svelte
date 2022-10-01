@@ -18,24 +18,27 @@
 	];
 </script>
 
-<aside class="">
-	<h2 class="text-center text-2xl font-bold text-brand-blue">Settings</h2>
+<aside class="sticky top-0 w-fit md:static md:w-full">
+	<!-- <a href="/gists" >back</a> -->
 
 	<!-- Settings Tab options -->
-	<div class="mt-10">
-		<ul class="grid place-content-center gap-3 py-3">
+	<div class="mt-10 w-fit md:w-full">
+		<ul class="grid gap-5 py-3 md:place-content-center">
 			{#each tabsHeader as tab}
 				<li
 					on:click={() => ($activeTab = tab.name)}
 					class="{$activeTab === tab.name
 						? 'text-gray-900 font-bold'
-						: 'text-gray-500 hover:text-gray-800 font-light'} flex w-fit cursor-pointer
-            items-center gap-2 capitalize"
+						: 'text-gray-500 hover:text-gray-800 font-light'} flex w-fit cursor-pointer flex-col items-center
+            gap-2 text-xs capitalize md:flex-row md:text-base"
 				>
 					<Icon icon={tab.icon} class="text-2xl" />
 					<span>{tab.name}</span>
 				</li>
 			{/each}
+			<li>
+				<a href="/gists" class="block text-sm text-blue-500 underline md:text-base">back</a>
+			</li>
 		</ul>
 	</div>
 </aside>

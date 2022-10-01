@@ -1,0 +1,70 @@
+<script>
+	import { fade } from 'svelte/transition';
+	import ProfileDisplay from './ProfileDisplay.svelte';
+
+	const user = {
+		name: 'John Doe',
+		email: 'johndoe@gmail.com',
+		username: 'johndoe',
+		institute: 'BlueCrest College',
+		bio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit cum eligendi hic voluptas.'
+	};
+</script>
+
+<section in:fade class="mx-auto max-w-2xl bg-white px-2 md:px-5">
+	<h2 class="mb-5 text-center font-pt-sans text-2xl text-brand">Profile Settings</h2>
+
+	<ProfileDisplay {user} />
+
+	<form action="" on:submit|preventDefault class="mt-5 max-w-xl px-3 md:p-5">
+		<fieldset class="flex flex-col gap-3">
+			<div>
+				<input
+					type="text"
+					bind:value={user.name}
+					placeholder="John H. Doe"
+					class="w-full rounded border-gray-200 text-sm font-light text-brand-blue focus:font-normal"
+				/>
+			</div>
+			<div>
+				<input
+					type="text"
+					bind:value={user.username}
+					placeholder="johndoe"
+					class="w-full rounded border-gray-200 text-sm font-light text-brand-blue focus:font-normal"
+				/>
+			</div>
+			<div>
+				<input
+					type="text"
+					bind:value={user.email}
+					placeholder="johndoe@gmail.com"
+					class="w-full rounded border-gray-200 text-sm font-light text-brand-blue focus:font-normal"
+				/>
+			</div>
+			<div>
+				<input
+					type="text"
+					bind:value={user.institute}
+					placeholder="College of Digital Excellence"
+					class="w-full rounded border-gray-200 text-sm font-light text-brand-blue focus:font-normal"
+				/>
+			</div>
+			<div>
+				<textarea
+					bind:value={user.bio}
+					placeholder="write something about yourself."
+					class="h-24 w-full resize-none rounded border-gray-200 text-sm font-light text-brand-blue
+					focus:font-normal"
+				/>
+			</div>
+
+			<button
+				type="submit"
+				class="w-fit rounded bg-brand px-5 py-2 text-xs text-white hover:bg-blue-900 md:text-base"
+			>
+				Update Profile
+			</button>
+		</fieldset>
+	</form>
+</section>

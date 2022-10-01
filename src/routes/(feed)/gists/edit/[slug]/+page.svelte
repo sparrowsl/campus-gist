@@ -1,18 +1,14 @@
 <script>
-	// export let data;
-	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { gists } from '$lib/stores/gists.js';
 	import Spinner from '$lib/components/Spinner.svelte';
 
-	const urlPath = $page.url.pathname;
-	const gistId = parseInt(urlPath.split('/')[3]);
-	const gist = $gists.find((gist) => gist.id === gistId);
+	export let data;
 
+	const gist = data.gist;
 	let newEditContent;
-	let editing = false;
-
 	if (gist) newEditContent = gist.body;
+	let editing = false;
 
 	const editGist = async (gist) => {
 		editing = true;

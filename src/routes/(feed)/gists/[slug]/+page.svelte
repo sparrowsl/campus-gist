@@ -1,10 +1,14 @@
 <script>
-	import { page } from '$app/stores';
-	import { gists } from '$lib/stores/gists.js';
+	// import { page } from '$app/stores';
+	// import { gists, getGists } from '$lib/stores/gists.js';
 
-	const urlPath = $page.url.pathname;
-	const gistId = parseInt(urlPath.split('/')[2]);
-	const gist = $gists.find((gist) => gist.id === gistId);
+	export let data;
+	// const urlPath = $page.url.pathname;
+	// const gistId = parseInt(urlPath.split('/')[2]);
+	// console.log(data.gist);
+	const gist = data.gist;
+	// data.gist.find((gist) => gist.id === gistId);
+	// console.log($gists);
 </script>
 
 <article class="container mx-auto min-h-[90vh] max-w-xl p-3">
@@ -16,7 +20,7 @@
 	<!-- Display the content of gist -->
 	<div class="border-b border-gray-300 pb-5">
 		{#if gist}
-			<p class="text-lg font-light text-gray-800 md:text-xl">{gist.body}</p>
+			<p class="text-lg font-light text-gray-800 md:text-xl">{gist?.body || 'hello'}</p>
 		{/if}
 	</div>
 </article>
