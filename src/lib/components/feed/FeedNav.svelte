@@ -6,7 +6,7 @@
 	const navIcons = [
 		{ icon: 'bytesize:search', name: 'search', href: '/search' },
 		{ icon: 'ant-design:calendar-outlined', name: 'events', href: '/events' },
-		{ icon: 'bx:message-detail', name: 'chats', href: '/messages' }
+		{ icon: 'clarity:talk-bubbles-outline-badged', name: 'chats', href: '/chats' }
 	];
 </script>
 

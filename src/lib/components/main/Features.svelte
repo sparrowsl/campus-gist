@@ -3,28 +3,28 @@
 
 	const features = [
 		{
-			title: 'Lorem ipsum dolor sit amet.',
+			title: 'Chat globally with other students.',
 			summary:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
-			icon: 'fa-solid:search-location'
+			icon: 'clarity:talk-bubbles-outline-badged'
 		},
 		{
-			title: 'Lorem ipsum dolor sit amet.',
-			summary:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
-			icon: 'eva:message-square-outline'
-		},
-		{
-			title: 'Lorem ipsum dolor sit amet.',
+			title: 'Make new friends and gist with old ones',
 			summary:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
 			icon: 'carbon:user-multiple'
 		},
 		{
-			title: 'Lorem ipsum dolor sit amet.',
+			title: 'Share messages, ideas and events',
 			summary:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
-			icon: 'bxs:message-alt-detail'
+			icon: 'fluent:share-28-regular'
+		},
+		{
+			title: 'Search for Institutions or Students easily',
+			summary:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id fugiat dolore sed repudiandae. Minus.',
+			icon: 'bi:search'
 		}
 	];
 </script>
