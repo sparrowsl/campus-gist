@@ -4,7 +4,7 @@
 	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
 
-	let textInput = 'lorem ipsum dolor sit amet';
+	let textInput = `The vast majority of us who have run through tutorials or made quick fixes will say "Yep... I have absolutely no idea what I meant by 'Fix style' 6 months ago." `;
 	let hasPosted = false;
 	$: disabled = textInput ? false : true;
 

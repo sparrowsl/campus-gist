@@ -1,5 +1,5 @@
 <script>
-	import Card from '$lib/components/feed/Card.svelte';
+	import GistCard from '$lib/components/cards/GistCard.svelte';
 	import { gists, getGists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
 	import CreateGistModal from '$lib/components/modals/CreateGistModal.svelte';
@@ -18,7 +18,7 @@
 			<div class="text-brand-blue text-center italic animate-pulse">Loading gists...</div>
 		{:then $gists}
 			{#each $gists as gist (gist)}
-				<Card {gist} />
+				<GistCard {gist} />
 			{:else}
 				<p class="mt-10 animate-pulse text-center italic text-brand-blue">
 					No gist found, create new gist...

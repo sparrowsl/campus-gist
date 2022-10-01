@@ -7,7 +7,7 @@
 		email: 'johndoe@gmail.com',
 		username: 'johndoe',
 		institute: 'BlueCrest College',
-		bio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit cum eligendi hic voluptas.'
+		bio: 'Simple is better than complex!'
 	};
 </script>
 

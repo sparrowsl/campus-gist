@@ -1,10 +1,10 @@
 <script>
-	import Icon from '@iconify/svelte';
 	import { scale } from 'svelte/transition';
+	import Icon from '@iconify/svelte';
 	import dayjs from 'dayjs';
 	import { gists } from '$lib/stores/gists.js';
-	import CardContexualMenu from '../cards/CardContexualMenu.svelte';
-	import CardImage from '../cards/CardImage.svelte';
+	import CardContexualMenu from './CardContexualMenu.svelte';
+	import CardImage from './CardImage.svelte';
 
 	export let gist;
 
@@ -24,7 +24,9 @@
 			<div class="flex flex-col">
 				<h2 class="font-pt-sans text-sm font-bold md:text-base">
 					{gist.author.fullname}
-					<span class="ml-1 text-xs text-blue-400 md:text-sm">@{gist.author.username}</span>
+					<a href="/profile" class="ml-1 text-xs text-blue-400 hover:text-brand md:text-sm">
+						@{gist.author.username}
+					</a>
 				</h2>
 				<span class="text-xs italic text-gray-500 md:text-sm">
 					{dayjs().format('DD MMMM YYYY')}
