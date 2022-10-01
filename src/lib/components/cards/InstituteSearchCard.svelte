@@ -6,7 +6,11 @@
 </script>
 
 <figure in:scale class="flex gap-2 border bg-white p-5 transition-shadow hover:shadow">
-	<img src="/images/default.png" alt="" class="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" />
+	<img
+		src="/images/{institute.logo ? institute.logo : 'default.png'}"
+		alt=""
+		class="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
+	/>
 
 	<!-- details -->
 	<figcaption>
@@ -27,12 +31,18 @@
 			</a>
 		</p>
 		<p
-			class="{institute.contact
+			class="{institute?.contact
 				? 'text-gray-600'
 				: 'text-gray-400'} mt-1 flex items-center gap-2 text-xs md:text-sm"
 		>
 			<Icon icon="carbon:phone-filled" />
-			<span>{institute.contact || 'No Contact info'}</span>
+			<span>{institute?.contact || 'No Contact info'}</span>
+		</p>
+		<p class="mt-1 flex items-center gap-2 text-xs md:text-sm">
+			<Icon icon="dashicons:admin-site-alt" />
+			<a href={institute?.website || ''} class="text-blue-500 hover:text-brand-blue">
+				{institute?.website || 'No Website'}
+			</a>
 		</p>
 	</figcaption>
 </figure>

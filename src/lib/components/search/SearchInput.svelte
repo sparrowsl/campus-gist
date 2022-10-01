@@ -22,8 +22,10 @@
 		}
 	} else if ($searchFilter === 'institutions') {
 		if ($searchedValue) {
-			$instituteFilteredResults = $instituteSearchResults.filter((institute) =>
-				institute.name.toLowerCase().includes($searchedValue.trim().toLowerCase())
+			$instituteFilteredResults = $instituteSearchResults.filter(
+				(institute) =>
+					institute.name.toLowerCase().includes($searchedValue.trim().toLowerCase()) ||
+					institute.abbreviation.toLowerCase().includes($searchedValue.trim().toLowerCase())
 			);
 		} else {
 			$instituteFilteredResults = $instituteSearchResults;
