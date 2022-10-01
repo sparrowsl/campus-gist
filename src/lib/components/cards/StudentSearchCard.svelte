@@ -2,10 +2,16 @@
 	import { scale } from 'svelte/transition';
 
 	export let student;
+	console.log(student.picture);
 </script>
 
 <figure in:scale class="flex gap-2 border bg-white p-5 transition-shadow hover:shadow">
-	<img src="/images/default.png" alt="" class="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" />
+	<img
+		src={student.picture ? student.picture : '/images/default.png'}
+		alt="{student.name}'s profile"
+		loading="lazy"
+		class="h-12 w-12 rounded-full md:h-14 md:w-14 lg:h-16 lg:w-16"
+	/>
 
 	<!-- details -->
 	<figcaption>
