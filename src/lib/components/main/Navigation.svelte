@@ -3,7 +3,7 @@
 	import Icon from '@iconify/svelte';
 	import Logo from '../Logo.svelte';
 
-	let openMenu = false;
+	let openMenu = true;
 
 	afterNavigate(() => (openMenu = false));
 </script>
@@ -24,26 +24,30 @@
 				bg-white shadow-lg md:static md:m-0 md:flex md:flex-row md:gap-14 md:bg-transparent
 				md:shadow-none"
 		>
-			<ul class="flex flex-col gap-5 p-5 md:flex-row md:p-0">
-				<li class="">
-					<a
-						href="/login"
-						class="block w-full rounded bg-brand-blue px-6 py-2 text-center text-sm
-						text-white hover:bg-brand"
-					>
-						Login
-					</a>
-				</li>
-				<li class="">
-					<a
-						href="/register"
-						class="block w-full rounded bg-brand-blue px-6 py-2 text-center text-sm
-						text-white hover:bg-brand"
-					>
-						Register
-					</a>
-				</li>
-			</ul>
+			<div class="flex flex-col items-center gap-5 p-5 md:flex-row md:p-0">
+				<a
+					href="/"
+					class="block w-full text-center text-sm text-brand hover:text-gray-200 hover:underline md:text-white"
+				>
+					Home
+				</a>
+
+				<a
+					data-sveltekit-prefetch
+					href="/login"
+					class="block text-center text-sm text-brand hover:text-gray-200 hover:underline md:text-white"
+				>
+					Login
+				</a>
+
+				<a
+					data-sveltekit-prefetch
+					href="/register"
+					class="block text-center text-sm text-brand hover:text-gray-200 hover:underline md:text-white"
+				>
+					Register
+				</a>
+			</div>
 		</div>
 
 		<!-- Menu toggle -->

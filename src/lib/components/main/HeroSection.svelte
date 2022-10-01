@@ -18,12 +18,17 @@
 		<!-- Call to actions -->
 		<div class="mt-10 flex items-center justify-center gap-5 md:justify-start">
 			<a
+				data-sveltekit-prefetch
 				href="/register"
 				class="rounded bg-brand-blue px-6 py-2 font-bold text-white hover:bg-blue-800"
 			>
 				Register
 			</a>
-			<a href="/login" class="rounded bg-[#6C63FF] px-6 py-2 font-bold text-white hover:bg-brand">
+			<a
+				data-sveltekit-prefetch
+				href="/login"
+				class="rounded bg-[#6C63FF] px-6 py-2 font-bold text-white hover:bg-brand"
+			>
 				Login
 			</a>
 		</div>

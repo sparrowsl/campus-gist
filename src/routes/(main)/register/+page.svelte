@@ -1,9 +1,18 @@
 <script>
-	import { institutes } from '$lib/stores/universities.js';
 	import Spinner from '$lib/components/Spinner.svelte';
 
 	let tac = false;
 	let isRegistered = false;
+
+	const loadInstitutes = async () => {
+		const res = await fetch('/data/institutes.json');
+
+		if (res.ok) {
+			const data = await res.json();
+			return data.map((inst) => inst.name);
+		}
+		return [];
+	};
 
 	const handleRegister = async () => {
 		console.log('TaC accepted?:', tac);
@@ -52,10 +61,15 @@
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Institution</label>
-					<select name="" id="" class="w-full rounded-md border-gray-200 p-2 text-gray-600">
-						{#each $institutes as institute}
-							<option value="" class="">{institute.name}</option>
-						{/each}
+					<select id="institutions" class="w-full rounded-md border-gray-200 p-2 text-gray-600">
+						{#await loadInstitutes()}
+							<option value="" class="" disabled>loading...</option>
+						{:then institutes}
+							{#each institutes as institute}
+								<option value="" class="">{institute}</option>
+							{/each}
+							<option value="other" class="">Other</option>
+						{/await}
 					</select>
 				</div>
 
