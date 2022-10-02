@@ -18,7 +18,7 @@
 		"logo": ""
 	},
 	{
-		"name": "BlueCrest College",
+		"name": "BlueCrest University College",
 		"abbreviation": "BCC",
 		"address": "Mobah House, 77 Wilkinson, Freetown",
 		"contact": "+23299890033",
@@ -45,13 +45,13 @@
 		"logo": "code-logo.jpg"
 	},
 	{
-		"name": "Canadian College of Modern Technology",
-		"abbreviation": "CCMT",
+		"name": "Central University Sierra Leone",
+		"abbreviation": "CUSL",
 		"address": " 1 Silicon Hills, Mile 91, Tonkolili",
 		"contact": "+23299140208",
 		"email": "info@ccmtsl.com",
 		"website": "https://ccmtsl.com/web/",
-		"logo": "ccmt-logo.png"
+		"logo": "cusl-logo.png"
 	},
 	{
 		"name": "College of Business & Information Technology",
@@ -119,16 +119,25 @@
 	{
 		"name": "Limkokwing University",
 		"abbreviation": "Limkokwing",
-		"address": "",
-		"contact": "",
-		"email": "",
-		"website": "",
-		"logo": ""
+		"address": "Hill Station, Freetown",
+		"contact": "+23279301395",
+		"email": "solomon.kargbo@limkokwing.edu.sl",
+		"website": "https://limkokwing.com/",
+		"logo": "limko-logo.png"
 	},
 	{
-		"name": "MMCET",
-		"abbreviation": "Milton Margai College of Education and Technology",
-		"address": "Brookfields/Congo Cross/Goderich Freetown",
+		"name": "Milestone Technology College",
+		"abbreviation": "MTC",
+		"address": "80E Sir Samuel Lewis Rd, FREETOWN",
+		"contact": "+23280777333",
+		"email": "info@milestonetechnologycollege.com",
+		"website": "https://www.milestonetechnologycollege.com/",
+		"logo": "mmcet-logo.png"
+	},
+	{
+		"name": "Milton Margai College of Education and Technology",
+		"abbreviation": "MMCET",
+		"address": "Freetown",
 		"contact": "+23275012900",
 		"email": "info@mmcet.edu.sl",
 		"website": "http://www.mmcet.edu.sl",

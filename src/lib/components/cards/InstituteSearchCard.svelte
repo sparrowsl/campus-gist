@@ -9,7 +9,9 @@
 	<img
 		src="/images/{institute.logo ? institute.logo : 'default.png'}"
 		alt=""
-		class="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
+		class="{institute.abbreviation === 'Limkokwing'
+			? 'bg-black'
+			: ''} h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
 	/>
 
 	<!-- details -->

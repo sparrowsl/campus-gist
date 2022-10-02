@@ -2,10 +2,11 @@
 	import ChatInput from '$lib/components/chat/ChatInput.svelte';
 	import ChatMessageCard from '$lib/components/chat/ChatMessageCard.svelte';
 	import { chatMessages } from '$lib/stores/messages.js';
+	import BackLink from '$lib/components/BackLink.svelte';
 </script>
 
 <article class="container mx-auto min-h-[90vh] max-w-6xl p-3 md:max-w-2xl">
-	<a href="/gists" class="text-blue-500 underline">back to gists</a>
+	<BackLink />
 
 	<!-- Display all messages in global chat -->
 	<section class="relative mt-5 h-[80vh] flex-col">

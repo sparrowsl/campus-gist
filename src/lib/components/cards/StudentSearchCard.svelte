@@ -2,7 +2,6 @@
 	import { scale } from 'svelte/transition';
 
 	export let student;
-	console.log(student.picture);
 </script>
 
 <figure in:scale class="flex gap-2 border bg-white p-5 transition-shadow hover:shadow">

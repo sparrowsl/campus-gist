@@ -27,7 +27,8 @@
 			<div class="flex flex-col items-center gap-5 p-5 md:flex-row md:p-0">
 				<a
 					href="/"
-					class="block w-full text-center text-sm text-brand hover:text-gray-200 hover:underline md:text-white"
+					class="block w-full text-center text-sm text-brand hover:text-gray-200
+					hover:underline md:text-white"
 				>
 					Home
 				</a>

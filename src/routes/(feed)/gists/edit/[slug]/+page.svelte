@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { gists } from '$lib/stores/gists.js';
 	import Spinner from '$lib/components/Spinner.svelte';
+	import BackLink from '$lib/components/BackLink.svelte';
 
 	export let data;
 
@@ -20,9 +21,7 @@
 
 <article class="container mx-auto min-h-[90vh] max-w-xl p-3">
 	<!-- Back to gists link -->
-	<a href="/gists" class="mb-6 block text-sm text-brand-blue underline md:text-base">
-		back to gists
-	</a>
+	<BackLink />
 
 	<!-- Display the content of gist -->
 	<section class="pb-5">
