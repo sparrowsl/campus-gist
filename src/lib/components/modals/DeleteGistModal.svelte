@@ -8,6 +8,7 @@
 
 	const deleteGist = async () => {
 		$gists = $gists.filter((el) => el.id !== gist.id);
+		$deleteGistModal = false; // close the modal
 		goto('/gists');
 	};
 </script>
