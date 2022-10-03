@@ -10,14 +10,14 @@
 	<figcaption>
 		<h3 class="mb-1 flex justify-between">
 			<a href="/profile" class="font-pt-sans text-sm font-bold text-brand hover:text-blue-700">
-				@{comment?.author?.username || 'johndoe'}
+				@{comment.author?.username || 'johndoe'}
 			</a>
-			<span class="font-pt-sans text-xs font-light text-gray-600"
-				>{comment?.datePosted || '3 hours ago'}</span
-			>
+			<span class="font-pt-sans text-xs font-light text-gray-600">
+				{comment?.datePosted || '3 hours ago'}
+			</span>
 		</h3>
 		<p class="text-sm font-light md:text-base">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, modi.
+			{comment.text || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, modi.'}
 		</p>
 	</figcaption>
 </figure>

@@ -69,12 +69,12 @@
 		</p>
 
 		<!-- Add new comment to this gist -->
-		<AddComment {$updatedGist} />
+		<AddComment />
 
 		<!-- Display all comments for this gist -->
 		<div class="mt-5 flex flex-col gap-2">
-			{#each $updatedGist.comments as _}
-				<CommentCard />
+			{#each $updatedGist.comments as comment}
+				<CommentCard {comment} />
 			{:else}
 				<p class="text-center text-gray-500 font-light">No Comments yet...</p>
 			{/each}

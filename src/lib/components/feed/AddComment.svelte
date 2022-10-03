@@ -1,12 +1,17 @@
 <script>
-	export let gist;
+	import { gists, updatedGist } from '$lib/stores/gists.js';
 
 	let newComment = 'simple is better than complex indeed.!!!';
 
-	const addComment = async (gist) => console.log(gist);
+	const addComment = async () => {
+		// Find the current gist
+		$updatedGist = $gists.find((gist) => gist.id === $updatedGist.id);
+		// Update the content of the gist
+		$updatedGist.comments.unshift({ text: newComment });
+	};
 </script>
 
-<form action="" on:submit|preventDefault={() => addComment(gist)}>
+<form action="" on:submit|preventDefault={addComment}>
 	<fieldset class="flex flex-col gap-2">
 		<textarea
 			required
