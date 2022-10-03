@@ -1,11 +1,15 @@
 <script>
-	import { deleteGistModal } from '$lib/stores/modals.js';
+	import { page } from '$app/stores';
+	import { gists, updatedGist } from '$lib/stores/gists.js';
+	import { deleteGistModal, editGistModal } from '$lib/stores/modals.js';
 	import BackLink from '$lib/components/BackLink.svelte';
 	import CommentCard from '$lib/components/cards/CommentCard.svelte';
 	import AddComment from '$lib/components/feed/AddComment.svelte';
 	import DeleteGistModal from '$lib/components/modals/DeleteGistModal.svelte';
+	import EditGistModal from '$lib/components/modals/EditGistModal.svelte';
 
-	export let data;
+	const params = $page.params.slug * 1;
+	$updatedGist = $gists.find((gist) => gist.id === params);
 </script>
 
 <article class="container mx-auto min-h-[90vh] max-w-xl p-3">
@@ -33,13 +37,14 @@
 
 			<!-- Edit and delete options -->
 			<div class="flex flex-col gap-5 md:flex-row">
-				<a
-					href="/gists/edit/{data.gist.id}"
+				<button
+					on:click={() => ($editGistModal = true)}
+					type="button"
 					class="block h-fit rounded bg-blue-100 px-4 py-1 text-center text-xs text-blue-700
 					 hover:bg-brand hover:text-white md:text-sm"
 				>
 					edit
-				</a>
+				</button>
 				<button
 					on:click={() => ($deleteGistModal = true)}
 					type="button"
@@ -52,23 +57,23 @@
 		</div>
 
 		<div class="mt-3 border-b border-gray-300 pb-5">
-			<p class="font-light text-gray-800 md:text-lg">{data.gist?.body || 'hello'}</p>
+			<p class="font-light text-gray-800 md:text-lg">{$updatedGist.body || 'hello'}</p>
 		</div>
 	</section>
 
 	<!-- Comments Section -->
 	<section class="mt-2">
 		<p class="mb-2 text-right text-xs font-light text-gray-500 md:text-sm">
-			{data.gist.comments.length}
-			{data.gist.comments.length > 1 ? 'comments' : 'comment'}
+			{$updatedGist.comments.length}
+			{$updatedGist.comments.length > 1 ? 'comments' : 'comment'}
 		</p>
 
 		<!-- Add new comment to this gist -->
-		<AddComment gist={data.gist} />
+		<AddComment {$updatedGist} />
 
 		<!-- Display all comments for this gist -->
 		<div class="mt-5 flex flex-col gap-2">
-			{#each data.gist.comments as _}
+			{#each $updatedGist.comments as _}
 				<CommentCard />
 			{:else}
 				<p class="text-center text-gray-500 font-light">No Comments yet...</p>
@@ -78,5 +83,9 @@
 </article>
 
 {#if $deleteGistModal}
-	<DeleteGistModal />
+	<DeleteGistModal gist={$updatedGist} />
+{/if}
+
+{#if $editGistModal}
+	<EditGistModal />
 {/if}

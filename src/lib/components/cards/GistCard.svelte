@@ -2,19 +2,9 @@
 	import { scale } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 	import dayjs from 'dayjs';
-	import { gists, getGists } from '$lib/stores/gists.js';
-	import CardContexualMenu from './CardContexualMenu.svelte';
 	import CardImage from './CardImage.svelte';
 
 	export let gist;
-
-	const deleteGist = async (gist) => {
-		const gists = await getGists();
-		console.log(gist);
-		gists.filter((feed) => feed.id !== gist.id);
-
-		console.log(gists);
-	};
 </script>
 
 <figure

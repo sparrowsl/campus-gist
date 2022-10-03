@@ -46,7 +46,7 @@ export const institutes = writable([
 		abbr: 'AIPro'
 	},
 	{
-		name: 'Other',
-		abbr: 'other'
+		name: 'Other Institute',
+		abbr: 'other institute'
 	}
 ]);

@@ -1,6 +1,15 @@
 <script>
 	import { fly } from 'svelte/transition';
 	import { deleteGistModal } from '$lib/stores/modals.js';
+	import { gists } from '$lib/stores/gists.js';
+	import { goto } from '$app/navigation';
+
+	export let gist;
+
+	const deleteGist = async () => {
+		$gists = $gists.filter((el) => el.id !== gist.id);
+		goto('/gists');
+	};
 </script>
 
 <section
@@ -19,7 +28,7 @@
 				No please
 			</button>
 			<button
-				on:click={() => console.log('...deleting')}
+				on:click={deleteGist}
 				type="button"
 				class="rounded bg-blue-100 px-4 py-1 text-sm text-blue-700 hover:bg-brand hover:text-white"
 			>

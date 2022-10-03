@@ -1,12 +1,14 @@
 <script>
+	import { getStores, navigating, page, updated } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { gists } from '$lib/stores/gists.js';
 	import Spinner from '$lib/components/Spinner.svelte';
 	import BackLink from '$lib/components/BackLink.svelte';
 
-	export let data;
+	const params = $page.params.slug * 1;
+	const gist = $gists.find((gist) => gist.id === params);
+	console.log(gist);
 
-	const gist = data.gist;
 	let newEditContent;
 	if (gist) newEditContent = gist.body;
 	let editing = false;
@@ -35,20 +37,32 @@
 						class="min-h-[200px] w-full border-gray-300 font-light text-gray-800 md:text-lg"
 					/>
 
-					<button
-						type="submit"
-						disabled={editing ? true : false}
-						class="{editing
-							? ''
-							: 'hover:bg-blue-900'} mt-5 ml-auto block w-fit rounded bg-brand px-6 py-2 text-white
+					<div>
+						<!-- Cancel Edit Button -->
+						<button
+							type="button"
+							class="mt-5 ml-auto block w-fit rounded bg-red-100 px-6 py-2 text-red-700
+							hover:bg-red-700 hover:text-white"
+						>
+							Cancel
+						</button>
+
+						<!-- Edit Button -->
+						<button
+							type="submit"
+							disabled={editing ? true : false}
+							class="{editing
+								? ''
+								: 'hover:bg-blue-900'} mt-5 ml-auto block w-fit rounded bg-brand px-6 py-2 text-white
 						disabled:cursor-not-allowed"
-					>
-						{#if editing}
-							<Spinner />
-						{:else}
-							Update Gist
-						{/if}
-					</button>
+						>
+							{#if editing}
+								<Spinner />
+							{:else}
+								Update Gist
+							{/if}
+						</button>
+					</div>
 				</fieldset>
 			</form>
 		{:else}

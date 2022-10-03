@@ -1,5 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import { institutes } from '$lib/stores/universities.js';
 	import ProfileDisplay from './ProfileDisplay.svelte';
 
 	const user = {
@@ -43,12 +44,15 @@
 				/>
 			</div>
 			<div>
-				<input
-					type="text"
+				<select
 					bind:value={user.institute}
-					placeholder="College of Digital Excellence"
+					name="institutes"
 					class="w-full rounded border-gray-200 text-sm font-light text-brand-blue focus:font-normal"
-				/>
+				>
+					{#each $institutes as institute}
+						<option value={institute.name}>{institute.name}</option>
+					{/each}
+				</select>
 			</div>
 			<div>
 				<textarea

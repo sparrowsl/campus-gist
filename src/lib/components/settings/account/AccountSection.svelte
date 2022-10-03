@@ -11,7 +11,7 @@
 	<form action="" on:submit|preventDefault class="p-3 md:p-5">
 		<fieldset class="flex flex-col gap-3 py-3">
 			<legend class="flex w-full items-center justify-between">
-				<span> Password Reset </span>
+				<span class="text-brand-blue"> Password Reset </span>
 				<span
 					on:click={() => (hidePasswordField = !hidePasswordField)}
 					class="cursor-pointer font-pt-sans text-xs text-blue-600 underline
@@ -21,9 +21,9 @@
 				</span>
 			</legend>
 
-			<section class="flex items-center gap-5">
+			<section class="flex flex-col items-center gap-5 md:flex-row">
 				<div>
-					<label for="" class="text-sm font-light text-gray-600">Old Password</label>
+					<label for="" class="text-sm font-light text-gray-600">Current Password</label>
 					<input
 						type={hidePasswordField ? 'password' : 'text'}
 						value="password"
