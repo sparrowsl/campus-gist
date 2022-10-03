@@ -6,13 +6,13 @@
 	<div class="basis-full px-3 text-center md:text-left">
 		<h1 class="mb-3 font-pt-sans text-4xl text-brand-blue md:mb-5 md:text-5xl">Campus Gist</h1>
 
-		<p class="mb-2 max-w-xl font-pt-sans text-xl font-bold text-brand-blue md:text-xl">
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, eum?
-			<!-- The best and one stop place to get information about activities in different institutions. -->
+		<p class="mb-2 max-w-xl text-xl text-brand-blue md:text-xl">
+			A social platform for students in different institutions to communicate with each other, share
+			ideas, find solutions to problems, attend events and make new friends.
 		</p>
 
 		<blockquote class="font-pt-sans italic text-brand">
-			Meet, discuss, joke &amp; share ideas with new friends from different places.
+			Meet, discuss, joke &amp; share ideas with new &amp; old friends from different campus.
 		</blockquote>
 
 		<!-- Call to actions -->
