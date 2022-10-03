@@ -24,13 +24,14 @@
 	<BackLink />
 
 	<!-- Display the content of gist -->
-	<section class="pb-5">
+	<section class="mt-5 pb-5">
 		{#if gist}
 			<form action="" on:submit|preventDefault={() => editGist(gist)}>
 				<fieldset>
 					<textarea
 						required
 						bind:value={newEditContent}
+						placeholder="Write something here..."
 						class="min-h-[200px] w-full border-gray-300 font-light text-gray-800 md:text-lg"
 					/>
 
@@ -39,7 +40,7 @@
 						disabled={editing ? true : false}
 						class="{editing
 							? ''
-							: 'hover:bg-blue-900'} mt-5 block w-full rounded bg-brand py-2 text-white
+							: 'hover:bg-blue-900'} mt-5 ml-auto block w-fit rounded bg-brand px-6 py-2 text-white
 						disabled:cursor-not-allowed"
 					>
 						{#if editing}

@@ -1,7 +1,9 @@
 <script>
+	import { deleteGistModal } from '$lib/stores/modals.js';
 	import BackLink from '$lib/components/BackLink.svelte';
 	import CommentCard from '$lib/components/cards/CommentCard.svelte';
 	import AddComment from '$lib/components/feed/AddComment.svelte';
+	import DeleteGistModal from '$lib/components/modals/DeleteGistModal.svelte';
 
 	export let data;
 </script>
@@ -11,9 +13,48 @@
 	<BackLink />
 
 	<!-- Display the content of gist -->
-	<div class="mt-5 border-b border-gray-300 pb-5">
-		<p class="font-light text-gray-800 md:text-lg">{data.gist?.body || 'hello'}</p>
-	</div>
+	<section class="mt-5">
+		<div class="flex justify-between gap-3">
+			<figure class="flex items-center gap-3">
+				<img
+					src="https://randomuser.me/api/portraits/med/men/62.jpg"
+					alt=""
+					loading="lazy"
+					class="h-16 w-16 rounded md:h-20 md:w-20"
+				/>
+				<figcaption class="">
+					<h3 class="text-base font-bold text-brand md:text-lg">John Doe</h3>
+					<a href="/profile" class="text-sm text-brand-blue hover:text-blue-600 md:text-base">
+						@johndoe
+					</a>
+					<p class="font-pt-sans text-xs text-gray-500 md:text-sm">Jan 30 2021</p>
+				</figcaption>
+			</figure>
+
+			<!-- Edit and delete options -->
+			<div class="flex flex-col gap-5 md:flex-row">
+				<a
+					href="/gists/edit/{data.gist.id}"
+					class="block h-fit rounded bg-blue-100 px-4 py-1 text-center text-xs text-blue-700
+					 hover:bg-brand hover:text-white md:text-sm"
+				>
+					edit
+				</a>
+				<button
+					on:click={() => ($deleteGistModal = true)}
+					type="button"
+					class="block h-fit rounded bg-red-100 px-4 py-1 text-center text-xs text-red-700
+					hover:bg-red-700 hover:text-white md:text-sm"
+				>
+					delete
+				</button>
+			</div>
+		</div>
+
+		<div class="mt-3 border-b border-gray-300 pb-5">
+			<p class="font-light text-gray-800 md:text-lg">{data.gist?.body || 'hello'}</p>
+		</div>
+	</section>
 
 	<!-- Comments Section -->
 	<section class="mt-2">
@@ -35,3 +76,7 @@
 		</div>
 	</section>
 </article>
+
+{#if $deleteGistModal}
+	<DeleteGistModal />
+{/if}
