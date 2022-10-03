@@ -22,9 +22,16 @@
 	</div>
 
 	<div class="mt-2">
-		<p class="text-brand-blue md:text-xl">{user?.institute || 'Orange Digital Center'}</p>
-		<p class="mt-2 text-sm font-light text-brand-blue md:text-lg">
-			{user?.bio || 'Simple is better than complex.'}
-		</p>
+		<div class="flex flex-col md:flex-row md:items-center md:gap-3">
+			<small class="font-pt-sans text-sm text-gray-700">Attends:</small>
+			<p class="text-brand-blue md:text-xl">{user?.institute || 'Orange Digital Center'}</p>
+		</div>
+		<!-- Bio/about -->
+		<div class="mt-2 flex flex-col md:flex-row md:items-center md:gap-3">
+			<small class="font-pt-sans text-sm text-gray-700">Bio:</small>
+			<p class="text-sm font-light text-brand-blue md:text-lg">
+				{user?.bio || 'Simple is better than complex.'}
+			</p>
+		</div>
 	</div>
 </section>
