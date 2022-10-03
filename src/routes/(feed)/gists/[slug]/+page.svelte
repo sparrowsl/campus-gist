@@ -57,15 +57,15 @@
 		</div>
 
 		<div class="mt-3 border-b border-gray-300 pb-5">
-			<p class="font-light text-gray-800 md:text-lg">{$updatedGist.body || 'hello'}</p>
+			<p class="font-light text-gray-800 md:text-lg">{$updatedGist?.body || 'hello'}</p>
 		</div>
 	</section>
 
 	<!-- Comments Section -->
 	<section class="mt-2">
 		<p class="mb-2 text-right text-xs font-light text-gray-500 md:text-sm">
-			{$updatedGist.comments.length}
-			{$updatedGist.comments.length > 1 ? 'comments' : 'comment'}
+			{$updatedGist?.comments.length || 0}
+			{$updatedGist?.comments.length > 1 || 0 ? 'comments' : 'comment'}
 		</p>
 
 		<!-- Add new comment to this gist -->
@@ -73,7 +73,7 @@
 
 		<!-- Display all comments for this gist -->
 		<div class="mt-5 flex flex-col gap-2">
-			{#each $updatedGist.comments as comment}
+			{#each $updatedGist?.comments || [] as comment}
 				<CommentCard {comment} />
 			{:else}
 				<p class="text-center text-gray-500 font-light">No Comments yet...</p>

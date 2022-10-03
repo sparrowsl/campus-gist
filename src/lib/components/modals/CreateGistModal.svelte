@@ -13,8 +13,9 @@
 			username: 'johndoe',
 			fullname: 'John Doe',
 			email: 'johndoe@gmail.com',
-			image: '/images/default.jpg'
-		}
+			image: '/images/default.png'
+		},
+		comments: []
 	};
 
 	const postGist = async () => {
