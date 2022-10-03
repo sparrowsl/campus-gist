@@ -57,7 +57,9 @@
 		</div>
 
 		<div class="mt-3 border-b border-gray-300 pb-5">
-			<p class="font-light text-gray-800 md:text-lg">{$updatedGist?.body || 'hello'}</p>
+			<p class="font-light text-gray-800 md:text-lg">
+				{$updatedGist?.body || 'lorem ipsum dolor sit amet...'}
+			</p>
 		</div>
 	</section>
 
