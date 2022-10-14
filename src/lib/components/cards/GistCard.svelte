@@ -12,7 +12,7 @@
 	class="mx-auto flex w-full gap-3 rounded-md border bg-white p-3 shadow-sm md:w-[37.5rem] md:p-5"
 >
 	<!-- Card profile -->
-	<CardImage src="/images/{`${gist.author?.image}` || 'default.png'}" />
+	<CardImage src={gist.author.image} />
 	<!-- User info -->
 	<figcaption class="flex w-full flex-col gap-3">
 		<div class="flex justify-between">
