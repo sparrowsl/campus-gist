@@ -1,0 +1,191 @@
+[
+	{
+		"name": "American College of Science and Technology",
+		"abbreviation": "ACOSAT",
+		"address": "33 Circular Rd, Freetown",
+		"contact": "+23288488724",
+		"email": "edu@acosatsl.com ",
+		"website": "https://acosatsl.com",
+		"logo": "acosat-logo.png"
+	},
+	{
+		"name": "AIPro",
+		"abbreviation": "AIPro",
+		"address": "31 Bolling Street Kingtom",
+		"contact": "+23278105153",
+		"email": "info@aiprofessionals.org",
+		"website": "https://www.aiprofessionals.org/",
+		"logo": "aipro-logo.jpg"
+	},
+	{
+		"name": "BlueCrest University College",
+		"abbreviation": "BCC",
+		"address": "Mobah House, 77 Wilkinson, Freetown",
+		"contact": "+23299890033",
+		"email": "freetown@bluecrest.edu.sl",
+		"website": "https://bluecrest.edu.sl/",
+		"logo": "bluecrest-logo.png"
+	},
+	{
+		"name": "College of Agriculture & Technology",
+		"abbreviation": "CAT",
+		"address": "12 Lightfoot Boston Street, 3rd floor",
+		"contact": "+23274064211",
+		"email": "competencydevelopmentservices@gmail.com",
+		"website": "",
+		"logo": "cds-logo.jpg"
+	},
+	{
+		"name": "College of Digital Excellence",
+		"abbreviation": "CODE",
+		"address": "36, Main Motor Road",
+		"contact": "+23230500500",
+		"email": "info@codesl.org",
+		"website": "http://codesl.org",
+		"logo": "code-logo.jpg"
+	},
+	{
+		"name": "Central University Sierra Leone",
+		"abbreviation": "CUSL",
+		"address": " 1 Silicon Hills, Mile 91, Tonkolili",
+		"contact": "+23299140208",
+		"email": "info@ccmtsl.com",
+		"website": "https://ccmtsl.com/web/",
+		"logo": "cusl-logo.png"
+	},
+	{
+		"name": "College of Business & Information Technology",
+		"abbreviation": "COBIT",
+		"address": "No.6 Ibrahim D. Antar Drive, Spurview Estate, Freetown",
+		"contact": "",
+		"email": "registrar@cobitedu.com",
+		"website": "http://cobitedu.com/",
+		"logo": "cobit-logo.png"
+	},
+	{
+		"name": "College of Medicine & Allied Health Sciences",
+		"abbreviation": "COMAHS",
+		"address": "Freetown",
+		"contact": "",
+		"email": "",
+		"website": "",
+		"logo": ""
+	},
+	{
+		"name": "Ernest Bai Koroma University of Science and Technology ",
+		"abbreviation": "EBKUST",
+		"address": "Magburaka-Kono Highway",
+		"contact": "+23277591751",
+		"email": "registrar@ebkustsl.edu.sl",
+		"website": "https://www.ebkustsl.edu.sl/",
+		"logo": "ebkust-logo.png"
+	},
+	{
+		"name": "Fourah Bay College",
+		"abbreviation": "FBC",
+		"address": "Freetown",
+		"contact": "",
+		"email": "",
+		"website": "",
+		"logo": ""
+	},
+	{
+		"name": "International Institute of Islamic Studies",
+		"abbreviation": "IIIS",
+		"address": "58 Wilkinson Road, Freetown",
+		"contact": "077876005",
+		"email": "sierraleone@miu.ac.ir",
+		"website": "http://islamicstudies.miu.ac.ir/",
+		"logo": "iiis-logo.jpg"
+	},
+	{
+		"name": "Institute of Public Administration and Management",
+		"abbreviation": "IPAM",
+		"address": "Freetown",
+		"contact": "",
+		"email": "",
+		"website": "",
+		"logo": ""
+	},
+	{
+		"name": "Liccsal Business College",
+		"abbreviation": "LICCSAL",
+		"address": "No 1 Freetown Road, Wilberforce.",
+		"contact": "+23279899941",
+		"email": "liccsalbusiness2000@gmail.com",
+		"website": "https://liccsaledu.com",
+		"logo": "liccsal-logo.jpg"
+	},
+	{
+		"name": "Limkokwing University",
+		"abbreviation": "Limkokwing",
+		"address": "Hill Station, Freetown",
+		"contact": "+23279301395",
+		"email": "solomon.kargbo@limkokwing.edu.sl",
+		"website": "https://limkokwing.com/",
+		"logo": "limko-logo.png"
+	},
+	{
+		"name": "Milestone Technology College",
+		"abbreviation": "MTC",
+		"address": "80E Sir Samuel Lewis Rd, FREETOWN",
+		"contact": "+23280777333",
+		"email": "info@milestonetechnologycollege.com",
+		"website": "https://www.milestonetechnologycollege.com/",
+		"logo": "mmcet-logo.png"
+	},
+	{
+		"name": "Milton Margai College of Education and Technology",
+		"abbreviation": "MMCET",
+		"address": "Freetown",
+		"contact": "+23275012900",
+		"email": "info@mmcet.edu.sl",
+		"website": "http://www.mmcet.edu.sl",
+		"logo": "mmcet-logo.png"
+	},
+	{
+		"name": "Njala University",
+		"abbreviation": "Njala",
+		"address": "Bo/Freetown",
+		"contact": "",
+		"email": "",
+		"website": "https://njala.edu.sl/",
+		"logo": "njala-logo.png"
+	},
+	{
+		"name": "The Evangelical College of Theology",
+		"abbreviation": "TECT",
+		"address": "Jui",
+		"contact": "+23230260799",
+		"email": "tectsl.edu@gmail.com",
+		"website": "https://tect.edu.sl/",
+		"logo": "tect-logo.png"
+	},
+	{
+		"name": "University of Management and Technology",
+		"abbreviation": "UNIMTECH",
+		"address": "03 Hospital Road, Kissy Dockyard",
+		"contact": "+23277266636",
+		"email": "info@unimtech.edu.sl",
+		"website": "https://unimtech.edu.sl/",
+		"logo": "unimtech-logo.webp"
+	},
+	{
+		"name": "University of Makeni",
+		"abbreviation": "UNIMAK",
+		"address": "Hazzolini Highway, Makeni",
+		"contact": "+23276670769",
+		"email": "info@unimak.edu.sl",
+		"website": "https://unimak.edu.sl/",
+		"logo": "unimak-logo.png"
+	},
+	{
+		"name": "Washington College of Management and Technology",
+		"abbreviation": "",
+		"address": "14 Earl Street, Freetown",
+		"contact": "",
+		"email": "",
+		"website": "https://wamtech.edu.sl/",
+		"logo": ""
+	}
+]
