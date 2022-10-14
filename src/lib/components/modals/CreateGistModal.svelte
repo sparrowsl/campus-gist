@@ -1,5 +1,4 @@
 <script>
-	import { page } from '$app/stores';
 	import Spinner from '../shared/Spinner.svelte';
 	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
@@ -16,16 +15,17 @@
 		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/gists/`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
+			// TODO: "author" would be the current logged in user
 			body: JSON.stringify({ content: textInput, author: '6347d57f11609865d9324b48' })
 		});
 
 		if (res.ok) {
 			const { _id, content, author, comments, datePosted } = await res.json();
-			console.log({ id: _id, content, author, comments, datePosted });
+			console.log({ _id, content, author, comments, datePosted });
 
 			setTimeout(() => {
 				$createGistModal = false;
-				$gists = [{ id: _id, content, author, comments, datePosted }, ...$gists];
+				$gists = [{ _id, content, author, comments, datePosted }, ...$gists];
 			}, 1500);
 		}
 	};

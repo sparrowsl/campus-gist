@@ -15,7 +15,7 @@
 			$studentFilteredResults = $studentSearchResults.filter(
 				(student) =>
 					student.username.toLowerCase().includes($searchedValue.trim().toLowerCase()) ||
-					student.name.toLowerCase().includes($searchedValue.trim().toLowerCase())
+					student.fullname.toLowerCase().includes($searchedValue.trim().toLowerCase())
 			);
 		} else {
 			$studentFilteredResults = $studentSearchResults;

@@ -1,10 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
-	import StudentSearchCard from '../cards/StudentSearchCard.svelte';
 	import { studentSearchResults, studentFilteredResults } from '$lib/stores/search.js';
+	import StudentSearchCard from '../cards/StudentSearchCard.svelte';
 
 	async function getStudents() {
-		const res = await fetch('/data/students.json');
+		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/students`);
 		if (res.ok) return await res.json();
 	}
 
@@ -15,17 +15,13 @@
 </script>
 
 {#await $studentFilteredResults}
-	<div class="text-center">
-		<p>Loading students...</p>
-	</div>
+	<p class="text-center">Loading students...</p>
 {:then $studentFilteredResults}
 	<div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
 		{#each $studentFilteredResults as student}
 			<StudentSearchCard {student} />
 		{:else}
-			<div class="w-full grid place-content-center">
-				<p class="text-center">No Student Found</p>
-			</div>
+			<p class="text-center text-brand-blue">No Student Found</p>
 		{/each}
 	</div>
 {/await}
