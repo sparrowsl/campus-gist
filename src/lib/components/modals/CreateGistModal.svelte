@@ -1,8 +1,8 @@
 <script>
-	import Spinner from '../shared/Spinner.svelte';
 	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
 	import ModalBackdrop from './ModalBackdrop.svelte';
+	import Spinner from '../shared/Spinner.svelte';
 
 	let textInput = `The vast majority of us will say "Yep... I have absolutely no idea what I meant by 'Fix style' 6 months ago."`;
 	let hasPosted = false;

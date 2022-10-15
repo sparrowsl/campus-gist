@@ -20,6 +20,7 @@
 			return;
 		}
 
+		// TODO: Check if student exists in the database
 		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/auth/login`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
@@ -28,14 +29,11 @@
 
 		if (res.ok) {
 			const data = await res.json();
+			isLoggedIn = true;
+			setTimeout(() => goto('/gists'), 1500);
 			console.log(data);
 		}
-
-		// isLoggedIn = true;
-		// setTimeout(() => goto('/gists'), 1500);
-		// TODO: Check if user exists in the database
-		// TODO: If there is no user, send invalid message
-		// TODO: Assume everything is ok, navigate to the gists page
+		// TODO: everything is ok, navigate to the gists page
 	};
 </script>
 

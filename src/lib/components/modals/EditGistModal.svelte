@@ -5,25 +5,27 @@
 	import Spinner from '$lib/components/shared/Spinner.svelte';
 	import ModalBackdrop from './ModalBackdrop.svelte';
 
-	// let newEditContent = $updatedGist.body;
-	let newContent = 'lorem ipsum dolor sit amet';
+	let newContent = $updatedGist.content;
 	let updating = false;
-
-	// console.log($updatedGist);
-	console.log($page.params.slug);
+	let errorMessage = '';
 
 	const editGist = async () => {
-		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/gists/${$page.params.slug}`);
-
 		updating = true;
-		// Find the current gist
-		$updatedGist = $gists.find((gist) => gist.id === $updatedGist.id);
-		// Update the content of the gist
 
-		// setTimeout(() => {
-		// 	$updatedGist.body = newEditContent.trim();
-		// 	$editGistModal = false;
-		// }, 750);
+		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/gists/${$page.params.slug}`, {
+			method: 'PUT',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ content: newContent })
+		});
+		const data = await res.json();
+
+		if (!res.ok) {
+			errorMessage = data;
+			return;
+		}
+
+		$updatedGist = data;
+		$editGistModal = false;
 	};
 </script>
 
@@ -38,8 +40,10 @@
         font-light text-gray-800"
 			/>
 
+			<p>{errorMessage}</p>
+
 			<div class="flex justify-between">
-				<!-- Cancel Edit Button -->
+				<!-- Cancel Button -->
 				<button
 					on:click={() => ($editGistModal = false)}
 					type="button"
