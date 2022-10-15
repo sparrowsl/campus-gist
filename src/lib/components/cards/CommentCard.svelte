@@ -1,4 +1,5 @@
 <script>
+	import dayjs from 'dayjs';
 	import CardImage from './CardImage.svelte';
 
 	export let comment = {};
@@ -13,11 +14,11 @@
 				@{comment.author?.username || 'johndoe'}
 			</a>
 			<span class="font-pt-sans text-xs font-light text-gray-600">
-				{comment?.datePosted || '3 hours ago'}
+				{comment?.datePosted || dayjs().format('DD MMMM YYYY')}
 			</span>
 		</h3>
 		<p class="whitespace-pre-wrap text-sm font-light md:text-base">
-			{comment.text || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, modi.'}
+			{comment?.content || 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'}
 		</p>
 	</figcaption>
 </figure>

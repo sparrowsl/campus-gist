@@ -1,15 +1,23 @@
 <script>
-	import { deleteGistModal } from '$lib/stores/modals.js';
-	import { gists } from '$lib/stores/gists.js';
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import { deleteGistModal } from '$lib/stores/modals.js';
 	import ModalBackdrop from './ModalBackdrop.svelte';
 
-	export let gist;
-
 	const deleteGist = async () => {
-		$gists = $gists.filter((el) => el.id !== gist.id);
-		$deleteGistModal = false; // close the modal
-		goto('/gists');
+		console.log($page.params.slug);
+
+		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/gists/${$page.params.slug}`, {
+			method: 'DELETE'
+			// headers: { 'Content-Type': 'application/json' },
+		});
+
+		if (res.ok) {
+			const data = await res.json();
+			console.log(data);
+			$deleteGistModal = false; // close the modal
+			goto('/gists');
+		}
 	};
 </script>
 

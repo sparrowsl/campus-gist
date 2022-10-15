@@ -89,7 +89,7 @@
 </article>
 
 {#if $deleteGistModal}
-	<DeleteGistModal gist={$updatedGist} />
+	<DeleteGistModal />
 {/if}
 
 {#if $editGistModal}

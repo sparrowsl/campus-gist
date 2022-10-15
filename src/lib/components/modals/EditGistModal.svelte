@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { gists, updatedGist } from '$lib/stores/gists.js';
+	import { updatedGist } from '$lib/stores/gists.js';
 	import { editGistModal } from '$lib/stores/modals.js';
 	import Spinner from '$lib/components/shared/Spinner.svelte';
 	import ModalBackdrop from './ModalBackdrop.svelte';
