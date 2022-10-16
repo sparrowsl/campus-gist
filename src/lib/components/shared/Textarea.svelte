@@ -4,7 +4,7 @@
 	export let placeholder = 'Write something here';
 	export let classes = '';
 	export let name = '';
-	export let rounded = 'md';
+	export let rounded = '';
 	export let height = '100';
 </script>
 
@@ -15,5 +15,5 @@
 	on:input={(e) => (value = e.target.value)}
 	class="{classes} {rounded
 		? `rounded-${rounded}`
-		: ''} min-h-[{height}px] block w-full border-gray-200"
+		: 'rounded'} min-h-[{height}px] block w-full border-gray-200"
 />

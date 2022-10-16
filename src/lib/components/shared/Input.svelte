@@ -16,5 +16,5 @@
 	{placeholder}
 	class="{classes} {rounded
 		? `rounded-${rounded}`
-		: ''} block w-full border-gray-200 p-2 text-gray-600"
+		: 'rounded'} block w-full border-gray-200 p-2 text-gray-600"
 />

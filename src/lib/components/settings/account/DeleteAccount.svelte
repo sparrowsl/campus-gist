@@ -8,7 +8,7 @@
 	<button
 		type="button"
 		class="mt-5 block rounded bg-red-200 px-6 py-2 text-xs text-red-800 hover:bg-red-500
-		hover:text-white md:text-base"
+		hover:text-white md:text-sm"
 	>
 		Delete My Account
 	</button>
