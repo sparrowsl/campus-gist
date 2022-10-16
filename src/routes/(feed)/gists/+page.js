@@ -7,6 +7,5 @@ export const load = async ({ fetch }) => {
 		const data = await res.json();
 		return { gists: data };
 	}
-
 	throw error(404, `No Gist Was Found`);
 };

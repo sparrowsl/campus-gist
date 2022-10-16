@@ -6,7 +6,7 @@
 	import CreateGist from '$lib/components/feed/CreateGist.svelte';
 
 	export let data;
-	$gists = data.gists;
+	$gists = data.gists || [];
 
 	console.log(data.gists);
 </script>
@@ -23,9 +23,7 @@
 		{#each $gists as gist (gist)}
 			<GistCard {gist} />
 		{:else}
-			<p class="mt-10 animate-pulse text-center italic text-brand-blue">
-				No gist found, create new gist...
-			</p>
+			<p class="mt-10 text-center italic text-brand-blue">No gist found, create new gist...</p>
 		{/each}
 		<!-- {/await} -->
 	</section>

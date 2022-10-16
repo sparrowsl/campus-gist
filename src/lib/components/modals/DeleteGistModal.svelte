@@ -12,12 +12,7 @@
 			// headers: { 'Content-Type': 'application/json' },
 		});
 
-		if (res.ok) {
-			const data = await res.json();
-			console.log(data);
-			$deleteGistModal = false; // close the modal
-			goto('/gists');
-		}
+		if (res.ok) goto('/gists');
 	};
 </script>
 
