@@ -5,14 +5,16 @@
 	import ModalBackdrop from './ModalBackdrop.svelte';
 
 	const deleteGist = async () => {
-		console.log($page.params.slug);
-
 		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/gists/${$page.params.slug}`, {
 			method: 'DELETE'
 			// headers: { 'Content-Type': 'application/json' },
 		});
 
-		if (res.ok) goto('/gists');
+		if (res.ok) {
+			goto('/gists');
+			// Prevents the pop up bug
+			$deleteGistModal = false;
+		}
 	};
 </script>
 

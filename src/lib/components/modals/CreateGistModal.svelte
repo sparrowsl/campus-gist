@@ -2,9 +2,10 @@
 	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
 	import ModalBackdrop from './ModalBackdrop.svelte';
+	import Textarea from '../shared/Textarea.svelte';
 	import Spinner from '../shared/Spinner.svelte';
 
-	let textInput = `The vast majority of us will say "Yep... I have absolutely no idea what I meant by 'Fix style' 6 months ago."`;
+	let textInput = `""`;
 	let hasPosted = false;
 	$: disabled = textInput ? false : true;
 
@@ -20,13 +21,12 @@
 		});
 
 		if (res.ok) {
-			const { _id, content, author, comments, datePosted } = await res.json();
-			console.log({ _id, content, author, comments, datePosted });
-
-			setTimeout(() => {
-				$createGistModal = false;
-				$gists = [{ _id, content, author, comments, datePosted }, ...$gists];
-			}, 1500);
+			const data = await res.json();
+			console.log(data);
+			const { _id, content, author, comments, datePosted } = data;
+			$createGistModal = false; // Close the Modal
+			// Add gist to the store
+			$gists = [{ _id, content, author, comments, datePosted }, ...$gists];
 		}
 	};
 </script>
@@ -36,11 +36,7 @@
 		<fieldset class="flex flex-col gap-5">
 			<legend class="mb-3 text-gray-500">What's on your mind?</legend>
 
-			<textarea
-				required
-				bind:value={textInput}
-				class="block max-h-[300px] min-h-[100px] w-full rounded-sm border border-gray-300 text-brand-blue"
-			/>
+			<Textarea name="message" classes="text-brand-blue" bind:value={textInput} />
 
 			<div class="flex justify-between">
 				<!-- Close Modal -->
