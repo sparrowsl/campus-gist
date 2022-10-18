@@ -25,8 +25,7 @@
 			console.log(data);
 			const { _id, content, author, comments, datePosted } = data;
 			$createGistModal = false; // Close the Modal
-			// Add gist to the store
-			$gists = [{ _id, content, author, comments, datePosted }, ...$gists];
+			$gists = [{ _id, content, author, comments, datePosted }, ...$gists]; // Add gist to the store
 		}
 	};
 </script>

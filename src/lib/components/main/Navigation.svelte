@@ -52,6 +52,7 @@
 		</div>
 
 		<!-- Menu toggle -->
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="md:hidden" on:click={() => (openMenu = !openMenu)}>
 			<Icon
 				icon={openMenu ? 'eva:close-fill' : 'heroicons-solid:menu-alt-3'}

@@ -7,8 +7,6 @@
 
 	export let data;
 	$gists = data.gists || [];
-
-	console.log(data.gists);
 </script>
 
 <article class="container relative mx-auto min-h-screen max-w-6xl p-3">
@@ -17,15 +15,11 @@
 
 	<!-- Display all the gists -->
 	<section class="flex flex-col gap-3">
-		<!-- {#await data}
-			<div class="text-brand-blue text-center italic animate-pulse">Loading gists...</div>
-		{:then $gists} -->
 		{#each $gists as gist (gist)}
 			<GistCard {gist} />
 		{:else}
 			<p class="mt-10 text-center italic text-brand-blue">No gist found, create new gist...</p>
 		{/each}
-		<!-- {/await} -->
 	</section>
 </article>
 

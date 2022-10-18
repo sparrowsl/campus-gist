@@ -63,8 +63,6 @@
 				{$updatedGist.content}
 			</p>
 		</div>
-
-		<!-- tiptap editor -->
 	</section>
 
 	<!-- Comments Section -->
