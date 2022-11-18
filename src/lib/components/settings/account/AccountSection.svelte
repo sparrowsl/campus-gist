@@ -5,13 +5,14 @@
 	let hidePasswordField = true;
 </script>
 
-<section in:fade class="mx-auto max-w-2xl bg-white p-2 md:px-5">
+<section in:fade class="mx-auto mb-20 max-w-2xl bg-white p-2 md:mb-0 md:px-5">
 	<h1 class="text-center font-pt-sans text-2xl text-brand">Account Settings</h1>
 
 	<form action="" on:submit|preventDefault class="p-3 md:p-5">
 		<fieldset class="flex flex-col gap-3 py-3">
 			<legend class="flex w-full items-center justify-between">
 				<span class="text-brand-blue"> Password Reset </span>
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<span
 					on:click={() => (hidePasswordField = !hidePasswordField)}
 					class="cursor-pointer font-pt-sans text-xs text-blue-600 underline
