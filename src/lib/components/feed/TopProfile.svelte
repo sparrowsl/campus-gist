@@ -8,6 +8,7 @@
 </script>
 
 <section class="relative">
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<img
 		src="/images/default.png"
 		alt="profile"
