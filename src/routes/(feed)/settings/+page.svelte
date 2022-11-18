@@ -7,7 +7,8 @@
 </script>
 
 <article
-	class="mx-auto flex min-h-[90vh] max-w-6xl bg-white px-3 py-10 md:grid md:grid-cols-[200px,1fr]"
+	class="mx-auto grid min-h-[90vh] max-w-6xl
+	bg-white px-3 py-10 md:grid-cols-[200px,1fr]"
 >
 	<SettingsAsideTab />
 
