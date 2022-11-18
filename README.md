@@ -2,7 +2,9 @@
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
-A web app for students, to post gist about anything happening in their institutions, and chat with others.
+A social platform for students in different institutions to communicate with each other, share ideas, find solutions to problems, attend events and make new friends.
+
+> Meet, discuss, joke & share ideas with new & old friends from different campus.
 
 ## Tech Stack (MENS)
 

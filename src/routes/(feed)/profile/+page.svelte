@@ -1,7 +1,7 @@
 <script>
 	import UserProfile from '$lib/components/user/UserProfile.svelte';
 	import UserPostsCard from '$lib/components/user/UserPostsCard.svelte';
-	import BackLink from '$lib/components/BackLink.svelte';
+	import BackLink from '$lib/components/shared/BackLink.svelte';
 
 	const user = {};
 </script>

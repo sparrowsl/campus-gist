@@ -1,8 +1,18 @@
 <script>
-	import Spinner from '$lib/components/Spinner.svelte';
+	import Spinner from '$lib/components/shared/Spinner.svelte';
+	import { registerValidation } from '$lib/utils/validate.js';
+	import Input from '../../../lib/components/shared/Input.svelte';
 
 	let tac = false;
 	let isRegistered = false;
+	let errorMessage = '';
+
+	let fullname = '';
+	let username = '';
+	let email = '';
+	let password = '';
+	let confirmPassword = '';
+	let institution = 'American College of Science and Technology';
 
 	const loadInstitutes = async () => {
 		const res = await fetch('/data/institutes.json');
@@ -15,7 +25,36 @@
 	};
 
 	const handleRegister = async () => {
-		console.log('TaC accepted?:', tac);
+		const { error } = registerValidation.validate({
+			fullname,
+			username,
+			email,
+			password,
+			institution,
+			confirmPassword
+		});
+
+		if (error) {
+			errorMessage = error.message;
+			return;
+		}
+
+		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/auth/register`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				fullname,
+				username,
+				email,
+				password,
+				institution
+			})
+		});
+
+		if (res.ok) {
+			const data = await res.json();
+			console.log(data);
+		}
 	};
 </script>
 
@@ -31,42 +70,49 @@
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Full Name</label>
-					<input
+					<Input
 						type="text"
 						name="fullname"
-						class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
+						bind:value={fullname}
+						required
 						placeholder="John Smith"
 					/>
 				</div>
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Username</label>
-					<input
+					<Input
 						type="text"
-						name="fullname"
-						class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
+						name="username"
+						bind:value={username}
+						required
 						placeholder="johnsmith"
 					/>
 				</div>
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Email</label>
-					<input
+					<Input
 						type="email"
 						name="email"
-						class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
+						bind:value={email}
+						required
 						placeholder="john@gmail.com"
 					/>
 				</div>
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Institution</label>
-					<select id="institutions" class="w-full rounded-md border-gray-200 p-2 text-gray-600">
+					<select
+						id="institutions"
+						bind:value={institution}
+						class="w-full rounded-md border-gray-200 p-2 text-gray-600"
+					>
 						{#await loadInstitutes()}
 							<option value="" class="" disabled>loading...</option>
 						{:then institutes}
 							{#each institutes as institute}
-								<option value="" class="">{institute}</option>
+								<option value={institute} class="">{institute}</option>
 							{/each}
 							<option value="other" class="">Other</option>
 						{/await}
@@ -75,23 +121,31 @@
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Password</label>
-					<input
+					<Input
 						type="password"
 						name="password"
-						class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
-						placeholder="Password"
+						bind:value={password}
+						required
+						placeholder="password"
 					/>
 				</div>
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Confirm Password</label>
-					<input
+					<Input
 						type="password"
-						name="confirm-password"
-						class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
-						placeholder="Confirm Password"
+						name="confirmPassword"
+						bind:value={confirmPassword}
+						required
+						placeholder="confirm password"
 					/>
 				</div>
+
+				{#if errorMessage}
+					<p class="text-center text-sm italic text-red-500">
+						{errorMessage}
+					</p>
+				{/if}
 
 				<label class="flex items-center gap-2 text-sm text-gray-600">
 					<input type="checkbox" name="terms" id="" class="rounded-full" bind:checked={tac} />

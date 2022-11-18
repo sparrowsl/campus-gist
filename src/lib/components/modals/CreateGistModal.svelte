@@ -1,56 +1,41 @@
 <script>
-	import { fly } from 'svelte/transition';
-	import Spinner from '../Spinner.svelte';
 	import { gists } from '$lib/stores/gists.js';
 	import { createGistModal } from '$lib/stores/modals.js';
+	import ModalBackdrop from './ModalBackdrop.svelte';
+	import Textarea from '../shared/Textarea.svelte';
+	import Spinner from '../shared/Spinner.svelte';
 
-	let textInput = `The vast majority of us will say "Yep... I have absolutely no idea what I meant by 'Fix style' 6 months ago."`;
+	let textInput = `""`;
 	let hasPosted = false;
 	$: disabled = textInput ? false : true;
 
-	const dummyFeed = {
-		author: {
-			username: 'johndoe',
-			fullname: 'John Doe',
-			email: 'johndoe@gmail.com',
-			image: '/images/default.png'
-		},
-		comments: []
-	};
-
-	const postGist = async () => {
+	const createGist = async () => {
 		hasPosted = true;
 		disabled = true;
-		// Generate new id
-		dummyFeed.id = $gists.length + 1;
-		// Pass the new data as the content
-		dummyFeed.body = textInput;
 
-		setTimeout(() => {
-			$createGistModal = false;
-			$gists = [dummyFeed, ...$gists];
-		}, 1500);
+		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/gists/`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			// TODO: "author" would be the current logged in user
+			body: JSON.stringify({ content: textInput, author: '6347d57f11609865d9324b48' })
+		});
+
+		if (res.ok) {
+			const data = await res.json();
+			console.log(data);
+			const { _id, content, author, comments, datePosted } = data;
+			$createGistModal = false; // Close the Modal
+			$gists = [{ _id, content, author, comments, datePosted }, ...$gists]; // Add gist to the store
+		}
 	};
 </script>
 
-<section
-	in:fly={{ y: 500, duration: 300 }}
-	out:fly={{ y: -500, duration: 300 }}
-	class="fixed inset-0 z-30 grid h-screen place-content-center bg-black bg-opacity-75"
->
-	<form
-		action=""
-		on:submit|preventDefault={postGist}
-		class="min-w-[325px] rounded-md bg-white p-5 md:min-w-[30rem] md:p-10"
-	>
+<ModalBackdrop>
+	<form action="" on:submit|preventDefault={createGist}>
 		<fieldset class="flex flex-col gap-5">
 			<legend class="mb-3 text-gray-500">What's on your mind?</legend>
 
-			<textarea
-				required
-				bind:value={textInput}
-				class="block max-h-[300px] min-h-[100px] w-full rounded-sm border border-gray-300 text-brand-blue"
-			/>
+			<Textarea name="message" classes="text-brand-blue" bind:value={textInput} />
 
 			<div class="flex justify-between">
 				<!-- Close Modal -->
@@ -78,4 +63,4 @@
 			</div>
 		</fieldset>
 	</form>
-</section>
+</ModalBackdrop>

@@ -1,6 +1,6 @@
 <script>
 	import Icon from '@iconify/svelte';
-	import Logo from '../Logo.svelte';
+	import Logo from '../shared/Logo.svelte';
 	import TopProfile from './TopProfile.svelte';
 
 	const navIcons = [

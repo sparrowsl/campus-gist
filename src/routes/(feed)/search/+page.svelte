@@ -7,7 +7,7 @@
 		searchFilter,
 		studentFilteredResults
 	} from '$lib/stores/search.js';
-	import BackLink from '$lib/components/BackLink.svelte';
+	import BackLink from '$lib/components/shared/BackLink.svelte';
 </script>
 
 <section class="container mx-auto min-h-screen max-w-6xl p-3">

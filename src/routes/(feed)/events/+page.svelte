@@ -1,6 +1,6 @@
 <script>
 	import EventsCard from '$lib/components/events/EventsCard.svelte';
-	import BackLink from '$lib/components/BackLink.svelte';
+	import BackLink from '$lib/components/shared/BackLink.svelte';
 </script>
 
 <article class="container mx-auto min-h-screen max-w-6xl p-3 md:max-w-2xl">

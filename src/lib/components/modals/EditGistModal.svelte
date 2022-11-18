@@ -1,44 +1,49 @@
 <script>
-	import { fly } from 'svelte/transition';
-	import { gists, updatedGist } from '$lib/stores/gists.js';
+	import { page } from '$app/stores';
+	import { updatedGist } from '$lib/stores/gists.js';
 	import { editGistModal } from '$lib/stores/modals.js';
-	import Spinner from '$lib/components/Spinner.svelte';
+	import Spinner from '$lib/components/shared/Spinner.svelte';
+	import ModalBackdrop from './ModalBackdrop.svelte';
 
-	let newEditContent = $updatedGist.body;
+	let newContent = $updatedGist.content;
 	let updating = false;
+	let errorMessage = '';
 
 	const editGist = async () => {
 		updating = true;
-		// Find the current gist
-		$updatedGist = $gists.find((gist) => gist.id === $updatedGist.id);
-		// Update the content of the gist
-		$updatedGist.body = newEditContent;
 
-		setTimeout(() => ($editGistModal = false), 750);
+		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/gists/${$page.params.slug}`, {
+			method: 'PUT',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ content: newContent })
+		});
+		const data = await res.json();
+
+		if (!res.ok) {
+			errorMessage = data;
+			return;
+		}
+
+		$updatedGist = data;
+		$editGistModal = false;
 	};
 </script>
 
-<section
-	in:fly={{ y: 500, duration: 300 }}
-	out:fly={{ y: -500, duration: 300 }}
-	class="fixed inset-0 z-30 grid h-screen place-content-center bg-black bg-opacity-75"
->
-	<form
-		action=""
-		on:submit|preventDefault={editGist}
-		class="min-w-[325px] rounded-md bg-white p-5 md:min-w-[30rem] md:p-10"
-	>
+<ModalBackdrop>
+	<form action="" on:submit|preventDefault={editGist}>
 		<fieldset>
 			<textarea
 				required
-				bind:value={newEditContent}
+				bind:value={newContent}
 				placeholder="Write something here..."
 				class="min-h-[130px] w-full resize-none rounded border-gray-300 text-base
         font-light text-gray-800"
 			/>
 
+			<p>{errorMessage}</p>
+
 			<div class="flex justify-between">
-				<!-- Cancel Edit Button -->
+				<!-- Cancel Button -->
 				<button
 					on:click={() => ($editGistModal = false)}
 					type="button"
@@ -66,4 +71,4 @@
 			</div>
 		</fieldset>
 	</form>
-</section>
+</ModalBackdrop>

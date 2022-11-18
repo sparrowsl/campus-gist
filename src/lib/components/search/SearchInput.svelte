@@ -8,14 +8,14 @@
 		instituteSearchResults,
 		instituteFilteredResults
 	} from '$lib/stores/search.js';
-	import Spinner from '$lib/components/Spinner.svelte';
+	import Spinner from '$lib/components/shared/Spinner.svelte';
 
 	$: if ($searchFilter === 'students') {
 		if ($searchedValue) {
 			$studentFilteredResults = $studentSearchResults.filter(
 				(student) =>
 					student.username.toLowerCase().includes($searchedValue.trim().toLowerCase()) ||
-					student.name.toLowerCase().includes($searchedValue.trim().toLowerCase())
+					student.fullname.toLowerCase().includes($searchedValue.trim().toLowerCase())
 			);
 		} else {
 			$studentFilteredResults = $studentSearchResults;

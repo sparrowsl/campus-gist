@@ -7,11 +7,11 @@
 
 <figure in:scale class="flex gap-2 border bg-white p-5 transition-shadow hover:shadow">
 	<img
-		src="/images/{institute.logo ? institute.logo : 'default.png'}"
-		alt=""
+		src="/images/{institute.logo ? institute.logo : ''}"
+		alt={institute.logo ? `${institute.abbreviation} logo` : 'No Logo'}
 		class="{institute.abbreviation === 'Limkokwing'
 			? 'bg-black'
-			: ''} h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
+			: ''}  h-12 w-12 text-xs text-gray-500 md:h-14 md:w-14 lg:h-16 lg:w-16"
 	/>
 
 	<!-- details -->

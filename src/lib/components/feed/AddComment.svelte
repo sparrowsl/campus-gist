@@ -4,11 +4,34 @@
 	let newComment = 'simple is better than complex indeed.!!!';
 
 	const addComment = async () => {
-		// Find the current gist
-		$updatedGist = $gists.find((gist) => gist.id === $updatedGist.id);
-		// Update the content of the gist
-		$updatedGist.comments.unshift({ text: newComment });
+		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/comments`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			// TODO: "author" would be the current logged in user
+			body: JSON.stringify({ content: newComment, author: '6347d57f11609865d9324b48' })
+		});
+
+		if (res.ok) {
+			const data = await res.json();
+			console.log(data);
+		}
+		console.log($gists);
+		// // Find the current gist
+		// $updatedGist = $gists.find((gist) => gist.id === $updatedGist.id) || {};
+		// console.log($updatedGist);
+
+		// if (!$updatedGist) $updatedGist.comments = [];
+
+		// // Update the comments of the gist
+		// $updatedGist.comments.unshift({ text: newComment });
+
+		// console.log($updatedGist);
 	};
+
+	// $: {
+	// 	console.log($gists);
+	// 	console.log($updatedGist);
+	// }
 </script>
 
 <form action="" on:submit|preventDefault={addComment}>

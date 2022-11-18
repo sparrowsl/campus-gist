@@ -19,21 +19,23 @@
 			<!-- User name and full name -->
 			<div class="flex w-full justify-between">
 				<h2 class="flex flex-col">
-					<span class="font-pt-sans font-bold md:text-base">{gist.author.fullname}</span>
+					<span class="font-pt-sans font-bold md:text-base">
+						{gist.author?.fullname || 'John Doe'}
+					</span>
 					<a href="/profile" class="text-xs text-blue-400 hover:text-brand md:text-sm">
-						@{gist.author?.username}
+						@{gist.author?.username || 'johndoe'}
 					</a>
 				</h2>
 				<span class="text-xs italic text-gray-400 md:text-sm">
-					{dayjs().format('DD MMMM YYYY')}
+					{dayjs(gist.datePosted).format('DD MMM YYYY')}
 				</span>
 			</div>
 		</div>
 
 		<!-- User text/post/gist -->
 		<p class="text-sm font-light text-gray-700 md:text-base">
-			{gist.body.slice(0, 75)}...
-			<a href="/gists/{gist.id}" class="text-sm italic text-blue-400" data-sveltekit-prefetch>
+			{gist.content.slice(0, 75)}...
+			<a href="/gists/{gist._id}" class="text-sm italic text-blue-400" data-sveltekit-prefetch>
 				read more
 			</a>
 		</p>

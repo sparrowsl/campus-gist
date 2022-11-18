@@ -1,7 +1,8 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { loginValidation } from '$lib/utils/validate.js';
-	import Spinner from '$lib/components/Spinner.svelte';
+	import Spinner from '$lib/components/shared/Spinner.svelte';
+	import Input from '../../../lib/components/shared/Input.svelte';
 
 	let email = '';
 	let password = '';
@@ -11,7 +12,7 @@
 	const handleLogin = async () => {
 		errorMessage = '';
 
-		// Validate data and return any error if any
+		// Validate data and return any error
 		const { error } = loginValidation.validate({ email, password });
 
 		if (error) {
@@ -19,15 +20,23 @@
 			return;
 		}
 
-		isLoggedIn = true;
-		setTimeout(() => goto('/gists'), 1500);
-		// TODO: Check if user exists in the database
-		// TODO: If there is no user, send invalid message
-		// TODO: Assume everything is ok, navigate to the gists page
+		// TODO: Check if student exists in the database
+		const res = await fetch(`${import.meta.env.VITE_API_BASE_ROUTE}/auth/login`, {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ email, password })
+		});
+
+		if (res.ok) {
+			const data = await res.json();
+			isLoggedIn = true;
+			setTimeout(() => goto('/gists'), 1500);
+			console.log(data);
+		}
+		// TODO: everything is ok, navigate to the gists page
 	};
 </script>
 
-<!-- Adding a flex-basis because of the parent component has flex -->
 <section class="grid min-h-[90vh] place-content-center">
 	<form
 		action=""
@@ -42,26 +51,12 @@
 
 			<div>
 				<label for="" class="block text-sm text-gray-500">Email</label>
-				<input
-					type="email"
-					required
-					name="email"
-					bind:value={email}
-					class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
-					placeholder="john@gmail.com"
-				/>
+				<Input type="email" name="email" bind:value={email} placeholder="john@gmail.com" />
 			</div>
 
 			<div>
 				<label for="" class="block text-sm text-gray-500">Password</label>
-				<input
-					type="password"
-					required
-					name="password"
-					bind:value={password}
-					class="block w-full rounded-md border-gray-200 p-2 text-gray-600"
-					placeholder="password"
-				/>
+				<Input type="password" name="password" bind:value={password} placeholder="password" />
 			</div>
 
 			{#if errorMessage}

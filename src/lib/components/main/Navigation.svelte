@@ -1,7 +1,7 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
 	import Icon from '@iconify/svelte';
-	import Logo from '../Logo.svelte';
+	import Logo from '../shared/Logo.svelte';
 
 	let openMenu = false;
 
@@ -52,6 +52,7 @@
 		</div>
 
 		<!-- Menu toggle -->
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="md:hidden" on:click={() => (openMenu = !openMenu)}>
 			<Icon
 				icon={openMenu ? 'eva:close-fill' : 'heroicons-solid:menu-alt-3'}
