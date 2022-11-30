@@ -1,18 +1,18 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
 	import Icon from '@iconify/svelte';
+	import { gravatar } from '$lib/utils/gravatar';
 
 	let openTopProfile = false;
-
 	afterNavigate(() => (openTopProfile = false));
 </script>
 
 <section class="relative">
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<img
-		src="/images/default.png"
-		alt="profile"
-		class="h-9 w-9 rounded-full hover:cursor-pointer md:h-10 md:w-10 lg:h-12 lg:w-12"
+		src={gravatar('sparrow@yahoo.com')}
+		alt=""
+		class="h-9 w-9 rounded-full text-xs text-white hover:cursor-pointer md:h-10 md:w-10 lg:h-12 lg:w-12"
 		on:click={() => (openTopProfile = !openTopProfile)}
 	/>
 

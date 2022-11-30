@@ -9,13 +9,8 @@
 
 	let message = '';
 
-	// const sendMessage = async () => {
-	// 	$chatMessages = [...$chatMessages, { author: 'johndoe', text: message }];
-	// 	message = '';
-	// };
-
-	const socket = io('http://localhost:5000', { path: '/chats' });
-	console.log(socket);
+	// const socket = io('http://localhost:5000', { path: '/chats' });
+	// console.log(socket);
 </script>
 
 <article class="container mx-auto min-h-[90vh] max-w-6xl p-3 md:max-w-2xl">

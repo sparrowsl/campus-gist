@@ -7,9 +7,11 @@
 	import AddComment from '$lib/components/feed/AddComment.svelte';
 	import DeleteGistModal from '$lib/components/modals/DeleteGistModal.svelte';
 	import EditGistModal from '$lib/components/modals/EditGistModal.svelte';
+	import { gravatar } from '../../../../lib/utils/gravatar';
 
 	export let data;
 	$updatedGist = data.gist;
+	console.log($updatedGist);
 </script>
 
 <article class="container mx-auto min-h-[90vh] max-w-xl p-3">
@@ -21,7 +23,7 @@
 		<div class="flex justify-between gap-3">
 			<figure class="flex items-center gap-3">
 				<img
-					src={`/images/${$updatedGist.author.image}`}
+					src={gravatar($updatedGist.author.email)}
 					alt=""
 					loading="lazy"
 					class="h-16 w-16 rounded md:h-20 md:w-20"

@@ -1,12 +1,12 @@
 <script>
 	import dayjs from 'dayjs';
-	import CardImage from './CardImage.svelte';
+	// import CardImage from './CardImage.svelte';
 
 	export let comment = {};
 </script>
 
 <figure class="flex w-full gap-2 rounded bg-gray-50 p-3">
-	<CardImage />
+	<!-- <CardImage /> -->
 
 	<figcaption>
 		<h3 class="mb-1 flex justify-between">
