@@ -30,7 +30,7 @@
 		if (res.ok) {
 			const data = await res.json();
 			isLoggedIn = true;
-			setTimeout(() => goto('/gists'), 1500);
+			setTimeout(() => goto('/gists'), 1000);
 			console.log(data);
 		}
 		// TODO: everything is ok, navigate to the gists page

@@ -1,4 +1,5 @@
 <script>
+	import { goto } from '$app/navigation';
 	import Spinner from '$lib/components/shared/Spinner.svelte';
 	import { registerValidation } from '$lib/utils/validate.js';
 	import Input from '../../../lib/components/shared/Input.svelte';
@@ -53,6 +54,8 @@
 
 		if (res.ok) {
 			const data = await res.json();
+			isRegistered = true;
+			setTimeout(() => goto('/gists'), 1000);
 			console.log(data);
 		}
 	};
@@ -70,24 +73,12 @@
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Full Name</label>
-					<Input
-						type="text"
-						name="fullname"
-						bind:value={fullname}
-						required
-						placeholder="John Smith"
-					/>
+					<Input name="fullname" bind:value={fullname} required placeholder="John Smith" />
 				</div>
 
 				<div>
 					<label for="" class="block text-sm text-gray-500">Username</label>
-					<Input
-						type="text"
-						name="username"
-						bind:value={username}
-						required
-						placeholder="johnsmith"
-					/>
+					<Input name="username" bind:value={username} required placeholder="johnsmith" />
 				</div>
 
 				<div>
