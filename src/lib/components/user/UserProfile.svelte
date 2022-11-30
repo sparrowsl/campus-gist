@@ -1,13 +1,15 @@
 <script>
+	import { gravatar } from '../../utils/gravatar.js';
+
 	export let user = {};
 </script>
 
 <section class="mt-10 border-b-2 pb-5">
 	<div class="flex items-center gap-3">
 		<img
-			src="/images/default.png"
-			alt="{user?.name || 'john'}'s profile"
-			class="h-20 w-20 rounded-full md:h-32 md:w-32"
+			src={gravatar(user?.email || 'johndoe@gmail.com')}
+			alt="{user.name}'s profile"
+			class="grid h-20 w-20 place-content-center rounded-full md:h-32 md:w-32"
 		/>
 		<div class="font-pt-sans">
 			<h2 class="text-xl text-brand md:text-3xl">{user?.name || 'John J. Doe'}</h2>
