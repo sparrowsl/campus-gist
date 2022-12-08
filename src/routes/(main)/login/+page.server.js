@@ -1,5 +1,4 @@
 import { redirect } from '@sveltejs/kit';
-
 import { loginValidation } from '$lib/utils/validate.js';
 
 export async function load({ fetch }) {
