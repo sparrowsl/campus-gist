@@ -17,7 +17,7 @@
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			// TODO: "author" would be the current logged in user
-			body: JSON.stringify({ content: textInput, author: '6347d57f11609865d9324b48' })
+			body: JSON.stringify({ content: textInput, author: '638e8749b8c94ae8d93c61fc' })
 		});
 
 		if (res.ok) {
