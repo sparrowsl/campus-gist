@@ -1,8 +1,8 @@
 <script>
-	import { scale } from 'svelte/transition';
 	import Icon from '@iconify/svelte';
 	import dayjs from 'dayjs';
-	import { gravatar } from '../../utils/gravatar';
+
+	import { scale } from 'svelte/transition';
 
 	export let gist;
 </script>
@@ -12,11 +12,7 @@
 	class="mx-auto flex w-full gap-3 rounded-md border bg-white p-3 shadow-sm md:w-[37.5rem] md:p-5"
 >
 	<!-- Card profile -->
-	<img
-		src={gravatar(gist.author?.email || 'john@')}
-		alt=""
-		class="h-7 w-7 rounded md:h-12 md:w-12"
-	/>
+	<img src={gist.author.image} alt="" class="h-7 w-7 rounded md:h-12 md:w-12" />
 
 	<!-- User info -->
 	<figcaption class="flex w-full flex-col gap-3">
@@ -25,10 +21,10 @@
 			<div class="flex w-full justify-between">
 				<h2 class="flex flex-col">
 					<span class="font-pt-sans font-bold md:text-base">
-						{gist.author?.fullname || 'test'}
+						{gist.author.fullname || 'test'}
 					</span>
 					<a href="/profile" class="text-xs text-blue-400 hover:text-brand md:text-sm">
-						@{gist.author?.username || 'test'}
+						@{gist.author.username || 'test'}
 					</a>
 				</h2>
 				<span class="text-xs italic text-gray-400 md:text-sm">

@@ -23,7 +23,7 @@
 		<div class="flex justify-between gap-3">
 			<figure class="flex items-center gap-3">
 				<img
-					src={gravatar($updatedGist.author.email)}
+					src={$updatedGist.author.image}
 					alt=""
 					loading="lazy"
 					class="h-16 w-16 rounded md:h-20 md:w-20"
