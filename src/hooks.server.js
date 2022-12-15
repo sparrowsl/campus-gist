@@ -7,13 +7,11 @@ export const handle = async ({ event, resolve }) => {
 	if (!session) return await resolve(event);
 
 	// Find the user with the unique id (which also is the session)
-	const user = await prisma.users.findUnique({
-		where: {
-			id: session
-		}
+	const student = await prisma.students.findUnique({
+		where: { id: session }
 	});
 
-	if (user) event.locals.user = user;
+	if (student) event.locals.student = student;
 
 	return await resolve(event);
 };

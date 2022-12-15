@@ -77,7 +77,8 @@
 				disabled={tac ? false : true}
 				class="{tac
 					? 'bg-brand hover:bg-brand-blue'
-					: 'bg-brand-blue'} block rounded-full py-3 text-sm font-semibold text-white "
+					: 'bg-brand-blue'} block rounded-full py-3 text-sm font-semibold text-white
+					disabled:cursor-not-allowed"
 			>
 				Register
 			</button>
