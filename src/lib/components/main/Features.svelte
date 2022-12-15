@@ -1,5 +1,5 @@
 <script>
-	import "iconify-icon"
+	import 'iconify-icon';
 
 	const features = [
 		{
@@ -62,7 +62,7 @@
 					class="flex flex-col gap-3 rounded-md bg-white p-5 shadow-sm hover:shadow-lg
 					md:flex-row md:gap-5 md:p-6"
 				>
-				<iconify-icon icon="{feature.icon}" class="mx-auto h-fit text-3xl text-brand-blue"></iconify-icon>
+					<iconify-icon icon={feature.icon} class="mx-auto h-fit text-3xl text-brand-blue" />
 
 					<div class="text-center md:text-left">
 						<h2 class="mb-3 mt-0 text-lg font-bold text-brand">{feature.title}</h2>

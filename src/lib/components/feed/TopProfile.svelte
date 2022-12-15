@@ -1,6 +1,6 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
-	import Icon from '@iconify/svelte';
+	import 'iconify-icon';
 	import { gravatar } from '$lib/utils/gravatar';
 
 	let openTopProfile = false;
@@ -32,16 +32,16 @@
 				href="/settings"
 				class="flex items-center gap-2 text-xs text-brand-blue hover:text-brand md:text-sm"
 			>
-				<Icon class="text-base md:text-lg" icon="ant-design:setting-outlined" />
-				<span> Settings&nbsp;&amp;&nbsp;Privacy </span>
+				<iconify-icon icon="ant-design:setting-outlined" class="text-base md:text-lg" />
+				<span> Settings </span>
 			</a>
 		</li>
 		<li>
 			<a
-				href="/"
+				href="/logout"
 				class="flex items-center gap-2 text-xs text-brand-blue hover:text-red-500 md:text-sm"
 			>
-				<Icon class="text-base md:text-lg" icon="mdi-light:logout" />
+				<iconify-icon icon="mdi-light:logout" class="text-base md:text-lg" />
 				<span> Logout </span>
 			</a>
 		</li>
