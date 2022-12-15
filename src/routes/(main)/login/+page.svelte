@@ -1,8 +1,11 @@
 <script>
 	import { enhance, applyAction } from '$app/forms';
 	import Input from '../../../lib/components/shared/Input.svelte';
+	import Spinner from '../../../lib/components/shared/Spinner.svelte';
 
 	export let form;
+
+	let loading = true;
 </script>
 
 <section class="grid min-h-screen place-content-center">
@@ -10,13 +13,10 @@
 		action=""
 		method="POST"
 		use:enhance={({ form }) => {
-			// Runs before form submission
+			loading = true;
 			return async ({ result, update }) => {
-				// Reset the form if successful
 				if (result.type === 'success') form.reset();
-				// Perserve the action login
 				if (result.type === 'invalid') await applyAction(form);
-				// Update any form logic passed
 				update();
 			};
 		}}
@@ -47,7 +47,11 @@
 				type="submit"
 				class="block rounded-full bg-brand py-3 text-base text-white hover:bg-brand-blue"
 			>
-				Log In
+				{#if loading}
+					<Spinner />
+				{:else}
+					Log In
+				{/if}
 			</button>
 		</fieldset>
 
