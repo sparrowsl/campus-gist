@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Students {
+  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+  fullname    String?
+  username    String     @unique
+  image       String
+  email       String     @unique
+  institution String
+  bio         String?
+  password    String
+  joined      DateTime   @default(now())
+  isAdmin     Boolean    @default(false)
+  gists       Gists[]
+  comments    Comments[]
+}
+
+model Gists {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  content    String
+  datePosted DateTime @default(now())
+  likes      BigInt   @default(0)
+  authorId   String   @db.ObjectId
+  author     Students @relation(fields: [authorId], references: [id])
+}
+
+// likedBy: [Schema.Types.ObjectId],
+
+model Comments {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  content    String
+  datePosted DateTime @default(now())
+  authorId   String   @db.ObjectId
+  author     Students @relation(fields: [authorId], references: [id])
+}
