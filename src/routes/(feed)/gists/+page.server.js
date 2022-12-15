@@ -18,3 +18,14 @@ export const load = async ({ locals }) => {
 
 	return { gists };
 };
+
+/** @type {import('./$types').Actions} */
+export const actions = {
+	createGist: async ({ request }) => {
+		const data = await request.formData();
+		const author = data.get('author');
+		const content = data.get('message');
+
+		console.log({ author, content });
+	}
+};

@@ -6,7 +6,10 @@
 	import CreateGist from '$lib/components/feed/CreateGist.svelte';
 
 	export let data;
-	$gists = data.gists || [];
+	export let form;
+	$gists = data.gists;
+
+	$: console.log(form);
 </script>
 
 <article class="container relative mx-auto min-h-screen max-w-6xl p-3">
@@ -24,5 +27,7 @@
 </article>
 
 {#if $createGistModal}
-	<CreateGistModal />
+	{#await import('$lib/components/modals/CreateGistModal.svelte') then _}
+		<CreateGistModal />
+	{/await}
 {/if}
