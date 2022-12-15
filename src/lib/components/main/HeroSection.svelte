@@ -18,14 +18,14 @@
 		<!-- Call to actions -->
 		<div class="mt-10 flex items-center justify-center gap-5 md:justify-start">
 			<a
-				data-sveltekit-prefetch
+				data-sveltekit-preload-data
 				href="/register"
 				class="rounded bg-brand-blue px-6 py-2 font-bold text-white hover:bg-blue-800"
 			>
 				Register
 			</a>
 			<a
-				data-sveltekit-prefetch
+				data-sveltekit-preload-data
 				href="/login"
 				class="rounded bg-[#6C63FF] px-6 py-2 font-bold text-white hover:bg-brand"
 			>
@@ -36,6 +36,6 @@
 
 	<!-- Side Illustration -->
 	<div class="mx-5 basis-full md:mx-0 md:grid md:place-content-center">
-		<img src="/images/chatting.png" alt="Chatting Illustration" />
+		<img src="/images/chatting.png" alt="Chatting Illustration" class="lg:animate-pulse" />
 	</div>
 </section>

@@ -9,7 +9,7 @@
 </script>
 
 <!-- bg-[#8A94AE] -->
-<header class="sticky top-0 bg-[#182747] md:shadow">
+<header class="sticky z-10 top-0 bg-[#182747] md:shadow">
 	<nav
 		class="container relative mx-auto flex min-h-[10vh] max-w-6xl items-center justify-between px-3"
 	>
