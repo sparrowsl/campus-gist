@@ -1,17 +1,17 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
 	import 'iconify-icon';
-	import { gravatar } from '$lib/utils/gravatar';
+	import { currentStudent } from '../../stores/students.js';
 
 	let openTopProfile = false;
 	afterNavigate(() => (openTopProfile = false));
 </script>
 
-<section class="relative">
+<div class="relative">
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<img
-		src={gravatar('sparrow@yahoo.com')}
-		alt=""
+		src={$currentStudent?.image}
+		alt="{$currentStudent?.username}'s profile"
 		class="h-9 w-9 rounded-full text-xs text-white hover:cursor-pointer md:h-10 md:w-10 lg:h-12 lg:w-12"
 		on:click={() => (openTopProfile = !openTopProfile)}
 	/>
@@ -24,8 +24,10 @@
 			 bg-white py-4 px-5 shadow-md md:-right-0"
 	>
 		<li class="mb-1 flex flex-col border-b pb-2 text-left text-xs text-brand-blue hover:text-brand">
-			<span class="font-sm mb-1 block text-base font-extrabold text-brand"> John Doe </span>
-			<span class="text-xs text-blue-800">johndoe@gmail.com</span>
+			<span class="font-sm mb-1 block text-base font-extrabold text-brand">
+				{$currentStudent?.fullname}
+			</span>
+			<span class="text-xs text-blue-800">{$currentStudent?.email}</span>
 		</li>
 		<li>
 			<a
@@ -46,4 +48,4 @@
 			</a>
 		</li>
 	</ul>
-</section>
+</div>
