@@ -5,7 +5,7 @@
 
 	export let form;
 
-	let loading = true;
+	let loading = false;
 </script>
 
 <section class="grid min-h-screen place-content-center">
@@ -18,6 +18,7 @@
 				if (result.type === 'success') form.reset();
 				if (result.type === 'invalid') await applyAction(form);
 				update();
+				loading = false;
 			};
 		}}
 		class="rounded-md bg-white p-8 shadow-md md:w-96 md:p-10"

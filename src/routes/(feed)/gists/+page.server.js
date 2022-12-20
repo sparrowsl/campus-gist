@@ -1,30 +1,21 @@
-import { redirect } from '@sveltejs/kit';
-import prisma from '../../../lib/utils/prisma.js';
+/** @type {import('./$types').PageLoad} */
+export async function load({ fetch, parent }) {
+	await parent();
 
-export const load = async ({ locals }) => {
-	if (!locals.student) throw redirect(303, '/login');
-
-	const gists = await prisma.gists.findMany({
-		include: {
-			author: {
-				select: {
-					fullname: true,
-					image: true,
-					username: true
-				}
-			}
-		}
-	});
+	const res = await fetch('/api/gists');
+	const { gists } = await res.json();
 
 	return { gists };
-};
+}
 
 /** @type {import('./$types').Actions} */
 export const actions = {
-	createGist: async ({ request }) => {
+	createGist: async ({ request, locals }) => {
 		const data = await request.formData();
 		const author = data.get('author');
 		const content = data.get('message');
+
+		console.log({ locals });
 
 		console.log({ author, content });
 	}

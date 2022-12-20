@@ -2,11 +2,13 @@ import { redirect } from '@sveltejs/kit';
 import { loginValidation } from '$lib/utils/validate.js';
 import prisma from '../../../lib/utils/prisma.js';
 
+/** @type {import('./$types').PageLoad} */
 export async function load({ cookies }) {
 	const session = cookies.get('session');
 	if (session) throw redirect(302, '/gists');
 }
 
+/** @type {import('./$types').Actions} */
 export const actions = {
 	default: async ({ request, cookies }) => {
 		const data = await request.formData();
@@ -21,7 +23,6 @@ export const actions = {
 		const student = await prisma.students.findUnique({
 			where: { email }
 		});
-		console.log(student);
 
 		// Return error from the server
 		if (!student) return { error: 'Invalid username and password!' };

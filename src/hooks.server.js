@@ -1,9 +1,7 @@
-import { redirect } from '@sveltejs/kit';
 import prisma from './lib/utils/prisma';
 
 export const handle = async ({ event, resolve }) => {
 	const session = event.cookies.get('session');
-
 	// If no session exists, return the normal page
 	if (!session) return await resolve(event);
 
@@ -17,7 +15,7 @@ export const handle = async ({ event, resolve }) => {
 			fullname: true,
 			username: true,
 			image: true,
-			email: true,
+			// email: true,
 			isAdmin: true
 		}
 	});

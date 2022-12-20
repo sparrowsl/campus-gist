@@ -4,9 +4,10 @@
 	import 'iconify-icon';
 
 	$: student = $page.data.student;
-
 	let openTopProfile = false;
 	afterNavigate(() => (openTopProfile = false));
+
+	// $: console.log(student?.image);
 </script>
 
 <div class="relative">

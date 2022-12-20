@@ -9,7 +9,7 @@
 	export let form;
 	$gists = data.gists;
 
-	$: console.log(form);
+	$: console.log($gists);
 </script>
 
 <article class="container relative mx-auto min-h-screen max-w-6xl p-3">
@@ -18,7 +18,7 @@
 
 	<!-- Display all the gists -->
 	<section class="flex flex-col gap-3">
-		{#each $gists as gist (gist)}
+		{#each $gists as gist (gist.id)}
 			<GistCard {gist} />
 		{:else}
 			<p class="mt-10 text-center italic text-brand-blue">No gist found, create new gist...</p>
