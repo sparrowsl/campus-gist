@@ -18,3 +18,16 @@ export const GET = async ({ request }) => {
 
 	return new Response(JSON.stringify({ gists }));
 };
+
+export const POST = async ({ request }) => {
+	const { authorId, content } = await request.json();
+
+	const gist = await prisma.gists.create({
+		data: {
+			content,
+			authorId
+		}
+	});
+
+	return new Response(JSON.stringify({ gist }));
+};

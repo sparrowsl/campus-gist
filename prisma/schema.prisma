@@ -29,7 +29,7 @@ model Gists {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   content    String
   datePosted DateTime @default(now())
-  likes      BigInt   @default(0)
+  likes      Int      @default(0)
   authorId   String   @db.ObjectId
   author     Students @relation(fields: [authorId], references: [id])
 }
