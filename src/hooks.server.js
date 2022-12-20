@@ -15,7 +15,7 @@ export const handle = async ({ event, resolve }) => {
 			fullname: true,
 			username: true,
 			image: true,
-			// email: true,
+			email: true,
 			isAdmin: true
 		}
 	});

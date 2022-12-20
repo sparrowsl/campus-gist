@@ -20,8 +20,8 @@ export const actions = {
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ authorId, content })
 		});
-		const data = await res.json();
+		const { gist } = await res.json();
 
-		console.log(data);
+		return { success: true, gist };
 	}
 };

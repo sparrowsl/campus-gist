@@ -9,7 +9,7 @@
 	export let form;
 	$gists = data.gists;
 
-	$: console.log($gists);
+	$: if (form?.success) $gists = [form.gist, ...$gists];
 </script>
 
 <article class="container relative mx-auto min-h-screen max-w-6xl p-3">
