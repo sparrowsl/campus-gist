@@ -1,7 +1,6 @@
 <script>
 	import Icon from '@iconify/svelte';
 	import dayjs from 'dayjs';
-
 	import { scale } from 'svelte/transition';
 
 	export let gist;
@@ -36,7 +35,7 @@
 		<!-- User text/post/gist -->
 		<p class="text-sm font-light text-gray-700 md:text-base">
 			{gist.content.slice(0, 75)}...
-			<a href="/gists/{gist._id}" class="text-sm italic text-blue-400" data-sveltekit-prefetch>
+			<a href="/gists/{gist.id}" class="text-sm italic text-blue-400" data-sveltekit-prefetch>
 				read more
 			</a>
 		</p>

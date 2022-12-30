@@ -1,53 +1,50 @@
 <script>
+	import { enhance, applyAction } from '$app/forms';
 	import { fade } from 'svelte/transition';
 	import { institutes } from '$lib/stores/universities.js';
 	import Textarea from '$lib/components/shared/Textarea.svelte';
 	import Input from '$lib/components/shared/Input.svelte';
 	import ProfileDisplay from './ProfileDisplay.svelte';
+	import { page } from '$app/stores';
 
-	// user will be equal to current user
-	const user = {
-		name: 'John Doe',
-		email: 'johndoe@gmail.com',
-		username: 'johndoe',
-		institute: 'BlueCrest College',
-		bio: 'Simple is better than complex!'
-	};
+	const student = $page.data.student;
+	console.log(student);
+
+	// TODO: pass data down to the components
 </script>
 
 <section in:fade class="mx-auto w-full max-w-2xl bg-white pl-5 md:px-5">
 	<h2 class="mb-5 text-center font-pt-sans text-2xl text-brand">Profile Settings</h2>
 
-	<ProfileDisplay {user} />
+	<ProfileDisplay {student} />
 
-	<form action="" on:submit|preventDefault class="mt-5 max-w-xl px-3 md:p-5">
+	<form action="" method="POST" class="mt-5 max-w-xl px-3 md:p-5" use:enhance>
 		<fieldset class="flex flex-col gap-3">
 			<Input
+				value={$page.data.student.fullname}
 				type="text"
-				bind:value={user.name}
 				placeholder="John Doe"
-				rounded=""
 				classes="text-sm font-light text-brand-blue focus:font-normal"
 			/>
 
 			<Input
+				bind:value={student.username}
 				type="text"
-				bind:value={user.username}
 				placeholder="johndoe"
 				rounded=""
 				classes="text-sm font-light text-brand-blue focus:font-normal"
 			/>
 
+			<!-- bind:value={user.email} -->
 			<Input
 				type="email"
-				bind:value={user.email}
 				placeholder="johndoe@gmail.com"
 				rounded=""
 				classes="text-sm font-light text-brand-blue focus:font-normal"
 			/>
 
+			<!-- bind:value={user.institute} -->
 			<select
-				bind:value={user.institute}
 				name="institutes"
 				class="block w-full rounded border-gray-200 text-sm font-light text-brand-blue focus:font-normal"
 			>
@@ -56,8 +53,8 @@
 				{/each}
 			</select>
 
+			<!-- bind:value={user.bio} -->
 			<Textarea
-				bind:value={user.bio}
 				placeholder="write short something about yourself."
 				classes="resize-none text-sm font-light focus:font-normal h-24"
 			/>

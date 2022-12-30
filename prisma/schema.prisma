@@ -17,7 +17,7 @@ model Students {
   image       String
   email       String     @unique
   institution String
-  bio         String?
+  bio         String     @default("Simple is better than complex")
   password    String
   joined      DateTime   @default(now())
   isAdmin     Boolean    @default(false)

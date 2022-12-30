@@ -22,6 +22,7 @@ export const actions = {
 		});
 		const { gist } = await res.json();
 
+		console.log({ gist });
 		return { success: true, gist };
 	}
 };

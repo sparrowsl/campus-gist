@@ -1,11 +1,11 @@
 <script>
 	import { page } from '$app/stores';
-	import { updatedGist } from '$lib/stores/gists.js';
+	import { gist } from '$lib/stores/gists.js';
 	import { editGistModal } from '$lib/stores/modals.js';
 	import Spinner from '$lib/components/shared/Spinner.svelte';
 	import ModalBackdrop from './ModalBackdrop.svelte';
 
-	let newContent = $updatedGist.content;
+	let newContent = $gist.content;
 	let updating = false;
 	let errorMessage = '';
 
@@ -24,7 +24,7 @@
 			return;
 		}
 
-		$updatedGist = data;
+		$gist = data;
 		$editGistModal = false;
 	};
 </script>

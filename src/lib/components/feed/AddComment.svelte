@@ -1,5 +1,5 @@
 <script>
-	import { gists, updatedGist } from '$lib/stores/gists.js';
+	import { gists, gist } from '$lib/stores/gists.js';
 
 	let newComment = 'simple is better than complex indeed.!!!';
 
@@ -17,20 +17,20 @@
 		}
 		console.log($gists);
 		// // Find the current gist
-		// $updatedGist = $gists.find((gist) => gist.id === $updatedGist.id) || {};
-		// console.log($updatedGist);
+		// $gist = $gists.find((gist) => gist.id === $gist.id) || {};
+		// console.log($gist);
 
-		// if (!$updatedGist) $updatedGist.comments = [];
+		// if (!$gist) $gist.comments = [];
 
 		// // Update the comments of the gist
-		// $updatedGist.comments.unshift({ text: newComment });
+		// $gist.comments.unshift({ text: newComment });
 
-		// console.log($updatedGist);
+		// console.log($gist);
 	};
 
 	// $: {
 	// 	console.log($gists);
-	// 	console.log($updatedGist);
+	// 	console.log($gist);
 	// }
 </script>
 

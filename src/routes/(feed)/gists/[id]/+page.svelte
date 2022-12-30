@@ -1,17 +1,16 @@
 <script>
 	import dayjs from 'dayjs';
-	import { updatedGist } from '$lib/stores/gists.js';
+	import { gist } from '$lib/stores/gists.js';
 	import { deleteGistModal, editGistModal } from '$lib/stores/modals.js';
 	import BackLink from '$lib/components/shared/BackLink.svelte';
 	import CommentCard from '$lib/components/cards/CommentCard.svelte';
 	import AddComment from '$lib/components/feed/AddComment.svelte';
 	import DeleteGistModal from '$lib/components/modals/DeleteGistModal.svelte';
 	import EditGistModal from '$lib/components/modals/EditGistModal.svelte';
-	import { gravatar } from '../../../../lib/utils/gravatar';
 
 	export let data;
-	$updatedGist = data.gist;
-	console.log($updatedGist);
+	// export let form
+	$gist = data.gist;
 </script>
 
 <article class="container mx-auto min-h-[90vh] max-w-xl p-3">
@@ -23,18 +22,18 @@
 		<div class="flex justify-between gap-3">
 			<figure class="flex items-center gap-3">
 				<img
-					src={$updatedGist.author.image}
+					src={$gist.author.image}
 					alt=""
 					loading="lazy"
 					class="h-16 w-16 rounded md:h-20 md:w-20"
 				/>
 				<figcaption class="">
-					<h3 class="text-base font-bold text-brand md:text-lg">{$updatedGist.author.fullname}</h3>
+					<h3 class="text-base font-bold text-brand md:text-lg">{$gist.author.fullname}</h3>
 					<a href="/profile" class="text-sm text-brand-blue hover:text-blue-600 md:text-base">
-						@{$updatedGist.author.username}
+						@{$gist.author.username}
 					</a>
 					<p class="font-pt-sans text-xs text-gray-500 md:text-sm">
-						{dayjs($updatedGist.datePosted).format('DD MMMM YYYY')}
+						{dayjs($gist.datePosted).format('DD MMMM YYYY')}
 					</p>
 				</figcaption>
 			</figure>
@@ -62,29 +61,30 @@
 
 		<div class="mt-3 border-b border-gray-300 pb-5">
 			<p class="whitespace-pre-wrap font-light text-gray-800 md:text-lg">
-				{$updatedGist.content}
+				{$gist.content}
 			</p>
 		</div>
 	</section>
 
 	<!-- Comments Section -->
 	<section class="mt-2">
-		<p class="mb-2 text-right text-xs font-light text-gray-500 md:text-sm">
-			{$updatedGist.comments.length}
-			{$updatedGist.comments.length > 1 || 0 ? 'comments' : 'comment'}
-		</p>
+		<!-- <p class="mb-2 text-right text-xs font-light text-gray-500 md:text-sm">
+			{$gist.comments.length}
+			{$gist.comments.length > 1 || 0 ? 'comments' : 'comment'}
+		</p> -->
 
 		<!-- Add new comment to this gist -->
 		<AddComment />
 
 		<!-- Display all comments for this gist -->
-		<div class="mt-5 flex flex-col gap-2">
-			{#each $updatedGist.comments || [] as comment}
+		<!-- <div class="mt-5 flex flex-col gap-2">
+			{#each $$gist.comments || [] as comment}
 				<CommentCard {comment} />
 			{:else}
 				<p class="text-center text-gray-500 font-light">No Comments yet...</p>
 			{/each}
 		</div>
+	</section> -->
 	</section>
 </article>
 
