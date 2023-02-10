@@ -6,40 +6,52 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
-model Students {
-  id          String     @id @default(auto()) @map("_id") @db.ObjectId
+model Student {
+  id          Int      @id @default(autoincrement())
+  uuid        String   @unique
   fullname    String?
-  username    String     @unique
+  username    String   @unique
   image       String
-  email       String     @unique
+  email       String   @unique
   institution String
-  bio         String     @default("Simple is better than complex")
+  bio         String?  @default("Simple is better than complex")
   password    String
-  joined      DateTime   @default(now())
-  isAdmin     Boolean    @default(false)
-  gists       Gists[]
-  comments    Comments[]
+  joined      DateTime @default(now())
+  isAdmin     Boolean  @default(false)
+  // gists       Gists[]
+  // comments    Comments[]
 }
 
-model Gists {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+model Gist {
+  id         Int      @id @default(autoincrement())
   content    String
   datePosted DateTime @default(now())
   likes      Int      @default(0)
-  authorId   String   @db.ObjectId
-  author     Students @relation(fields: [authorId], references: [id])
+  // authorId   String
+  // author     Students @relation(fields: [authorId], references: [id])
 }
 
 // likedBy: [Schema.Types.ObjectId],
 
-model Comments {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+model Comment {
+  id         Int      @id @default(autoincrement())
   content    String
   datePosted DateTime @default(now())
-  authorId   String   @db.ObjectId
-  author     Students @relation(fields: [authorId], references: [id])
+  // authorId   String
+  // author     Students @relation(fields: [authorId], references: [id])
+}
+
+model Institution {
+  id           Int     @id @default(autoincrement())
+  uuid         String
+  name         String  @unique
+  abbreviation String?
+  contact      String? @unique
+  email        String? @unique
+  website      String? @unique
+  logo         Bytes?
 }
