@@ -1,19 +1,13 @@
-import Joi from 'joi';
+import { z } from 'zod';
 
-export const loginValidation = Joi.object({
-	email: Joi.string()
-		.email({ tlds: { allow: false } })
-		.required(),
-	password: Joi.string().min(6).required()
+export const loginValidation = z.object({
+	email: z.string().email(),
+	password: z.string().min(6)
 });
 
-export const registerValidation = Joi.object({
-	fullname: Joi.string(),
-	username: Joi.string().required(),
-	email: Joi.string()
-		.email({ tlds: { allow: false } })
-		.required(),
-	institution: Joi.string(),
-	password: Joi.string().min(6).required(),
-	confirmPassword: Joi.ref('password')
+export const registerValidation = z.object({
+	fullname: z.string().trim(),
+	username: z.string().min(2).trim(),
+	email: z.string().email(),
+	password: z.string().min(6)
 });

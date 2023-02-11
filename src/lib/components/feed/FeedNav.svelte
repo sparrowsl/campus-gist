@@ -1,5 +1,5 @@
 <script>
-	import 'iconify-icon';
+	import Icon from '@iconify/svelte';
 	import Logo from '../shared/Logo.svelte';
 	import TopProfile from './TopProfile.svelte';
 
@@ -22,7 +22,7 @@
 			<div class="flex gap-6">
 				{#each navIcons as navIcon}
 					<a href={navIcon.href} class="flex flex-col items-center gap-1 text-white">
-						<iconify-icon icon={navIcon.icon} class="" />
+						<Icon icon={navIcon.icon} class="" />
 						<span class="text-xs">{navIcon.name}</span>
 					</a>
 				{/each}

@@ -1,7 +1,7 @@
 <script>
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import 'iconify-icon';
+	import Icon from '@iconify/svelte';
 
 	$: student = $page.data.student;
 	let openTopProfile = false;
@@ -37,7 +37,7 @@
 				href="/settings"
 				class="flex items-center gap-2 text-xs text-brand-blue hover:text-brand md:text-sm"
 			>
-				<iconify-icon icon="ant-design:setting-outlined" class="text-base md:text-lg" />
+				<Icon icon="ant-design:setting-outlined" class="text-base md:text-lg" />
 				<span> Settings </span>
 			</a>
 		</li>
@@ -46,7 +46,7 @@
 				href="/logout"
 				class="flex items-center gap-2 text-xs text-brand-blue hover:text-red-500 md:text-sm"
 			>
-				<iconify-icon icon="mdi-light:logout" class="text-base md:text-lg" />
+				<Icon icon="mdi-light:logout" class="text-base md:text-lg" />
 				<span> Logout </span>
 			</a>
 		</li>

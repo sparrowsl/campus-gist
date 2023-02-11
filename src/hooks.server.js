@@ -6,9 +6,9 @@ export const handle = async ({ event, resolve }) => {
 	if (!session) return await resolve(event);
 
 	// Find the user with the unique id (which also is the session)
-	const student = await prisma.students.findUnique({
+	const student = await prisma.student.findUnique({
 		where: {
-			id: session
+			uuid: session
 		},
 		select: {
 			id: true,
