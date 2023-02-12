@@ -5,30 +5,31 @@ import prisma from '../../../lib/utils/prisma.js';
 /** @type {import('./$types').PageLoad} */
 export async function load({ cookies }) {
 	const session = cookies.get('session');
-	if (session) throw redirect(302, '/gists');
+	// if (session) throw redirect(302, '/gists');
 }
 
 /** @type {import('./$types').Actions} */
 export const actions = {
 	default: async ({ request, cookies }) => {
-		const data = await request.formData();
-		const email = data.get('email');
-		const password = data.get('password');
+		const form = await request.formData();
+		const email = form.get('email');
+		const password = form.get('password');
 
 		// Validate form inputs
-		const { error } = loginValidation.validate({ email, password });
-		if (error) return { error: error.message };
+		try {
+			loginValidation.parse({ email, password });
+		} catch (error) {
+			return { error: 'Invalid username and password!' };
+		}
 
 		// Check if user already exists in the database
-		const student = await prisma.students.findUnique({
+		const student = await prisma.student.findUnique({
 			where: { email }
 		});
-
-		// Return error from the server
 		if (!student) return { error: 'Invalid username and password!' };
 
 		// Set a new cookie using the user id
-		cookies.set('session', student.id, {
+		cookies.set('session', student.uuid, {
 			path: '/',
 			sameSite: 'strict',
 			httpOnly: true,

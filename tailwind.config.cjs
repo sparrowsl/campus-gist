@@ -10,8 +10,7 @@ module.exports = {
 				'brand-blue': '#364F6B'
 			},
 			fontFamily: {
-				roboto: ['Roboto', 'Arial', 'sans-serif'],
-				'pt-sans': ['PT Sans', 'Arial', 'sans-serif']
+				roboto: ['Roboto', 'Arial', 'sans-serif']
 			}
 		}
 	},

@@ -1,7 +1,7 @@
 <script>
 	import { enhance, applyAction } from '$app/forms';
+	import Button from '../../../lib/components/shared/Button.svelte';
 	import Input from '../../../lib/components/shared/Input.svelte';
-	import Spinner from '../../../lib/components/shared/Spinner.svelte';
 
 	export let form;
 
@@ -39,21 +39,12 @@
 			</div>
 
 			{#if form?.error}
-				<small class="text-center text-sm italic text-red-500">
-					{form.error}
-				</small>
+				<small class="text-sm text-red-500">{form.error}</small>
 			{/if}
 
-			<button
-				type="submit"
-				class="block rounded-full bg-brand py-3 text-base text-white hover:bg-brand-blue"
-			>
-				{#if loading}
-					<Spinner />
-				{:else}
-					Log In
-				{/if}
-			</button>
+			<Button type="submit" classes="rounded w-full bg-brand py-3 text-sm font-semibold text-white">
+				Log in
+			</Button>
 		</fieldset>
 
 		<small class="mt-5 block text-center text-gray-500">
