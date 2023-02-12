@@ -1,22 +1,23 @@
-import prisma from '../../../lib/utils/prisma.js';
+import { json } from '@sveltejs/kit';
+import prisma from '../../../lib/utils/prisma';
 
-export const GET = async ({ request }) => {
-	const gists = await prisma.gists.findMany({
+export const GET = async ({}) => {
+	const gists = await prisma.gist.findMany({
 		orderBy: {
 			datePosted: 'desc'
 		},
 		include: {
-			author: {
+			student: {
 				select: {
 					fullname: true,
 					image: true,
-					username: true
+					username: true,
+					uuid: true
 				}
 			}
 		}
 	});
-
-	return new Response(JSON.stringify({ gists }));
+	return json({ gists });
 };
 
 export const POST = async ({ request }) => {
@@ -29,5 +30,5 @@ export const POST = async ({ request }) => {
 		}
 	});
 
-	return new Response(JSON.stringify({ gist }));
+	return json({ gist });
 };

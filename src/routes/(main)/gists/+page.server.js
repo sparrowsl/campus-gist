@@ -5,7 +5,7 @@ export async function load({ fetch, parent }) {
 	const res = await fetch('/api/gists');
 	const { gists } = await res.json();
 
-	return { gists };
+	return { gists: gists || [] };
 }
 
 /** @type {import('./$types').Actions} */

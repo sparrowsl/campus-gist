@@ -22,19 +22,22 @@ model Student {
   password    String
   joined      DateTime @default(now())
   isAdmin     Boolean  @default(false)
-  // gists       Gists[]
+
+  gists Gist[]
   // comments    Comments[]
   // institution Institution @relation(fields: [institutionId], references: [uuid])
 }
 
-// model Gist {
-//   id         Int      @id @default(autoincrement())
-//   content    String
-//   datePosted DateTime @default(now())
-//   likes      Int      @default(0)
-//   // authorId   String
-//   // author     Students @relation(fields: [authorId], references: [id])
-// }
+model Gist {
+  id         Int      @id @default(autoincrement())
+  uuid       String   @unique
+  content    String
+  datePosted DateTime @default(now())
+  likes      Int      @default(0)
+
+  studentId String?
+  student   Student? @relation(fields: [studentId], references: [uuid])
+}
 
 // likedBy: [Schema.Types.ObjectId],
 

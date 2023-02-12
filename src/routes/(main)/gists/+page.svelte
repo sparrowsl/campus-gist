@@ -7,7 +7,7 @@
 
 	export let data;
 	export let form;
-	$gists = data.gists;
+	$gists = data.gists || [];
 
 	$: if (form?.success) $gists = [form.gist, ...$gists];
 	$: console.log($gists);
