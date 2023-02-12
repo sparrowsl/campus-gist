@@ -5,6 +5,7 @@
 
 	export let form;
 	export let data;
+	let loading = false;
 </script>
 
 <section class="container mx-auto grid min-h-screen place-content-center md:p-10">
@@ -12,10 +13,12 @@
 		action=""
 		method="POST"
 		use:enhance={({ form }) => {
+			loading = true;
 			return async ({ result, update }) => {
 				if (result.type === 'success') form.reset();
 				if (result.type === 'invalid') await applyAction(form);
 				update();
+				loading = false;
 			};
 		}}
 		class="mx-3 rounded-md bg-white p-5 shadow-lg md:mx-0 md:min-w-[20em] md:p-10"
@@ -62,8 +65,12 @@
 				{/if}
 			</div>
 
-			<Button type="submit" classes="rounded w-full bg-brand py-3 text-sm font-semibold text-white">
-				Register
+			<Button
+				type="submit"
+				disabled={loading}
+				classes="rounded w-full bg-brand py-3 text-sm font-semibold text-white disabled:cursor-wait"
+			>
+				{loading ? '...' : 'Register'}
 			</Button>
 		</fieldset>
 

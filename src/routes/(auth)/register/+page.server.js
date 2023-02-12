@@ -8,7 +8,7 @@ import { gravatar } from '../../../lib/utils/gravatar';
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, cookies }) {
 	const session = cookies.get('session');
-	// if (session) throw redirect(302, '/gists');
+	if (session) throw redirect(302, '/gists');
 
 	// Load the institutions from json file
 	const res = await fetch('/data/institutes.json');
@@ -72,6 +72,6 @@ export const actions = {
 			maxAge: 60 * 60 * 24 * 1
 		});
 
-		throw redirect(302, '/login');
+		throw redirect(302, '/gists');
 	}
 };

@@ -1,6 +1,7 @@
 <script>
 	export let type = 'button';
 	export let classes = '';
+	export let disabled = false;
 </script>
 
-<button {type} class="{classes} block w-fit"> <slot /> </button>
+<button {type} {disabled} class="{classes} block w-fit"> <slot /> </button>

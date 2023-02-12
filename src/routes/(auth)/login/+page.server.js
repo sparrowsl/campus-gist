@@ -5,7 +5,7 @@ import prisma from '../../../lib/utils/prisma.js';
 /** @type {import('./$types').PageLoad} */
 export async function load({ cookies }) {
 	const session = cookies.get('session');
-	// if (session) throw redirect(302, '/gists');
+	if (session) throw redirect(302, '/gists');
 }
 
 /** @type {import('./$types').Actions} */

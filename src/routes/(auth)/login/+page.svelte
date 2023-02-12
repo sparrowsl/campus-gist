@@ -42,8 +42,12 @@
 				<small class="text-sm text-red-500">{form.error}</small>
 			{/if}
 
-			<Button type="submit" classes="rounded w-full bg-brand py-3 text-sm font-semibold text-white">
-				Log in
+			<Button
+				type="submit"
+				disabled={loading}
+				classes="rounded w-full bg-brand py-3 text-sm font-semibold text-white disabled:cursor-wait"
+			>
+				{loading ? '...' : 'Log in'}
 			</Button>
 		</fieldset>
 
