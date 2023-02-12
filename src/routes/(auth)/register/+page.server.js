@@ -5,17 +5,28 @@ import { registerValidation } from '$lib/utils/validate.js';
 import prisma from '../../../lib/utils/prisma';
 import { gravatar } from '../../../lib/utils/gravatar';
 
-export async function load({ cookies }) {
+/** @type {import('./$types').PageLoad} */
+export async function load({ fetch, cookies }) {
 	const session = cookies.get('session');
-	if (session) throw redirect(302, '/gists');
+	// if (session) throw redirect(302, '/gists');
+
+	// Load the institutions from json file
+	const res = await fetch('/data/institutes.json');
+	if (!res.ok) return [];
+
+	const data = await res.json();
+	// return only the names of the institutions
+	return { institutions: data.map((institute) => institute.name) };
 }
 
+/** @type {import('./$types').Actions} */
 export const actions = {
 	default: async ({ request, cookies }) => {
 		const form = await request.formData();
 		const fullname = form.get('fullname');
 		const username = form.get('username');
 		const email = form.get('email');
+		const institute = form.get('institute');
 		const password = form.get('password');
 
 		// Validate form inputs
@@ -26,19 +37,17 @@ export const actions = {
 			return { errors };
 		}
 
-		// Check if email already exists in the database
-		const emailExists = await prisma.student.findUnique({
-			where: {
-				email
-			}
-		});
-		if (emailExists) return { errors: { email: 'Email already exists!' } };
-
 		// Check if username already exists in the database
 		const usernameExists = await prisma.student.findUnique({
 			where: { username }
 		});
-		if (usernameExists) return { errors: { username: 'Username already exists!' } };
+		if (usernameExists) return { errors: { username: ['Username already exists!'] } };
+
+		// Check if email already exists in the database
+		const emailExists = await prisma.student.findUnique({
+			where: { email }
+		});
+		if (emailExists) return { errors: { email: ['Email already exists!'] } };
 
 		// Hash user password before sending it to database
 		const hashed = await bcrypt.hash(password, 10);
@@ -49,6 +58,7 @@ export const actions = {
 				fullname,
 				username,
 				email,
+				institution: institute,
 				image: gravatar(email),
 				password: hashed
 			}
@@ -62,6 +72,6 @@ export const actions = {
 			maxAge: 60 * 60 * 24 * 1
 		});
 
-		throw redirect(302, '/gists');
+		throw redirect(302, '/login');
 	}
 };

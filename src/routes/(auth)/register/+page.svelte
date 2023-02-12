@@ -4,6 +4,7 @@
 	import Input from '../../../lib/components/shared/Input.svelte';
 
 	export let form;
+	export let data;
 </script>
 
 <section class="container mx-auto grid min-h-screen place-content-center md:p-10">
@@ -41,6 +42,16 @@
 				{#if form?.errors?.email}
 					<small class="text-xs text-[tomato]">{form?.errors?.email[0]}</small>
 				{/if}
+			</div>
+
+			<div>
+				<label for="" class="block text-sm text-gray-500">Institution</label>
+				<select name="institute" class="rounded-md border-gray-200 p-2 text-sm text-gray-600">
+					{#each data.institutions as institute}
+						<option value={institute}>{institute}</option>
+					{/each}
+					<option value="Other">Other</option>
+				</select>
 			</div>
 
 			<div>
