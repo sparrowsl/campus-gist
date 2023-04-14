@@ -15,9 +15,7 @@ A social platform for students in different institutions to communicate with eac
   - TailwindCSS
   - SvelteKit
 
-- **Server:**
-
-  - Node (Express.js)
+  - https://robohash.org - generate profile image 
 
 - **Database:**
 
